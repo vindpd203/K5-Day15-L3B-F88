@@ -8,8 +8,8 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 |---|---|---|---|---|
 | Code bản chạy thử | | | | |
 | Prompt / thiết kế lời gọi mô hình | | | | |
-| Đào data (viết script đếm, gợi ý nhãn) | | | Kiểm tay __ dòng, khớp __ | |
-| Rà câu hỏi phỏng vấn / khảo sát | | Chỉ rà câu dẫn dắt | | |
+| Đào data (viết script đếm, phân loại) | Codex | Viết count.py, kiểm snapshot 5000 review, chọn mẫu 504/pilot 30; đọc và điền đủ 504 nhãn cuối theo yêu cầu Minh, giữ 85 đề xuất cũ làm lịch sử | Nguồn nhãn ghi Codex, loai_duyet=ai; chưa có kiểm tay hoặc đối chiếu Minh/Khánh. Kết quả 0/300 random và 2/204 keyword đủ căn cứ mất cọc; không khai là nhãn người thật | Nguyễn Nhật Minh |
+| Rà câu hỏi phỏng vấn / khảo sát | Codex | Soạn 7 nhóm câu khảo sát; lịch đề xuất tham khảo, kịch bản người mua/người bán và phiếu ghi chép trắng | Minh đã tạo Form; lịch/câu hỏi phỏng vấn chỉ là tham khảo. Chưa có lịch được xác nhận hoặc câu trả lời người thật trong repo | Nguyễn Nhật Minh |
 | Viết câu thử (benchmark) | | | Mỗi câu thử có `source`; câu thử AI viết được ghi rõ | |
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
 | Chấm cột `pass` bằng LLM (nếu có) | | | Kiểm tra thủ công __ câu thử, khớp __/__ | |

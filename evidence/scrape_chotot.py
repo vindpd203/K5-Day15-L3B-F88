@@ -20,6 +20,8 @@ LABELS = {
     "khoa_tai_khoan": ["khóa", "khoá", "bị chặn", "cấm"],
 }
 
+if os.path.exists(OUT):
+    raise SystemExit("Đã có snapshot raw. Giữ nguyên file gốc; đổi OUT trước khi lấy snapshot mới.")
 rs, _ = reviews(APP_ID, lang="vi", country="vn", sort=Sort.NEWEST, count=N)
 rows = []
 for i, r in enumerate(rs, 1):
@@ -27,13 +29,15 @@ for i, r in enumerate(rs, 1):
     rows.append({"id": f"C{i:04d}", "date": r["at"].date(), "score": r["score"], "content": r["content"],
                  "labels": "|".join(k for k, kws in LABELS.items() if any(w in text for w in kws)), "nhan_tay": ""})
 
-with open(OUT, "w", newline="", encoding="utf-8-sig") as f:
+with open(OUT, "x", newline="", encoding="utf-8-sig") as f:
     w = csv.DictWriter(f, fieldnames=["id", "date", "score", "content", "labels", "nhan_tay"])
     w.writeheader(); w.writerows(rows)
 
 n = len(rows)
 d = [r["date"] for r in rows]
 c = Counter(l for r in rows for l in r["labels"].split("|") if l)
+if not n:
+    raise SystemExit("Không lấy được review; không công bố tỷ lệ.")
 print(f"N={n}  {min(d)} → {max(d)}  1-2 sao={sum(r['score'] <= 2 for r in rows)}  → {OUT}")
 for k in LABELS:
     print(f"  {k}: {c[k]}/{n} ({c[k] / n:.1%})")

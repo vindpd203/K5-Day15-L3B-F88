@@ -52,6 +52,11 @@ Trong README này lệnh viết là `python …`; máy nhóm cần `python3` hay
 
 ## Lệnh
 
+Phần bằng chứng của Minh (issue #5): [cách chạy phân tích review](evidence/README.md),
+[kết quả và giới hạn](evidence/data-mining.md), [việc còn cần thực hiện](evidence/issue-5-handoff.md).
+Phân tích snapshot có sẵn chỉ dùng thư viện chuẩn. Khi cần thu thập mới, cài gói trong
+`requirements.txt` bằng `python -m pip install -r requirements.txt`; giữ nguyên snapshot cũ.
+
 | Lệnh | Làm gì |
 |---|---|
 | `python run.py` | Chạy bản chạy thử (gõ đầu vào, nhận kết quả, kèm số lần gọi model / token) |

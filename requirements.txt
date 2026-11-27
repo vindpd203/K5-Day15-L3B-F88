@@ -2,3 +2,5 @@
 # KHÔNG cần pip install để chạy.
 # Nhóm dùng thêm thư viện (vd SDK của nhà cung cấp model) thì ghi tên gói vào đây, mỗi dòng một gói,
 # và ghi lệnh cài vào README: python -m pip install -r requirements.txt
+# Chỉ dùng cho evidence/, khung chạy không cần gói này.
+google-play-scraper==1.2.7
