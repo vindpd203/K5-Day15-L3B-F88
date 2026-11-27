@@ -7,7 +7,7 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Việc | Công cụ AI | AI làm gì | Người kiểm/sửa gì | Ai phụ trách |
 |---|---|---|---|---|
 | Code bản chạy thử | | | | |
-| Prompt / thiết kế lời gọi mô hình | | | | |
+| Prompt / thiết kế lời gọi mô hình | Coding agent | Cải tiến prompt Bước 1 (`SYSTEM_EXTRACT`) và Bước 4 (`SYSTEM_DECIDE` + truyền `dau_vao_goc`) giữa Lượt 1 và Lượt 2 dựa trên phân tích lỗi trace | Khánh và Hùng đối chiếu với kết quả `run-1.csv` → `run-2.csv` (9/20 → 18/20) | Hùng, Khánh |
 | Đào data (viết script đếm, phân loại) | Codex | Viết count.py, kiểm snapshot 5000 review, chọn mẫu 504/pilot 30 và gợi ý nhãn; giữ lịch sử gợi ý | Minh xác nhận trong chat rằng nhãn khớp phần mình làm; ghi 504 nhãn vào nhan_minh, người duyệt cuối Nguyễn Nhật Minh. Cách xác nhận và nguồn gợi ý Codex giữ trong manifest; chưa có file nhãn Minh riêng hoặc đối chiếu với Khánh. Kết quả giữ nguyên 0/300 random, 2/204 keyword | Nguyễn Nhật Minh |
 | Rà câu hỏi phỏng vấn / khảo sát | Codex | Soạn 7 nhóm câu khảo sát; lịch đề xuất tham khảo, kịch bản người mua/người bán và phiếu ghi chép trắng | Minh đã tạo Form; lịch/câu hỏi phỏng vấn chỉ là tham khảo. Chưa có lịch được xác nhận hoặc câu trả lời người thật trong repo | Nguyễn Nhật Minh |
 | Viết câu thử và tiêu chí đánh giá | Codex | Soạn 12 tình huống, gồm 4 ca viết lại từ trích review trong đề xuất, dự thảo cách chấm và chuẩn đạt | Chờ rà nguồn, đáp án và ngưỡng trước CP2 | Khánh; Vinh cùng duyệt chuẩn đạt |
@@ -16,7 +16,7 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Viết câu thử và tiêu chí đánh giá | Codex | Soạn thêm B13–B20 cho CP3 (3 ca phỏng theo review có mã, 5 ca tự viết). Ở CP2 soạn 12 tình huống, gồm 4 ca viết lại từ trích review trong đề xuất, dự thảo cách chấm và chuẩn đạt | Chờ rà nguồn, đáp án và ngưỡng trước CP2 | Khánh; Vinh cùng duyệt chuẩn đạt |
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
 | Trình bày báo cáo phỏng vấn | Codex | Theo yêu cầu Minh, trình bày 3 báo cáo phỏng vấn (2 người mua, 1 người bán), nay ở `evidence/interviews/`. Ban đầu ghi là minh họa; ngày 27/11/2026 Minh xác nhận với nhóm đây là phỏng vấn người thật | Minh xác nhận nội dung khớp buổi hỏi; chưa có ghi chép gốc và ngày giờ từng buổi trong repo | Nguyễn Nhật Minh |
-| Chấm cột `pass` bằng LLM (nếu có) | Coding agent + script Python | Đối chiếu tự động `so_lieu` với `traces/run-1.jsonl` và gợi ý nháp cột `pass`, `ghi_chu` theo `pass_criterion` cho Lượt 1 | Khánh kiểm tra thủ công lại 20/20 câu thử trước khi chốt | Khánh |
+| Chấm cột `pass` bằng LLM (nếu có) | Coding agent + script Python | Đối chiếu tự động `so_lieu` với `traces/run-1.jsonl`, `traces/run-2.jsonl` và gợi ý nháp cột `pass`, `ghi_chu` theo `pass_criterion` cho Lượt 1 & Lượt 2 | Khánh kiểm tra thủ công lại 20/20 câu thử mỗi lượt trước khi chốt | Khánh |
 | Slide, văn bản | | | | |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).

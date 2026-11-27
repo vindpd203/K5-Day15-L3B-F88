@@ -20,9 +20,9 @@ personas:           # 3 kiểu người mua đồ cũ khớp spec.md §2 và doc
     source: "(tự ước tính) theo giả thuyết docs/de-xuat-do-cu.md §6 — chờ cập nhật từ khảo sát câu 1–2 (issue #5)"
   - name: san_mot_mon
     share: 0.3
-    uses_per_month: 5       # đang tìm mua 1 món (điện thoại, xe), hỏi và kiểm 4–6 người bán
+    uses_per_month: 4       # trung bình 4 người bán / 30 ngày từ phỏng vấn MUA-01 (5) và MUA-02 (3)
     turns_per_session: 2    # kiểm lần đầu + bổ sung STK/tình trạng máy sau khi hỏi thêm người bán
-    source: "(tự ước tính) theo giả thuyết docs/de-xuat-do-cu.md §6 (4–6 lần/tháng) — chờ cập nhật từ khảo sát câu 1–2 (issue #5)"
+    source: "Tần suất 4 lần/tháng từ phỏng vấn người thật MUA-01 (kiểm 5 người bán/30 ngày) và MUA-02 (kiểm 3 người bán/30 ngày) trong evidence/interviews/; tỷ lệ share 0,3 và 2 lượt/phiên là (tự ước tính)"
   - name: mua_di_ban_lai
     share: 0.1
     uses_per_month: 18      # người săn hàng cũ thường xuyên (15–20 lần/tháng)
