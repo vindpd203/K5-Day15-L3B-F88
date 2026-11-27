@@ -111,13 +111,13 @@ flowchart TD
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
 - Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu (thuong 7 · kho 10 · tu_choi 3) · metric: `eval/metric_spec.yaml` (6 metric)
 - **Chuẩn "đạt"** (chốt **trước 19:30 Thứ Sáu 27/11**, giữ nguyên đến 23:59 Thứ Bảy 28/11): "Đạt khi ≥ 75% câu thuong và kho có `muc` đúng nhãn, và 0 câu ca lừa bị báo `tuong_doi_an_toan`, và ≤ 1/8 (12,5%) câu ca người bán thật bị báo `dau_hieu_lua_dao`, và 100% số liệu trong `so_lieu` khớp kết quả công cụ."
-- Kết quả: lượt 1 **9/20 (45%)** *(chưa đạt chuẩn: `muc_dung_nhan` 10/17 = 58,8% < 75%; đạt 0/4 lọt lừa, 0/8 báo oan, 17/17 số liệu khớp công cụ)* · lượt 2 __/__ (__%) — run ID: `run-1@20261127-191256` / __ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
+- Kết quả: lượt 1 **9/20 (45%)** *(chưa đạt chuẩn: `muc_dung_nhan` 10/17 = 58,8% < 75%)* · lượt 2 **18/20 (90%)** *(**đạt chuẩn**: `muc_dung_nhan` 17/17 = 100% ≥ 75%, 0/4 lọt lừa, 0/8 báo oan, 17/17 số liệu khớp công cụ)* — run ID: `run-1@20261127-191256` / `run-2@20261127-212020` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
-- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-__.csv` (__ phiên)
-- Chi phí / task thành công: __ (model __) · __ (model __)
-- Chi phí / tháng ở quy mô thật: thấp __ · cơ sở __ · cao __ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2): đáng làm không, vì sao:
+- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-1.csv` (**50** phiên, seed 42, run ID `simulate-1@20261127-212619`, đo token thật trên `google/gemini-3.1-flash-lite`, tỉ lệ đạt `18/20 = 90%` từ `eval/run-2.csv`)
+- Chi phí / task thành công: **`$0.0022` (≈ `57 ₫`)** (model `gemini-3.1-flash-lite`) · **`$0.0119` (≈ `303 ₫`)** (model `gemini-4-hydrogen`)
+- Chi phí / tháng ở quy mô thật (model `gemini-3.1-flash-lite`): thấp (10.000 người) **`$85.08` (≈ `2,16 triệu ₫`)** · cơ sở (100.000 người) **`$850.76` (≈ `21,61 triệu ₫`, tức `216 ₫/người/tháng`)** · cao (500.000 người) **`$4,253.81` (≈ `108,05 triệu ₫`)** → chi tiết `cost/cost-estimate.md`
+- So với impact / người / tháng (§2): **Đáng làm** — chi phí chỉ ~`216 ₫/người/tháng` (`57 ₫/task thành công`), trong khi người mua đang mất 15–25 phút/lần tự soi tin (`MUA-01`, `MUA-02`) và mỗi vụ cọc rủi ro 100.000–200.000 ₫ (`C2567`, `MUA-01`); chỉ cần chặn được 1 vụ mất cọc 200.000 ₫ trên ~925 người dùng/tháng (~0,11%) là đã hòa vốn toàn bộ chi phí AI.
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: đã ẩn danh gì, không thu gì, không đưa gì vào model gói miễn phí:
@@ -134,6 +134,8 @@ flowchart TD
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
 | 21:15 27/11 | Cập nhật số câu thử ở `spec.md` §7 (12 → 20 câu) và ghi kết quả Eval Lượt 1 (`run-1@20261127-191256`, 9/20 = 45%) chạy trên `google/gemini-3.1-flash-lite` | Hoàn thành Issue #20 và #22; lộ ra 3 nhóm lỗi thực tế ở B02, B03–B06/B19 và B05/B08/B13–B14/B17–B18 để sửa cho Lượt 2 (giữ nguyên chuẩn "đạt") |
+| 21:24 27/11 | Cải tiến `codebase/agent.py` (truyền `dau_vao_goc` + quy tắc G10 vào Bước 4, làm rõ `da_chuyen_tien` ở Bước 1) và chạy Eval Lượt 2 (`run-2@20261127-212020`, 18/20 = 90%) | Hoàn thành Issue #25: khắc phục nhóm lỗi hạ nhầm 6 ca kiểm trước trả sau (B05, B08, B13–B14, B17–B18), mất ngữ cảnh (B03, B19) và B02; đạt chuẩn "đạt" |
+| 21:33 27/11 | Cập nhật nguồn phỏng vấn `MUA-01`, `MUA-02` vào `cost/personas.yaml`, chạy mô phỏng 50 phiên (`simulate-1@20261127-212619`) và điền `cost/cost-estimate.md`, `spec.md` §8 | Hoàn thành Issue #26: đo chi phí / task thành công thực tế (`$0.0022 ≈ 57 ₫` trên `gemini-3.1-flash-lite`) dựa trên tỉ lệ đạt 90% của Lượt 2 |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
