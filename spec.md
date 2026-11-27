@@ -109,9 +109,9 @@ flowchart TD
 - Bị đòi ngoài phạm vi (lớp 3): · Trường hợp đặc thù lĩnh vực (lớp 4):
 
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
-- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 12 câu (thuong 3 · kho 6 · tu_choi 3) · metric: `eval/metric_spec.yaml` (6 metric)
+- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu (thuong 7 · kho 10 · tu_choi 3) · metric: `eval/metric_spec.yaml` (6 metric)
 - **Chuẩn "đạt"** (chốt **trước 19:30 Thứ Sáu 27/11**, giữ nguyên đến 23:59 Thứ Bảy 28/11): "Đạt khi ≥ 75% câu thuong và kho có `muc` đúng nhãn, và 0 câu ca lừa bị báo `tuong_doi_an_toan`, và ≤ 1/8 (12,5%) câu ca người bán thật bị báo `dau_hieu_lua_dao`, và 100% số liệu trong `so_lieu` khớp kết quả công cụ."
-- Kết quả: lượt 1 __/__ (__%) · lượt 2 __/__ (__%) — run ID: __ / __ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
+- Kết quả: lượt 1 **9/20 (45%)** *(chưa đạt chuẩn: `muc_dung_nhan` 10/17 = 58,8% < 75%; đạt 0/4 lọt lừa, 0/8 báo oan, 17/17 số liệu khớp công cụ)* · lượt 2 __/__ (__%) — run ID: `run-1@20261127-191256` / __ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
 - Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-__.csv` (__ phiên)
@@ -133,7 +133,7 @@ flowchart TD
 
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
-|  |  |  |
+| 19:25 27/11 | Cập nhật số câu thử ở `spec.md` §7 (12 → 20 câu) và ghi kết quả Eval Lượt 1 (`run-1@20261127-191256`, 9/20 = 45%) chạy trên `google/gemini-3.1-flash-lite` | Hoàn thành Issue #20 và #22; lộ ra 3 nhóm lỗi thực tế ở B02, B03–B06/B19 và B05/B08/B13–B14/B17–B18 để sửa cho Lượt 2 (giữ nguyên chuẩn "đạt") |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
