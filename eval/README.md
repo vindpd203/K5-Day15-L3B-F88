@@ -30,12 +30,13 @@ Chạy python run.py check để kiểm cấu trúc. Khi có model thật, chạ
 |---|---|---|---|---|---|---|
 | 1 | `run-1@20261127-191256` | `google/gemini-3.1-flash-lite` | Workflow 5 bước + 4 công cụ + luật G10 trên `main` (`30f6a39`) | 9/20 | 45% | Chưa (`muc_dung_nhan` 10/17 = 58,8% < 75%; đạt 0/4 lọt lừa, 0/8 báo oan, 17/17 khớp số liệu) |
 | 2 | `run-2@20261127-212020` | `google/gemini-3.1-flash-lite` | Truyền `dau_vao_goc` + quy tắc G10 vào Bước 4, làm rõ `ngoai_pham_vi` cho `da_chuyen_tien` ở Bước 1 | 18/20 | 90% | **Đạt** (`muc_dung_nhan` 17/17 = 100% ≥ 75%; 0/4 lọt lừa, 0/8 báo oan, 17/17 khớp số liệu) |
+| 3 | `run-3@20261128-001143` | `openai/gpt-4o-mini` (**model chốt của nhóm**) | Chạy lại nguyên bộ trên code `main` hiện tại (`4437fb8`: prompt Lượt 2 + luật đỏ `da_chuyen_bi_chan`), chỉ đổi model | 11/20 | 55% | **Đạt** (`muc_dung_nhan` 17/17 = 100% ≥ 75%; 0/4 lọt lừa, 0/8 báo oan, 17/17 khớp số liệu) |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau Checkpoint 4: ghi thêm dòng, không sửa dòng cũ.
 
 ## 6. Lỗi chính
 
-Nhóm lỗi lớn nhất ở Lượt 1 là đứt ngữ cảnh giao dịch gốc và thiếu quy tắc G10 giữa Bước 1 → Bước 4 (làm 6/8 ca kiểm trước trả sau bị hạ về `can_kiem_them`, 4 ca mất chi tiết phụ và B02 bị gán nhầm `ngoai_pham_vi`). Sau một lần cải tiến truyền `dau_vao_goc` + quy tắc G10 vào Bước 4 và làm rõ `da_chuyen_tien` ở Bước 1, Lượt 2 đạt **18/20 (90%)** và vượt chuẩn đạt (`17/17` đúng mã mức, `0` câu tệ đi). Còn lại 2 câu `kho` (`B04`, `B06`) đúng mức `can_kiem_them` nhưng diễn đạt chưa tách bạch tin đồn chung (`B04`) hoặc chưa bắt hết câu viết tắt không dấu mở sẵn phương án hẹn xem trực tiếp (`B06`).
+Nhóm lỗi lớn nhất ở Lượt 1 là đứt ngữ cảnh giao dịch gốc và thiếu quy tắc G10 giữa Bước 1 → Bước 4 (làm 6/8 ca kiểm trước trả sau bị hạ về `can_kiem_them`, 4 ca mất chi tiết phụ và B02 bị gán nhầm `ngoai_pham_vi`). Sau một lần cải tiến truyền `dau_vao_goc` + quy tắc G10 vào Bước 4 và làm rõ `da_chuyen_tien` ở Bước 1, Lượt 2 đạt **18/20 (90%)** và vượt chuẩn đạt (`17/17` đúng mã mức, `0` câu tệ đi). **Lượt 3 trên model chốt `gpt-4o-mini`:** vẫn đúng mức 17/17 và đạt chuẩn, nhưng chỉ 11/20 câu đạt `pass_criterion` vì `ly_do` ngắn, thiếu ý phụ (B01, B04, B06, B09, B13–B15, B17, B18). Còn lại 2 câu `kho` ở Lượt 2 (`B04`, `B06`) đúng mức `can_kiem_them` nhưng diễn đạt chưa tách bạch tin đồn chung (`B04`) hoặc chưa bắt hết câu viết tắt không dấu mở sẵn phương án hẹn xem trực tiếp (`B06`).
 
 ## 7. Demo CP3
 

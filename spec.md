@@ -36,7 +36,7 @@ Data BTC cấp đã dùng (nếu có — không commit nguyên file): không dù
 
 - **Impact / tháng** của hướng chọn (kịch bản cơ sở, cùng 100.000 người dùng như `cost/cost-estimate.md`):
   - **Thời gian:** 100.000 người × 30% đang săn một món *(tự ước tính, share persona `san_mot_mon` ở `cost/personas.yaml`)* × 4 người bán / tháng (trung bình MUA-01: 5, MUA-02: 3) × 20 phút / người bán (trung bình MUA-01: 25, MUA-02: 15) = **2,4 triệu phút ≈ 40.000 giờ tự kiểm / tháng**. AI không xoá hết thời gian này (người mua vẫn xem máy), chỉ rút phần soi trang cá nhân, so giá, tra STK.
-  - **Tiền:** chưa có số tin cậy cho % người mua gặp người bán lừa — review chỉ có 2/204 tự thuật mất cọc, phỏng vấn 0/2 người mua mất tiền, khảo sát chưa sàng lọc. Không nhân ra số tiền để tránh bịa; chỉ dùng mức hoà vốn ở §8 (chặn 1 vụ mất cọc 200.000 ₫ trên ~925 người dùng / tháng).
+  - **Tiền:** chưa có số tin cậy cho % người mua gặp người bán lừa — review chỉ có 2/204 tự thuật mất cọc, phỏng vấn 0/2 người mua mất tiền, khảo sát chưa sàng lọc. Không nhân ra số tiền để tránh bịa; chỉ dùng mức hoà vốn ở §8 (chặn 1 vụ mất cọc 200.000 ₫ trên ~2.450 người dùng / tháng với model chốt).
   - Quy mô người dùng: Chợ Tốt công bố hơn 10 triệu người dùng, 55 triệu lượt truy cập/tháng ([Dân Việt 2022](https://thegioitiepthi.danviet.vn/thi-truong-do-secondhand-51-ty-usd-va-cach-giai-bai-toan-niem-tin-cua-cho-tot-20220615151315565-d13435.html)) — **tự công bố, số năm 2022, có thể đã cũ**; 100.000 người = 1% *(tự ước tính)*. Số phút và số người bán từ n = 2 phỏng vấn, không suy rộng thành tỉ lệ.
 - Hướng ĐÃ LOẠI + vì sao: xem 3 dòng "Loại" ở bảng trên. Số của hai hướng đầu lấy từ cùng bộ 5000 review Chợ Tốt.
 - Số lần / tháng của từng kiểu người dùng (persona §8, `cost/personas.yaml`): thỉnh thoảng mua đồ cũ 0,5 *(tự ước tính)* · đang săn một món 4 (MUA-01, MUA-02) · mua đi bán lại 18 *(tự ước tính)*.
@@ -95,7 +95,7 @@ flowchart TD
   | G2 — cho biết hệ thống làm tốt đến đâu | Không bao giờ nói "chắc chắn an toàn" hay "chắc chắn lừa đảo"; mức cao nhất là "tương đối an toàn, vẫn nên xem hàng trực tiếp" |
   | G9 — dễ sửa khi sai | Người mua bổ sung thông tin (số TK, tình trạng máy) rồi kiểm lại; kết luận cũ không bị ghi đè âm thầm |
 
-- Phần nào còn giả: **danh sách STK/SĐT cảnh báo**, các mã tin `TD…` và bảng giá dự phòng *(ước tính, dùng khi đời máy không có trong dữ liệu Chợ Tốt)* là dữ liệu dựng trong `codebase/tools.py`; ngoài đời nguồn này phải là dữ liệu báo cáo của chính app. **Thật:** giá tham chiếu 37 đời điện thoại và hồ sơ 816 người bán cào từ Chợ Tốt ngày 27/11/2026 (`data/DATA_CARD.md`); model thật `google/gemini-3.1-flash-lite` ở Lượt 1, Lượt 2 và mô phỏng chi phí.
+- Phần nào còn giả: **danh sách STK/SĐT cảnh báo**, các mã tin `TD…` và bảng giá dự phòng *(ước tính, dùng khi đời máy không có trong dữ liệu Chợ Tốt)* là dữ liệu dựng trong `codebase/tools.py`; ngoài đời nguồn này phải là dữ liệu báo cáo của chính app. **Thật:** giá tham chiếu 37 đời điện thoại và hồ sơ 816 người bán cào từ Chợ Tốt ngày 27/11/2026 (`data/DATA_CARD.md`); model thật: Lượt 1, Lượt 2 chạy `google/gemini-3.1-flash-lite`; model chốt của nhóm là `openai/gpt-4o-mini` (Lượt 3, mô phỏng chi phí `simulate-2`, demo).
 
 ## §5. Chỗ khó — 4 lớp + ≥6 kịch bản + 2 tấn công *(guide 2.3)*
 
@@ -127,13 +127,13 @@ flowchart TD
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
 - Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 20 câu (thuong 7 · kho 10 · tu_choi 3) · metric: `eval/metric_spec.yaml` (6 metric)
 - **Chuẩn "đạt"** (chốt **trước 19:30 Thứ Sáu 27/11**, giữ nguyên đến 23:59 Thứ Bảy 28/11): "Đạt khi ≥ 75% câu thuong và kho có `muc` đúng nhãn, và 0 câu ca lừa bị báo `tuong_doi_an_toan`, và ≤ 1/8 (12,5%) câu ca người bán thật bị báo `dau_hieu_lua_dao`, và 100% số liệu trong `so_lieu` khớp kết quả công cụ."
-- Kết quả: lượt 1 **9/20 (45%)** *(chưa đạt chuẩn: `muc_dung_nhan` 10/17 = 58,8% < 75%)* · lượt 2 **18/20 (90%)** *(**đạt chuẩn**: `muc_dung_nhan` 17/17 = 100% ≥ 75%, 0/4 lọt lừa, 0/8 báo oan, 17/17 số liệu khớp công cụ)* — run ID: `run-1@20261127-191256` / `run-2@20261127-212020` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
+- Kết quả: lượt 1 **9/20 (45%)** *(chưa đạt chuẩn: `muc_dung_nhan` 10/17 = 58,8% < 75%)* · lượt 2 **18/20 (90%)** *(**đạt chuẩn**: `muc_dung_nhan` 17/17 = 100% ≥ 75%, 0/4 lọt lừa, 0/8 báo oan, 17/17 số liệu khớp công cụ)* · **lượt 3 trên model chốt `openai/gpt-4o-mini`: 11/20 (55%)** *(vẫn **đạt chuẩn**: `muc_dung_nhan` 17/17, 0/4 lọt lừa, 0/8 báo oan, 17/17 số liệu khớp; số câu đạt `pass_criterion` giảm vì `ly_do` thiếu ý phụ)* — run ID: `run-1@20261127-191256` / `run-2@20261127-212020` (cả hai trên `google/gemini-3.1-flash-lite`) / `run-3@20261128-001143` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
-- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-1.csv` (**50** phiên, seed 42, run ID `simulate-1@20261127-212619`, đo token thật trên `google/gemini-3.1-flash-lite`, tỉ lệ đạt `18/20 = 90%` từ `eval/run-2.csv`)
-- Chi phí / task thành công: **`$0.0022` (≈ `57 ₫`)** (model `gemini-3.1-flash-lite`) · **`$0.0119` (≈ `303 ₫`)** (model `gemini-4-hydrogen`)
-- Chi phí / tháng ở quy mô thật (model `gemini-3.1-flash-lite`): thấp (10.000 người) **`$85.08` (≈ `2,16 triệu ₫`)** · cơ sở (100.000 người) **`$850.76` (≈ `21,61 triệu ₫`, tức `216 ₫/người/tháng`)** · cao (500.000 người) **`$4,253.81` (≈ `108,05 triệu ₫`)** → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2): **Đáng làm** — chi phí chỉ ~`216 ₫/người/tháng` (`57 ₫/task thành công`), trong khi người mua đang mất 15–25 phút/lần tự soi tin (`MUA-01`, `MUA-02`) và mỗi vụ cọc rủi ro 100.000–200.000 ₫ (`C2567`, `MUA-01`); chỉ cần chặn được 1 vụ mất cọc 200.000 ₫ trên ~925 người dùng/tháng (~0,11%) là đã hòa vốn toàn bộ chi phí AI.
+- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-2.csv` (**50** phiên, seed 42, run ID `simulate-2@20261128-001559`, đo token thật trên model chốt `openai/gpt-4o-mini`, tỉ lệ đạt `11/20 = 55%` từ `eval/run-3.csv`). Lượt cũ trên Gemini: `cost/simulate-1.csv`.
+- Chi phí / task thành công: **`$0.0014` (≈ `35 ₫`)** (model `gpt-4o-mini`) · **`$0.0205` (≈ `521 ₫`)** (model `gpt-6.2-sol`)
+- Chi phí / tháng ở quy mô thật (model `gpt-4o-mini`): thấp (10.000 người) **`$32.14` (≈ `0,82 triệu ₫`)** · cơ sở (100.000 người) **`$321.41` (≈ `8,16 triệu ₫`, tức `82 ₫/người/tháng`)** · cao (500.000 người) **`$1,607.04` (≈ `40,8 triệu ₫`)** → chi tiết `cost/cost-estimate.md`
+- So với impact / người / tháng (§2): **Đáng làm** — chi phí chỉ ~`82 ₫/người/tháng` (`35 ₫/task thành công`), trong khi người mua đang mất 15–25 phút/lần tự soi tin (`MUA-01`, `MUA-02`) và mỗi vụ cọc rủi ro 100.000–200.000 ₫ (`C2567`, `MUA-01`); chặn được 1 vụ mất cọc 200.000 ₫ trên ~2.450 người dùng/tháng (~0,04%) là đủ bù chi phí model. Đánh đổi: tỉ lệ đạt đủ tiêu chí trên model chốt là 55%, thấp hơn 90% của Gemini ở Lượt 2.
 
 ## §9. Rủi ro & an toàn
 - **Dữ liệu:**
@@ -145,12 +145,12 @@ flowchart TD
 
   | Ai bị hại | AI sai thế nào | Hậu quả | Cách chặn | Đo được ở đâu |
   |---|---|---|---|---|
-  | Người mua | Báo `tuong_doi_an_toan` cho kẻ lừa | Mất tiền cọc, không đảo được | Có tín hiệu đỏ thì code ở bước [5] ghi đè, không cho ra "an toàn"; G10 hạ "an toàn" về `can_kiem_them` khi chưa đối chiếu được và người bán không cho xem hàng trước | Lượt 2: 0/4 ca lừa bị báo an toàn |
-  | Người bán thật | Báo `dau_hieu_lua_dao` oan | Mất khách, mang tiếng | Chỉ nói "dấu hiệu", nêu tín hiệu cụ thể để người mua tự kiểm; không tố cáo, không đăng bài | Lượt 2: 0/8 ca người bán thật bị báo lừa đảo (chuẩn cho phép ≤1/8) |
+  | Người mua | Báo `tuong_doi_an_toan` cho kẻ lừa | Mất tiền cọc, không đảo được | Có tín hiệu đỏ thì code ở bước [5] ghi đè, không cho ra "an toàn"; G10 hạ "an toàn" về `can_kiem_them` khi chưa đối chiếu được và người bán không cho xem hàng trước | Lượt 2 và Lượt 3: 0/4 ca lừa bị báo an toàn |
+  | Người bán thật | Báo `dau_hieu_lua_dao` oan | Mất khách, mang tiếng | Chỉ nói "dấu hiệu", nêu tín hiệu cụ thể để người mua tự kiểm; không tố cáo, không đăng bài | Lượt 2 và Lượt 3: 0/8 ca người bán thật bị báo lừa đảo (chuẩn cho phép ≤1/8) |
   | Người mua đã chuyển tiền | Từ chối nhầm hoặc hứa lấy lại tiền | Mất thời gian vàng để báo ngân hàng | Luật đỏ `da_chuyen_bi_chan`, chỉ hướng dẫn kênh chính thức, không hứa kết quả | B02 |
   | Người có STK trùng danh sách cảnh báo | Danh sách sai | Bị nghi oan | Danh sách hiện là dữ liệu dựng; dùng thật phải lấy từ báo cáo đã xác minh của sàn | — |
 
-  Giới hạn còn lại: kết quả Lượt 2 đo trên chính 20 câu dùng để phân tích lỗi, và `agent.py` đã đổi sau Lượt 2 (§10) — cần một lượt chạy lại trước khi tin con số 18/20 cho đầu vào lạ.
+  Giới hạn còn lại: các lượt đều đo trên chính 20 câu dùng để phân tích lỗi; Lượt 3 đã chạy lại trên code hiện tại với model chốt, nhưng chưa có câu thử ngoài bộ này.
 
 ## §10. Phân công & changelog
 - Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"; khớp `TEAMS.md`):
@@ -176,6 +176,8 @@ flowchart TD
 | 23:30 27/11 | Gộp PR #35 vào `codebase/agent.py` sau Lượt 2: thêm cờ `bi_chan_khi_chua_nhan_hang` và luật đỏ `da_chuyen_bi_chan`; giữ prompt Bước 4 của Lượt 2 | B02 (đã chuyển tiền rồi bị chặn) có luật code đỡ khi model trích sai; `run-2` đo trên code trước thay đổi này, chưa chạy lại |
 | 28/11 (trước CP3) | Điền §5 (12 kịch bản gồm 2 tấn công, trỏ B01–B20), §6 (6 đường đi); cập nhật §1 bằng chứng, §2 bảng impact có nguồn, §4 "phần nào còn giả" | Issue #23; số lấy từ `evidence/summary.md`, `evidence/interviews/`, `evidence/survey/results-report.md`, `cost/personas.yaml`, `data/DATA_CARD.md`. Không đổi chuẩn "đạt" và câu thử |
 | 28/11 (trước CP4) | Điền §9 rủi ro & an toàn, §10 phân công và dùng AI; điền README; thêm `demo-slides.pdf` | Issue #27, #28; số lấy từ `eval/report.md`, `cost/cost-estimate.md`, `evidence/summary.md` |
+| 28/11 (trước CP3) | Sửa theo review PR #33–#35: `count.py count` chạy được trên bản nhãn công khai; `eval/report.md` ghi rõ 18/20 đo trong mẫu; `cost/cost-estimate.md` dẫn bảng giá BTC và gắn *(tự ước tính)*; link CP3 trong `evidence/summary.md` trỏ về `main` | Lệnh tái lập trong `evidence/README.md` báo lỗi `'nhan_khanh'`; các số tiết kiệm ở §4 chi phí chưa có nguồn. Không đổi số liệu, nhãn hay kết quả lượt chạy |
+| 00:30 28/11 | Đổi sang model chốt `openai/gpt-4o-mini`: chạy Lượt 3 (`run-3@20261128-001143`, 11/20, vẫn đạt chuẩn) và mô phỏng `simulate-2@20261128-001559`; `cost/personas.yaml` đổi giá sang `gpt-4o-mini`, `gpt-6.2-sol`; cập nhật §7, §8, `cost/cost-estimate.md`, README, slide | Nhóm chốt model cuối là `gpt-4o-mini`. Giữ nguyên Lượt 1, Lượt 2, `simulate-1` (chạy trên Gemini). Chuẩn "đạt" và câu thử không đổi |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

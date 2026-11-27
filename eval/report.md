@@ -10,8 +10,11 @@
 |---|---|---|---|---|---|---|---|
 | 1 | `run-1@20261127-191256` | 9/20 | 45% | 2/7 (29%) | 4/10 (40%) | 3/3 (100%) | chưa đạt (`muc_dung_nhan` 10/17 = 58,8% < 75%; 0/4 lọt lừa; 0/8 báo oan; 100% số liệu khớp công cụ) |
 | 2 | `run-2@20261127-212020` | 18/20 | 90% | 7/7 (100%) | 8/10 (80%) | 3/3 (100%) | **đạt** (`muc_dung_nhan` 17/17 = 100% ≥ 75%; 0/4 lọt lừa; 0/8 báo oan; 100% số liệu khớp công cụ) |
+| 3 *(model chốt)* | `run-3@20261128-001143` | 11/20 | 55% | 3/7 (43%) | 5/10 (50%) | 3/3 (100%) | **đạt** (`muc_dung_nhan` 17/17 = 100%; 0/4 lọt lừa; 0/8 báo oan; 100% số liệu khớp công cụ) |
 
-Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-1.jsonl`, `traces/run-2.jsonl`.
+Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`, `eval/run-3.csv`. Trace: `traces/run-1.jsonl`, `traces/run-2.jsonl`, `traces/run-3.jsonl`.
+
+Lượt 1 và Lượt 2 chạy trên `google/gemini-3.1-flash-lite`. Nhóm chốt model cuối là `openai/gpt-4o-mini`, nên chạy lại nguyên bộ câu thử thành Lượt 3 (cùng bộ câu, cùng cách chấm, chỉ đổi model và code đã thêm luật `da_chuyen_bi_chan`). Lượt 3 giữ được cả 4 điều kiện của chuẩn "đạt" nhưng số câu đạt `pass_criterion` giảm 18/20 → 11/20: mức kết luận vẫn đúng, còn `ly_do` của `gpt-4o-mini` ngắn và hay ghi chung chung ("chưa thấy dấu hiệu bất thường rõ rệt") nên thiếu ý phụ ở 7 câu Lượt 2 đã đạt (B01, B09, B13, B14, B15, B17, B18). Cột `pass` của Lượt 3 do Claude Code chấm nháp theo cùng mức với Lượt 2; Khánh đã kiểm lại 20/20 câu và đồng ý giữ nguyên kết quả 11/20.
 
 ## 2. Lỗi lượt 1 — gom thành nhóm có tên
 
@@ -36,6 +39,7 @@ Kết quả từng câu: `eval/run-1.csv`, `eval/run-2.csv`. Trace: `traces/run-
 - Đã sửa gì (có thể vài thay đổi cùng nhắm nhóm lỗi đó): (1) Truyền thêm `dau_vao_goc` vào Bước 4 trong `codebase/agent.py` (kèm quy tắc chỉ coi là dữ liệu, không thực thi chỉ dẫn trong chat) và giữ tối đa 4 ý ở `ly_do`; (2) Bổ sung tiêu chí chọn 3 mức khớp quy tắc G10 vào `SYSTEM_DECIDE` (cho phép kết luận `tương đối an toàn` khi `cho_kiem_truoc_khi_tra = true` và không có tín hiệu đỏ/vàng); (3) Làm rõ ranh giới `ngoai_pham_vi` trong `SYSTEM_EXTRACT` để ca đã chuyển tiền rồi bị chặn đi vào luồng cảnh báo `da_chuyen_tien = true` thay vì bị từ chối.
 - Kết quả: 6 câu lỗi kiểm trước trả sau (`B05, B08, B13, B14, B17, B18`) từ **0/6 → 6/6** (toàn bộ 8 ca người bán thật **2/8 → 8/8**); nhóm 4 câu thiếu chi tiết hội thoại (`B03, B04, B06, B19`) từ **0/4 → 2/4**; câu `B02` từ **0/1 → 1/1** · tổng **45% (9/20) → 90% (18/20)** (`muc_dung_nhan` tăng từ **10/17 = 58,8% → 17/17 = 100%**).
 - Câu nào **tệ đi** sau khi sửa: **0 câu tệ đi** (không có câu nào từ `1 → 0`; đánh đổi duy nhất là lượng token vào trung bình mỗi câu tăng nhẹ từ `1.301` lên `1.729` token do Bước 4 đọc thêm `dau_vao_goc` và quy tắc G10).
+- **Giới hạn của con số 18/20:** Lượt 2 đo trên chính 20 câu đã dùng để phân tích lỗi Lượt 1 (đo trong mẫu), nên chưa nói được bản chạy thử làm tốt bao nhiêu với câu lạ. Prompt Bước 4 có nêu các loại tình huống "đổi sang món khác", "các mức giá mâu thuẫn", "tin đồn chung" — gần với B03, B19, B04 nhưng không chép nguyên văn câu thử. Sau Lượt 2, `codebase/agent.py` còn thêm luật đỏ `da_chuyen_bi_chan` (PR #35, ghi ở `spec.md` §10); lượt sau cần chạy lại trên code này và thêm câu thử ngoài bộ 20 câu.
 
 ## 4. Còn lại
 

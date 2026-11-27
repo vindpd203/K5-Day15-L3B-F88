@@ -91,7 +91,7 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: `google/gemini-3.1-flash-lite` (Lượt 1, Lượt 2, mô phỏng chi phí); `openai/gpt-4o-mini` ở lượt thử `run-try` |
+| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model chốt: `openai/gpt-4o-mini` (Lượt 3 `run-3`, mô phỏng chi phí `simulate-2`, demo). Lượt 1, Lượt 2 đã chạy trên `google/gemini-3.1-flash-lite` |
 | Giá tham chiếu điện thoại | **Thật** + dự phòng | 37 đời máy từ 1.500 tin Chợ Tốt cào 27/11/2026; đời không có thì dùng bảng ước tính trong `codebase/tools.py` |
 | Hồ sơ người bán | **Thật** + dựng | 816 hồ sơ Chợ Tốt (tuổi tài khoản, điểm đánh giá); mã `NB…` là dữ liệu dựng |
 | Danh sách STK/SĐT cảnh báo, mã tin `TD…` | **Giả** (dữ liệu dựng) | Ngoài đời phải lấy từ báo cáo đã xác minh của sàn |

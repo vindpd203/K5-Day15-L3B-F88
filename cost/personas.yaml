@@ -30,14 +30,14 @@ personas:           # 3 kiểu người mua đồ cũ khớp spec.md §2 và doc
     source: "(tự ước tính) theo giả thuyết docs/de-xuat-do-cu.md §6 (15–20 lần/tháng) — chờ cập nhật từ phỏng vấn (issue #5)"
 
 prices:             # USD / 1 triệu token — ≥2 mức model (rẻ và mạnh) từ bảng giá chính thức
-  - model: gemini-3.1-flash-lite
-    input: 0.25
-    output: 1.50
-    source: "https://ai.google.dev/gemini-api/docs/pricing · bảng giá mẫu repo đề BTC phát, xem 27/11/2026"
-  - model: gemini-4-hydrogen
-    input: 1.50
-    output: 7.50
-    source: "https://ai.google.dev/gemini-api/docs/pricing · bảng giá mẫu repo đề BTC phát, xem 27/11/2026"
+  - model: gpt-4o-mini
+    input: 0.15
+    output: 0.60
+    source: "Model chốt của nhóm. further-reading/model-prices.md (bảng giá BTC phát) mục OpenAI, nguồn gốc https://developers.openai.com/api/docs/pricing, xem 28/11/2026"
+  - model: gpt-6.2-sol
+    input: 2.00
+    output: 10.00
+    source: "Mức mạnh đối chứng (tầng Lớn). further-reading/model-prices.md mục OpenAI, nguồn gốc https://developers.openai.com/api/docs/pricing, xem 28/11/2026"
 
 usd_to_vnd:         # in kèm quy đổi VNĐ để so trực tiếp với Impact tiền cọc ở spec.md §2
   rate: 25400
