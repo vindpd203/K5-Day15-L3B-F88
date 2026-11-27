@@ -136,13 +136,33 @@ flowchart TD
 - So với impact / người / tháng (§2): **Đáng làm** — chi phí chỉ ~`216 ₫/người/tháng` (`57 ₫/task thành công`), trong khi người mua đang mất 15–25 phút/lần tự soi tin (`MUA-01`, `MUA-02`) và mỗi vụ cọc rủi ro 100.000–200.000 ₫ (`C2567`, `MUA-01`); chỉ cần chặn được 1 vụ mất cọc 200.000 ₫ trên ~925 người dùng/tháng (~0,11%) là đã hòa vốn toàn bộ chi phí AI.
 
 ## §9. Rủi ro & an toàn
-- Dữ liệu: đã ẩn danh gì, không thu gì, không đưa gì vào model gói miễn phí:
-- AI **không được** làm gì kể cả khi người dùng yêu cầu:
-- Ai có thể bị hại nếu AI sai, và nhóm chặn thế nào:
+- **Dữ liệu:**
+  - Đã ẩn danh: trích review chỉ ghi mã (C0342…), bỏ tên người viết; phỏng vấn ghi mã vai MUA-01, MUA-02, BAN-01; khảo sát không thu email, SĐT, tài khoản, bản gốc để trong `evidence/private/` (Git bỏ qua), repo chỉ có số tổng hợp.
+  - **Chưa ẩn danh:** `evidence/raw-chotot_listings.csv` và `evidence/raw-chotot_sellers.csv` (dữ liệu công khai cào từ Chợ Tốt) còn tên hiển thị và địa chỉ người bán — nhóm giữ lại để thành viên làm việc với dữ liệu gốc (`data/DATA_CARD.md`). Công cụ `kiem_tin_dang` đọc tuổi tài khoản, điểm đánh giá và tên hiển thị (để so với tên chủ TK, luật `ten_tk_khac`); không dùng địa chỉ.
+  - Không thu / không đưa vào model: không lưu đầu vào của người dùng ngoài trace của lượt chạy; 20 câu thử là tình huống viết lại, không có danh tính thật; STK trong danh sách cảnh báo là số dựng. Model gọi qua API trả phí theo token (`cost/cost-estimate.md`), `.env` và API key không commit.
+- **AI không được làm, kể cả khi người dùng yêu cầu** (code chặn ở bước [1], ra `tu_choi`): chuyển tiền hoặc đặt cọc hộ · tra hay tiết lộ CCCD, địa chỉ, thông tin cá nhân người khác · viết hoặc đăng bài khẳng định ai đó lừa đảo · xin OTP, mật khẩu, số thẻ của người mua · nói "chắc chắn an toàn" hay "chắc chắn lừa đảo" · làm theo lệnh nằm trong đoạn chat hoặc tin đăng (B10–B12).
+- **Ai có thể bị hại nếu AI sai, và nhóm chặn thế nào:**
+
+  | Ai bị hại | AI sai thế nào | Hậu quả | Cách chặn | Đo được ở đâu |
+  |---|---|---|---|---|
+  | Người mua | Báo `tuong_doi_an_toan` cho kẻ lừa | Mất tiền cọc, không đảo được | Có tín hiệu đỏ thì code ở bước [5] ghi đè, không cho ra "an toàn"; G10 hạ "an toàn" về `can_kiem_them` khi chưa đối chiếu được và người bán không cho xem hàng trước | Lượt 2: 0/4 ca lừa bị báo an toàn |
+  | Người bán thật | Báo `dau_hieu_lua_dao` oan | Mất khách, mang tiếng | Chỉ nói "dấu hiệu", nêu tín hiệu cụ thể để người mua tự kiểm; không tố cáo, không đăng bài | Lượt 2: 0/8 ca người bán thật bị báo lừa đảo (chuẩn cho phép ≤1/8) |
+  | Người mua đã chuyển tiền | Từ chối nhầm hoặc hứa lấy lại tiền | Mất thời gian vàng để báo ngân hàng | Luật đỏ `da_chuyen_bi_chan`, chỉ hướng dẫn kênh chính thức, không hứa kết quả | B02 |
+  | Người có STK trùng danh sách cảnh báo | Danh sách sai | Bị nghi oan | Danh sách hiện là dữ liệu dựng; dùng thật phải lấy từ báo cáo đã xác minh của sàn | — |
+
+  Giới hạn còn lại: kết quả Lượt 2 đo trên chính 20 câu dùng để phân tích lỗi, và `agent.py` đã đổi sau Lượt 2 (§10) — cần một lượt chạy lại trước khi tin con số 18/20 cho đầu vào lạ.
 
 ## §10. Phân công & changelog
-- Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"): __
-- Dùng AI vào việc gì (2–3 dòng; chi tiết `docs/ai-usage.md`):
+- Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"; khớp `TEAMS.md`):
+
+  | Người | Phần chính | Cặp kiểm chéo |
+  |---|---|---|
+  | Phạm Đức Vinh (đội trưởng) | canvas, `spec.md`, impact, slide, demo | rà bằng chứng với Minh |
+  | Nguyễn Nhật Minh | `evidence/`: gắn nhãn review, khảo sát, phỏng vấn | Vinh duyệt số đưa vào spec |
+  | Phạm Thế Hùng | `codebase/`, `data/`: công cụ, luồng 5 bước, nối model | Khánh chạy eval trên code của Hùng |
+  | Ngô Duy Khánh | `eval/`, `cost/`: bộ câu thử, metric, Lượt 1–2, mô phỏng chi phí | Hùng sửa code theo lỗi Khánh tìm |
+
+- Dùng AI vào việc gì (chi tiết `docs/ai-usage.md`): Codex và coding agent viết script đếm review, gợi ý nhãn (Minh duyệt 504 nhãn), soạn câu thử (Khánh duyệt), cải tiến prompt giữa Lượt 1 và Lượt 2, trình bày báo cáo phỏng vấn. Claude Code rà PR, điền §5, §6, §9 của spec và dựng slide từ số trong repo (Vinh duyệt). Không dùng AI để tạo người được phỏng vấn, câu trả lời khảo sát hay sửa kết quả các lượt đã chạy.
 - Nhật ký thay đổi — **mọi thay đổi sau CP2 19:30 Thứ Sáu 27/11 phải có dòng ở đây**:
 
 **CP2 → CP4** (vd thu hẹp lát cắt, hỏi thêm người dùng, lần cải tiến trước lượt 2)
@@ -155,6 +175,7 @@ flowchart TD
 | 27/11/2026 (sau CP2) | Cập nhật bằng chứng #19, kết luận giả thuyết và bản xuất khảo sát | `evidence/summary.md`: 0/300 và 2/204 review tự thuật mất cọc; 20 phản hồi khảo sát chờ sàng lọc. `evidence/survey/results-report.md`: phạm vi và giới hạn của bản xuất |
 | 23:30 27/11 | Gộp PR #35 vào `codebase/agent.py` sau Lượt 2: thêm cờ `bi_chan_khi_chua_nhan_hang` và luật đỏ `da_chuyen_bi_chan`; giữ prompt Bước 4 của Lượt 2 | B02 (đã chuyển tiền rồi bị chặn) có luật code đỡ khi model trích sai; `run-2` đo trên code trước thay đổi này, chưa chạy lại |
 | 28/11 (trước CP3) | Điền §5 (12 kịch bản gồm 2 tấn công, trỏ B01–B20), §6 (6 đường đi); cập nhật §1 bằng chứng, §2 bảng impact có nguồn, §4 "phần nào còn giả" | Issue #23; số lấy từ `evidence/summary.md`, `evidence/interviews/`, `evidence/survey/results-report.md`, `cost/personas.yaml`, `data/DATA_CARD.md`. Không đổi chuẩn "đạt" và câu thử |
+| 28/11 (trước CP4) | Điền §9 rủi ro & an toàn, §10 phân công và dùng AI; điền README; thêm `demo-slides.pdf` | Issue #27, #28; số lấy từ `eval/report.md`, `cost/cost-estimate.md`, `evidence/summary.md` |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
