@@ -14,11 +14,16 @@ Bản cập nhật benchmark CP3, ngày 27/11/2026.
 | Tài khoản cảnh báo · synthetic | Dự kiến khoảng 15 mã giả để kiểm luật chặn. Chỉ có ý nghĩa trong Chợ Mẫu. |
 | Chat · synthetic | Dự kiến khoảng 30 đoạn hội thoại lừa, thật và mơ hồ. Dùng mã và hội thoại hư cấu. |
 
-Năm tập Chợ Mẫu đang chờ bản dữ liệu từ Hùng. Seed thực tế, số dòng, phiên bản và số dòng đã kiểm tay chưa xác định. B01 dùng STK cảnh báo dựng sẵn và B09 dùng TD002 (trùng mã ảnh IMG-001 với TD001 của người bán khác) từ bộ dự phòng trong codebase/tools.py tại commit 1444053 của PR #13. Kiểm lại hai ca khi issue #6 có bộ CSV chính thức. Khi có dữ liệu, đối chiếu đời máy, tình trạng, mã tin và mã tài khoản cảnh báo với benchmark trước lượt chạy.
+### Đối chiếu B01 và B09 sau PR #17
 
-### Kiểm tra B01 và B09 cho CP2
+Ngày 27/11/2026, chạy nguyên đầu vào B01 và B09 của benchmark qua `answer()` với `MODEL_PROVIDER=fake`, dùng code trên `main` tại `5d201c2`. Cả hai đầu ra đều là JSON, có `muc = dau_hieu_lua_dao`, khớp nhãn kỳ vọng. Bảng dưới đối chiếu `so_lieu` và mã trong `tin_hieu` với trace công cụ của từng ca.
 
-Ngày 27/11, chạy hai input của benchmark qua `answer()` với model giả trên commit `3cddf2f`. B01 gọi `kiem_tai_khoan`, trả `canh_bao=True` và 5 lượt báo cáo. B09 gọi `kiem_tin_dang(TD002)`, trả ảnh trùng tin TD001 của người bán khác. Cả hai trace đều ghi nguồn `du_lieu_mau_tam`. Tại thời điểm kiểm tra, cả 5 nhánh của origin đều chưa có CSV Chợ Mẫu trong data/. Các tệp raw trong evidence/ là dữ liệu nghiên cứu riêng. Đối chiếu chính thức còn chờ CSV từ issue #6; khi có, chạy lại hai input và xác nhận cả nguồn CSV lẫn tín hiệu trong trace.
+| Ca | Giá và tiền cọc | Tra tài khoản, tin và ảnh | Mã luật trong đầu ra |
+|---|---|---|---|
+| B01 · iPhone 12 | Giá đăng 5.000.000 đ, cao hơn 9,3% so với giá tham chiếu 4.575.000 đ từ tin đăng Chợ Tốt. Cọc 500.000 đ bằng 10% giá đăng. | STK trong bộ dự phòng có 5 lượt báo cáo, kích hoạt cảnh báo đỏ. Đầu vào thiếu mã tin để kiểm ảnh. | Đỏ: `tk_canh_bao`. Vàng: `thuc_ep`. |
+| B09 · TD002 | Giá đăng 6.500.000 đ, thấp hơn 36,6% so với giá tham chiếu 10.250.000 đ của bộ dự phòng. Tỷ lệ cọc là `null` vì thiếu số tiền cọc. | TD002 dùng trùng ảnh với TD001 của người bán khác trong bộ dự phòng. Đầu vào thiếu STK và SĐT để tra cảnh báo tài khoản. | Đỏ: `gia_thap_30`, `anh_trung`. Vàng: `tai_khoan_moi`, `chua_danh_gia`, `thuc_ep`. |
+
+Nguồn giá B01 là `evidence/raw-chotot_listings.csv`. Trace ghi `du_lieu_mau_tam` cho danh sách STK ở B01, giá và dữ liệu tin ở B09. Khi issue #6 có CSV Chợ Mẫu chính thức, chạy lại hai ca và đối chiếu nguồn trong trace. Lượt thử này dùng để kiểm luồng và hợp đồng JSON; kết quả đánh giá CP3 cần lượt chạy với model thật.
 
 ### Nguồn cho B13–B20
 

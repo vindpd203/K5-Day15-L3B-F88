@@ -1,4 +1,4 @@
-﻿# Khai báo dùng AI
+# Khai báo dùng AI
 
 README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt buộc). Ghi chi tiết vào bảng dưới đây.
 
