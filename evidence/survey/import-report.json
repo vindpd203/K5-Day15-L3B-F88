@@ -1,0 +1,37 @@
+{
+  "source_url": "https://docs.google.com/spreadsheets/d/1oYM1CZ6PHnJHpb41z17OETy3S-hiqApnwzhBxwcWu2o/edit?gid=1944901882",
+  "raw_file": "evidence/private/raw-survey.csv",
+  "raw_sha256": "a054d6b8fa979529c3ca6733fecef7182cf14b29296d8c9aa1505c43d657c21a",
+  "export_processed_at_utc": "2026-11-27T12:26:56.590624+00:00",
+  "response_count": 20,
+  "ignored_nonresponse_sheet_rows": [
+    22
+  ],
+  "real_outside_group_confirmed_by_minh": true,
+  "eligible_confirmed": 0,
+  "eligibility_pending": 20,
+  "last_item_categories": {
+    "Quần áo, giày dép": 3,
+    "Đồ điện tử, phụ kiện công nghệ": 2,
+    "Điện thoại, máy tính bảng": 5,
+    "vợt pickeball": 1,
+    "Không trả lời": 6,
+    "Đồ gia dụng, nội thất": 1,
+    "Laptop, máy tính": 1,
+    "Xe máy, xe đạp": 1
+  },
+  "upfront_requests": {
+    "Có": 5,
+    "Không nhớ": 3,
+    "Không": 6,
+    "Không trả lời": 6
+  },
+  "quality_flags": {
+    "Chọn không kiểm tra cùng phương pháp kiểm khác": 8,
+    "Chọn chưa từng nghi ngờ cùng dấu hiệu nghi ngờ": 7,
+    "Chọn chưa từng mua cùng kênh liên lạc": 11
+  },
+  "quality_flagged_responses": 12,
+  "results_sha256": "920e635113583262fc625977e2241976750102912916340fb2d1058f664ff174",
+  "notes": "Không loại phản hồi trùng nội dung khi chưa có căn cứ; không tự đổi khoảng thời gian thành số phút. eligible=pending không phải phản hồi vô hiệu."
+}
