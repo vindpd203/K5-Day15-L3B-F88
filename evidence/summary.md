@@ -89,7 +89,7 @@ Review là lời kể chưa xác minh, thiên về người chủ động đánh
 
 ## §5. Bàn giao CP3 và việc còn thiếu
 
-Link hồ sơ để người phụ trách nộp CP3: [evidence/summary.md](https://github.com/vindpd203/K5-Day15-L3B-F88/blob/fix/minh-evidence/evidence/summary.md). Dùng bản trên nhánh của PR; sau khi hợp nhất có thể dùng đường dẫn tương ứng trên `main`. Chưa có link form CP3 hoặc xác nhận đã nộp form.
+Link hồ sơ để người phụ trách nộp CP3: [evidence/summary.md](https://github.com/vindpd203/K5-Day15-L3B-F88/blob/main/evidence/summary.md) (bản trên `main`, PR #33 đã hợp nhất). Chưa có link form CP3 hoặc xác nhận đã nộp form.
 
 - Bổ sung ngày giờ và ghi chép gốc của các buổi phỏng vấn; hỏi thêm ít nhất 1 người mua đúng tiêu chí.
 - Xác nhận loại hàng và thời điểm tìm mua của 20 người khảo sát; hỏi lại 12 phản hồi có lựa chọn cần làm rõ, tuyển thêm nếu chưa đủ người phù hợp.
