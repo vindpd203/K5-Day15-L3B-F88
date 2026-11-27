@@ -17,6 +17,6 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
 | Trình bày báo cáo phỏng vấn | Codex | Theo yêu cầu Minh, trình bày 3 báo cáo phỏng vấn (2 người mua, 1 người bán), nay ở `evidence/interviews/`. Ban đầu ghi là minh họa; ngày 27/11/2026 Minh xác nhận với nhóm đây là phỏng vấn người thật | Minh xác nhận nội dung khớp buổi hỏi; chưa có ghi chép gốc và ngày giờ từng buổi trong repo | Nguyễn Nhật Minh |
 | Chấm cột `pass` bằng LLM (nếu có) | Coding agent + script Python | Đối chiếu tự động `so_lieu` với `traces/run-1.jsonl`, `traces/run-2.jsonl` và gợi ý nháp cột `pass`, `ghi_chu` theo `pass_criterion` cho Lượt 1 & Lượt 2 | Khánh kiểm tra thủ công lại 20/20 câu thử mỗi lượt trước khi chốt | Khánh |
-| Slide, văn bản | | | | |
+| Slide, văn bản | Claude Code | Rà PR #12–#35; điền `spec.md` §5, §6, §9, §10 và README từ số có sẵn trong repo; dựng `demo-slides.pdf` từ `slides/outline.md` | Vinh đối chiếu từng số với file nguồn (`eval/report.md`, `cost/cost-estimate.md`, `evidence/summary.md`), chọn kết luận go / iterate / stop | Phạm Đức Vinh |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).

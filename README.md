@@ -91,14 +91,17 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: ____ |
-|  |  |  |
+| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: `google/gemini-3.1-flash-lite` (Lượt 1, Lượt 2, mô phỏng chi phí); `openai/gpt-4o-mini` ở lượt thử `run-try` |
+| Giá tham chiếu điện thoại | **Thật** + dự phòng | 37 đời máy từ 1.500 tin Chợ Tốt cào 27/11/2026; đời không có thì dùng bảng ước tính trong `codebase/tools.py` |
+| Hồ sơ người bán | **Thật** + dựng | 816 hồ sơ Chợ Tốt (tuổi tài khoản, điểm đánh giá); mã `NB…` là dữ liệu dựng |
+| Danh sách STK/SĐT cảnh báo, mã tin `TD…` | **Giả** (dữ liệu dựng) | Ngoài đời phải lấy từ báo cáo đã xác minh của sàn |
+| Luật đỏ/vàng, chặn "an toàn" (G10) | **Thật** (code) | `codebase/agent.py` bước [3] và [5] |
 
 ## Dùng AI vào việc gì
 
 2–3 dòng (bắt buộc): nhóm dùng công cụ AI nào để làm gì, người kiểm lại phần nào. Chi tiết: [docs/ai-usage.md](docs/ai-usage.md). Coding agent đọc [AGENTS.md](AGENTS.md).
 
-____
+Codex và coding agent viết script đếm review và gợi ý nhãn (Minh duyệt 504 nhãn), soạn câu thử (Khánh duyệt), cải tiến prompt giữa Lượt 1 và Lượt 2 (Hùng, Khánh đối chiếu `run-1` → `run-2`) và trình bày báo cáo phỏng vấn (Minh xác nhận khớp buổi hỏi). Claude Code rà PR và điền một số mục `spec.md`, dựng slide từ số trong repo (Vinh duyệt). Không dùng AI để tạo người được phỏng vấn, câu trả lời khảo sát hay sửa kết quả các lượt đã chạy.
 
 ## File mẫu — điền ở bước nào
 
@@ -130,5 +133,5 @@ ____
 | 4 | Bản chạy thử làm trọn lát cắt | `codebase/` · lệnh ở mục "Lệnh" |
 | 5 | Định nghĩa "tốt" + bộ câu thử | `data/DATA_CARD.md` · `eval/` |
 | 6 | Mô phỏng chi phí khi dùng thật | `cost/` |
-| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: ____ |
+| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: [Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) (bản 27/11, quay trước khi có đầu ra JSON — đang quay lại, xem `eval/README.md` §7) |
 | + | *Bonus:* người dùng thử | `validation/log.md` |
