@@ -81,6 +81,8 @@ def make_sample(rows, seed, random_n, targeted_n):
 
 
 def count_labels(rows):
+    # Bản nhãn công khai (annotations-codex.csv) bỏ bớt cột; cột thiếu coi như rỗng.
+    rows = [{**dict.fromkeys(FIELDS, ""), **r} for r in rows]
     result = {}
     for row in rows:
         if row["stratum"] not in {"random", "keyword"} or row["pilot"] not in {"0", "1"}:
