@@ -2,7 +2,7 @@
 
 Phụ trách: Nguyễn Nhật Minh · issue #5 · soạn 27/11/2026.
 
-**Trạng thái:** đã có Form và bảng kết quả theo liên kết Minh cung cấp; chưa xác nhận đã gửi lên các kênh hoặc số phản hồi. Chưa đối chiếu nội dung Form với bộ câu hỏi chuẩn bị bên dưới.
+**Trạng thái:** Minh đã xác nhận việc gửi Form trong chat ngày 27/11/2026; chưa cung cấp giờ gửi thực tế. Đã xuất 20 phản hồi vào `results.csv` (giữ tại máy người phụ trách); Minh xác nhận đều do người thật ngoài nhóm tự điền. Form thực tế hỏi đồ cũ nói chung và khác bộ câu chuẩn bị bên dưới; [báo cáo nhập kết quả](results-report.md) ghi nguyên câu nguồn và giới hạn. Chưa xác nhận đủ ≥20 người phù hợp lát cắt điện thoại cũ.
 
 ## Liên kết và nhật ký phát hành
 
@@ -13,15 +13,15 @@ Phụ trách: Nguyễn Nhật Minh · issue #5 · soạn 27/11/2026.
 | Kết quả | [Google Sheets nhận phản hồi](https://docs.google.com/spreadsheets/d/1oYM1CZ6PHnJHpb41z17OETy3S-hiqApnwzhBxwcWu2o/edit) | Xem và xuất kết quả; CSV đã ẩn danh mới đưa vào repo |
 
 - Bộ liên kết mới thay bộ cũ; log Minh cung cấp: **17:38:36**, chưa có ngày trong log. Đây là mốc ghi log liên kết, không tự coi là giờ gửi hoặc giờ mở nhận phản hồi.
-- Kênh dự kiến: Discord lớp và nhóm bạn. Kênh đã gửi, giờ gửi/mở/chốt thực tế: chưa được xác nhận.
-- Số phản hồi/số hợp lệ: **bổ sung sau khi chốt khảo sát** theo yêu cầu của Minh; chưa kiểm tra, không mặc định bằng 0. Khi có kết quả, lưu bản đã ẩn danh vào `evidence/survey/results.csv` và cập nhật `evidence/summary.md`.
+- Kênh gửi: Discord lớp và nhóm bạn, theo xác nhận của Minh trong chat ngày 27/11/2026; tên kênh cụ thể, giờ gửi/mở/chốt thực tế chưa được cung cấp. Ngày xác nhận không thay thế giờ gửi.
+- Snapshot xuất ngày 27/11/2026: **20 phản hồi có nội dung**, người thật ngoài nhóm theo xác nhận của Minh; **20 chờ xác minh tiêu chí điện thoại cũ trong 12 tháng**. Bản gốc lưu private, bản ẩn danh `evidence/survey/results.csv` giữ tại máy người phụ trách; PR chỉ công bố số tổng hợp. Đây chưa phải xác nhận đóng Form.
 - Mục tiêu tuyển ≥25 để có ≥20 câu hợp lệ ngoài nhóm trước CP3 10:00 ngày 28/11/2026.
 
 Lời mở: “Nhóm F88 tìm hiểu lần mua điện thoại cũ online gần nhất. Khảo sát khoảng 3–5 phút, tự nguyện; bạn có thể bỏ qua câu nhạy cảm. Không nhập tên, email, số điện thoại, tài khoản ngân hàng hay thông tin người bán. Không cần kể thông tin nhận diện. Kết quả được tổng hợp cho bài hackathon.”
 
 Không bật thu email, không yêu cầu đăng nhập, không thu liên hệ trong form này. Nếu muốn phỏng vấn, người tham gia chủ động nhắn Minh riêng; không đưa liên hệ vào repo.
 
-## 7 câu chính
+## 7 nhóm câu đã chuẩn bị — xem báo cáo kết quả để biết câu thực tế phát hành
 
 | # | Nguyên câu hỏi | Kiểu / nhánh |
 |---|---|---|

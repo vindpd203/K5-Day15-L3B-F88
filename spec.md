@@ -133,7 +133,7 @@ flowchart TD
 
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
-|  |  |  |
+| 27/11/2026 (sau CP2) | Cập nhật bằng chứng #19, kết luận giả thuyết và bản xuất khảo sát | `evidence/summary.md`: 0/300 và 2/204 review tự thuật mất cọc; 20 phản hồi khảo sát chờ sàng lọc. `evidence/survey/results-report.md`: phạm vi và giới hạn của bản xuất |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
