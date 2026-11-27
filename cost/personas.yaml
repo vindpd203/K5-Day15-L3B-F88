@@ -1,52 +1,44 @@
-# Mô phỏng chi phí khi dùng thật — điền ở guide bước 4.2.
-# Ôn lại: ngày 13, ngày 1, ngày 14 · lab ngày 13, lab ngày 14.
-# Mọi số phải có nguồn (data / phỏng vấn / khảo sát / quy mô khoá có nguồn) hoặc ghi rõ "(tự ước tính)".
+# Mô phỏng chi phí khi dùng thật — Track D · Kiểm người bán đồ cũ trước khi chuyển cọc (F88).
+# Mọi con số đều ghi nguồn công khai hoặc đánh dấu rõ "(tự ước tính)" cho tới khi đóng khảo sát / phỏng vấn (issue #5).
 # Chạy: python run.py simulate --try   (10 phiên, kiểm khung — làm trước CP3)
-#       python run.py simulate         (đủ số phiên dưới đây — bản nộp CP4)
-# Thay mọi dòng "(ví dụ)" bằng số và nguồn của nhóm; simulate nhắc nếu còn sót.
+#       python run.py simulate         (đủ 50 phiên dưới đây — bản nộp CP4)
 
 sessions: 50        # số phiên mô phỏng — bản nộp ≥50
 seed: 42            # giữ cố định để chạy lại ra cùng chuỗi phiên
 
-users:              # số người dùng thật nếu đưa vào dùng — 3 kịch bản, ở quy mô thật của sản phẩm
-                    # track A: khoá học · track B–F: người dùng của sản phẩm / nhóm nhắm tới, nguồn công khai có link
-  low: 300
-  base: 700
-  high: 1000
-  source: "(ví dụ) track A — thay bằng số của nhóm. Cơ sở: lớp L3 hơn 700 học viên (README hackathon); thấp, cao: (tự ước tính)"
+users:              # số người dùng thật hằng tháng ở 3 kịch bản (0,1% · 1% · 5% người dùng nền tảng)
+  low: 10000
+  base: 100000
+  high: 500000
+  source: "Quy mô nền tảng: Chợ Tốt công bố hơn 10 triệu người dùng (Dân Việt 15/06/2022: https://thegioitiepthi.danviet.vn/thi-truong-do-secondhand-51-ty-usd-va-cach-giai-bai-toan-niem-tin-cua-cho-tot-20220615151315565-d13435.html — số tự công bố năm 2022); tỷ lệ người mua dùng tính năng kiểm trước khi cọc ở 3 kịch bản 0,1% / 1% / 5% là (tự ước tính) theo docs/de-xuat-do-cu.md §6"
 
-personas:           # ≥3 kiểu người dùng; share cộng lại = 1
-  - name: dung_it
-    share: 0.5              # tỉ lệ người dùng kiểu này
-    uses_per_month: 4       # số phiên / người / tháng
-    turns_per_session: 1    # số lượt hỏi trong một phiên
-    source: "(ví dụ) phỏng vấn P1, P3 — thay bằng nguồn của nhóm"
-  - name: dung_vua
+personas:           # 3 kiểu người mua đồ cũ khớp spec.md §2 và docs/de-xuat-do-cu.md §6; tổng share = 1.0
+  - name: mua_thinh_thoang
+    share: 0.6
+    uses_per_month: 0.5     # khoảng 2 tháng mới mua và kiểm cọc 1 lần
+    turns_per_session: 1    # dán tin đăng + đoạn chat kiểm 1 lượt trước khi quyết định
+    source: "(tự ước tính) theo giả thuyết docs/de-xuat-do-cu.md §6 — chờ cập nhật từ khảo sát câu 1–2 (issue #5)"
+  - name: san_mot_mon
     share: 0.3
-    uses_per_month: 10
-    turns_per_session: 3
-    source: "(ví dụ) khảo sát n = 24, câu 3"
-  - name: dung_nhieu
-    share: 0.2
-    uses_per_month: 20
-    turns_per_session: 5
-    source: "(ví dụ) data/preclass: đếm số lượt / người — cách đếm ở evidence/data-mining.md"
-# Mỗi lượt hỏi lấy ngẫu nhiên một đầu vào trong eval/benchmark.csv (type thuong và kho).
-# Persona hỏi kiểu riêng: thêm vào persona đó
-#     types: [thuong, kho, tu_choi]
-# hoặc
-#     inputs: ["câu hỏi kiểu 1", "câu hỏi kiểu 2"]
+    uses_per_month: 5       # đang tìm mua 1 món (điện thoại, xe), hỏi và kiểm 4–6 người bán
+    turns_per_session: 2    # kiểm lần đầu + bổ sung STK/tình trạng máy sau khi hỏi thêm người bán
+    source: "(tự ước tính) theo giả thuyết docs/de-xuat-do-cu.md §6 (4–6 lần/tháng) — chờ cập nhật từ khảo sát câu 1–2 (issue #5)"
+  - name: mua_di_ban_lai
+    share: 0.1
+    uses_per_month: 18      # người săn hàng cũ thường xuyên (15–20 lần/tháng)
+    turns_per_session: 2    # kiểm nhanh các mối hàng giá rẻ bị đòi cọc giữ máy
+    source: "(tự ước tính) theo giả thuyết docs/de-xuat-do-cu.md §6 (15–20 lần/tháng) — chờ cập nhật từ phỏng vấn (issue #5)"
 
-prices:             # USD / 1 triệu token — chép từ further-reading/model-prices.md của repo đề. ≥2 mức model
+prices:             # USD / 1 triệu token — ≥2 mức model (rẻ và mạnh) từ bảng giá chính thức
   - model: gemini-3.1-flash-lite
     input: 0.25
     output: 1.50
-    source: "(ví dụ) https://ai.google.dev/gemini-api/docs/pricing · xem 25/11/2026"
+    source: "https://ai.google.dev/gemini-api/docs/pricing · bảng giá mẫu repo đề BTC phát, xem 27/11/2026"
   - model: gemini-4-hydrogen
     input: 1.50
     output: 7.50
-    source: "(ví dụ) https://ai.google.dev/gemini-api/docs/pricing · xem 25/11/2026"
+    source: "https://ai.google.dev/gemini-api/docs/pricing · bảng giá mẫu repo đề BTC phát, xem 27/11/2026"
 
-usd_to_vnd:         # tuỳ chọn: điền thì bản tóm tắt in thêm tiền Việt
-  rate:
-  source:
+usd_to_vnd:         # in kèm quy đổi VNĐ để so trực tiếp với Impact tiền cọc ở spec.md §2
+  rate: 25400
+  source: "(tự ước tính) tỷ giá tham khảo USD/VNĐ ngày 27/11/2026"
