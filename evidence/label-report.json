@@ -1,0 +1,63 @@
+{
+  "strata": {
+    "random": {
+      "selected": 300,
+      "reviewed": 300,
+      "human_reviewed": 300,
+      "ai_reviewed": 0,
+      "pending": 0,
+      "labels": {
+        "bi_lua_coc": 0,
+        "khong_du_bang_chung": 13,
+        "khong_lien_quan": 287
+      },
+      "complete": true,
+      "bi_lua_coc_percent": 0.0
+    },
+    "keyword": {
+      "selected": 204,
+      "reviewed": 204,
+      "human_reviewed": 204,
+      "ai_reviewed": 0,
+      "pending": 0,
+      "labels": {
+        "bi_lua_coc": 2,
+        "khong_du_bang_chung": 86,
+        "khong_lien_quan": 116
+      },
+      "complete": true,
+      "bi_lua_coc_percent": 0.98
+    }
+  },
+  "pilot_selected": 30,
+  "pilot_paired": 0,
+  "pilot_agree": 0,
+  "ai_suggested": 85,
+  "note": "loai_duyet ghi nguồn duyệt cuối; nguồn gợi ý ban đầu và cách xác nhận ghi trong manifest. Nhãn Minh xác nhận qua chat không đồng nghĩa có đối chiếu độc lập Minh/Khánh. Không tính tỷ lệ gộp; chưa đủ nhãn cuối thì % = null.",
+  "reviewer": "Nguyễn Nhật Minh",
+  "reviewer_type": "human",
+  "generated_at_utc": "2026-11-27T11:37:32.272144+00:00",
+  "raw_sha256": "eec56eb8f707840319b8ef65f7cad1d8e001db2cde2cdf48f4c22ea2138fc18f",
+  "labeled_sample_sha256": "d699756d1f56b8c5bcaa6a03d0c18188fbcda771b7d2790b8b1d0b9bb6cedff7",
+  "clear_deposit_loss_ids": [
+    "C0342",
+    "C2567"
+  ],
+  "source_note": "Minh states in chat that Codex labels match his labels and requests copying them into nhan_minh. Original suggestions were from Codex; no independent second reviewer or separate Minh label file was supplied.",
+  "public_annotations_file": "evidence/annotations-codex.csv",
+  "public_annotations_sha256": "608a0c949468f54851f7f2a488b1745dc514184784ee5ea2d443e8106ba68144",
+  "minh_labeled": 504,
+  "khanh_labeled": 0,
+  "pilot_minh_labeled": 30,
+  "pilot_khanh_labeled": 0,
+  "label_origin": "Codex",
+  "review_method": "user_confirmed_match_in_chat",
+  "human_confirmation": {
+    "reviewer": "Nguyễn Nhật Minh",
+    "reviewerType": "human",
+    "basis": "Minh xác nhận trong chat rằng nhãn Codex khớp phần nhãn của mình và yêu cầu đưa vào cột nhan_minh.",
+    "labelOrigin": "Codex",
+    "confirmedAtUtc": "2026-11-27T11:35:29.012Z",
+    "independentSecondReviewer": false
+  }
+}
