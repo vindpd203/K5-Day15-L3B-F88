@@ -1,6 +1,6 @@
 ﻿# Dữ liệu đánh giá giao dịch điện thoại cũ
 
-Bản đầu để duyệt CP2, ngày 27/11/2026.
+Bản cập nhật benchmark CP3, ngày 27/11/2026.
 
 | Nguồn | Cách dùng và giới hạn |
 |---|---|
@@ -14,6 +14,27 @@ Bản đầu để duyệt CP2, ngày 27/11/2026.
 | Tài khoản cảnh báo · synthetic | Dự kiến khoảng 15 mã giả để kiểm luật chặn. Chỉ có ý nghĩa trong Chợ Mẫu. |
 | Chat · synthetic | Dự kiến khoảng 30 đoạn hội thoại lừa, thật và mơ hồ. Dùng mã và hội thoại hư cấu. |
 
-Năm tập Chợ Mẫu đang chờ bản dữ liệu từ Hùng. Seed thực tế, số dòng, phiên bản và số dòng đã kiểm tay chưa xác định. B01 dùng STK cảnh báo dựng sẵn và B09 dùng TD002 (trùng mã ảnh IMG-001 với TD001 của người bán khác) từ bộ dự phòng trong codebase/tools.py tại commit 1444053 của PR #13. Kiểm lại hai ca khi issue #6 có bộ CSV chính thức. Khi có dữ liệu, đối chiếu đời máy, tình trạng, mã tin và mã tài khoản cảnh báo với benchmark trước lượt chạy.
+### Đối chiếu B01 và B09 sau PR #17
+
+Ngày 27/11/2026, chạy nguyên đầu vào B01 và B09 của benchmark qua `answer()` với `MODEL_PROVIDER=fake`, dùng code trên `main` tại `5d201c2`. Cả hai đầu ra đều là JSON, có `muc = dau_hieu_lua_dao`, khớp nhãn kỳ vọng. Bảng dưới đối chiếu `so_lieu` và mã trong `tin_hieu` với trace công cụ của từng ca.
+
+| Ca | Giá và tiền cọc | Tra tài khoản, tin và ảnh | Mã luật trong đầu ra |
+|---|---|---|---|
+| B01 · iPhone 12 | Giá đăng 5.000.000 đ, cao hơn 9,3% so với giá tham chiếu 4.575.000 đ từ tin đăng Chợ Tốt. Cọc 500.000 đ bằng 10% giá đăng. | STK trong bộ dự phòng có 5 lượt báo cáo, kích hoạt cảnh báo đỏ. Đầu vào thiếu mã tin để kiểm ảnh. | Đỏ: `tk_canh_bao`. Vàng: `thuc_ep`. |
+| B09 · TD002 | Giá đăng 6.500.000 đ, thấp hơn 36,6% so với giá tham chiếu 10.250.000 đ của bộ dự phòng. Tỷ lệ cọc là `null` vì thiếu số tiền cọc. | TD002 dùng trùng ảnh với TD001 của người bán khác trong bộ dự phòng. Đầu vào thiếu STK và SĐT để tra cảnh báo tài khoản. | Đỏ: `gia_thap_30`, `anh_trung`. Vàng: `tai_khoan_moi`, `chua_danh_gia`, `thuc_ep`. |
+
+Nguồn giá B01 là `evidence/raw-chotot_listings.csv`. Trace ghi `du_lieu_mau_tam` cho danh sách STK ở B01, giá và dữ liệu tin ở B09. Khi issue #6 có CSV Chợ Mẫu chính thức, chạy lại hai ca và đối chiếu nguồn trong trace. Lượt thử này dùng để kiểm luồng và hợp đồng JSON; kết quả đánh giá CP3 cần lượt chạy với model thật.
+
+### Nguồn cho B13–B20
+
+Đối chiếu cột id của [CSV review](../evidence/raw-chotot_reviews.csv). Các trường hợp dưới đây chuyển ý từ review thành tình huống giả định. Mức kỳ vọng dùng để chấm tình huống đã viết.
+
+| Ca | Review | Chi tiết gốc dùng để dựng ca |
+|---|---|---|
+| B13 | C3257 · 24/04/2024 | Người viết khuyên gặp nhau kiểm hàng, trả sau khi kiểm. |
+| B14 | C3729 · 08/01/2024 | Người mua kể được đồng kiểm hàng. Điều kiện trả sau, từ chối nhận và loại máy do nhóm thêm. |
+| B19 | C3504 · 02/03/2024 | Người viết kể giá đăng xe khác giá bán. Nhóm đổi mặt hàng và dựng hai mức giá. |
+
+B15–B18 và B20 do AI soạn theo Canvas. Với 12 ca CP2, bộ CP3 có tổng cộng 20 ca, gồm 7 ca phỏng theo review và 13 ca tự viết.
 
 **Phạm vi nhãn.** Mức kỳ vọng áp dụng cho thông tin người mua có tại thời điểm hỏi. Một review kể về mất cọc có thể gợi ý cách viết ca thử nhưng không xác minh danh tính của người bán trong hội thoại dựng lại. Metric trên main dùng mã expected để xác định nhóm ca lừa và ca người bán thật trong benchmark. Khi chạy, hệ thống chỉ nhận cột `input`; đáp án, tiêu chí và mã nguồn dùng cho người chấm.
