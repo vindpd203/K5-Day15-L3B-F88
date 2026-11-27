@@ -36,3 +36,8 @@ Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, k
 ## 6. Lỗi chính
 
 Tóm 2–3 dòng từ `eval/report.md`: nhóm lỗi lớn nhất · đã sửa gì · còn lại gì.
+
+## 7. Demo CP3
+
+- [Video demo CP3 trên Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) quay ở phiên bản terminal trước khi tích hợp đầu ra JSON từ `main`.
+- Lượt thử `run-try@20261127-223855` chạy B01–B03 với `openai/gpt-4o-mini` trên bản tích hợp. Cả ba câu có token vào và ra, và trường `muc` trùng nhãn mong đợi. Xem [kết quả CSV](run-try.csv) và [trace](../traces/run-try.jsonl).

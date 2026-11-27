@@ -1,0 +1,106 @@
+﻿run_id,id,type,input,expected,pass_criterion,output,pass,ghi_chu,model,model_calls,tool_calls,tokens_in,tokens_out,latency_s,error
+run-try@20261127-223855,B01,thuong,"Tin iPhone 12 giá 5 triệu. Người bán bắt cọc 500 nghìn trong 5 phút rồi mới gửi địa chỉ, không cho gọi video xem máy. Người bán gửi STK 19001234567890. Tôi nên làm gì?",dau_hieu_lua_dao,Dẫn hạn chuyển gấp và việc chỉ cung cấp địa chỉ sau khi nhận cọc. Khuyên hoãn chuyển đến khi xem được máy. Trace có kết quả tra STK thuộc danh sách cảnh báo Chợ Mẫu và đầu ra nêu tín hiệu đó.,"{
+  ""muc"": ""dau_hieu_lua_dao"",
+  ""tin_hieu"": [
+    {
+      ""muc"": ""do"",
+      ""ma"": ""tk_canh_bao"",
+      ""mo_ta"": ""Số TK/SĐT xuất hiện trong danh sách cảnh báo (5 lần bị báo cáo).""
+    },
+    {
+      ""muc"": ""vang"",
+      ""ma"": ""tu_choi_gap_video"",
+      ""mo_ta"": ""Người bán từ chối gặp trực tiếp hoặc gọi video kiểm tra hàng.""
+    }
+  ],
+  ""so_lieu"": {
+    ""gia_tham_chieu"": 4575000,
+    ""chenh_gia_pct"": 9.3,
+    ""coc_pct"": 10.0,
+    ""khoang_gia_tham_chieu"": [
+      3400000,
+      5750000
+    ],
+    ""doi_tham_chieu"": ""iPhone 12"",
+    ""nguon_gia"": ""evidence/raw-chotot_*.csv (Chợ Tốt, cào 27/11/2026)""
+  },
+  ""ly_do"": [
+    ""Người bán yêu cầu đặt cọc trước và không cho gọi video xem máy."",
+    ""Số tài khoản đã xuất hiện trong danh sách cảnh báo với 5 lần bị báo cáo về hành vi nhận cọc rồi chặn liên lạc.""
+  ],
+  ""buoc_kiem"": [
+    ""Cân nhắc không chuyển tiền hoặc chỉ chuyển một phần nhỏ hơn trong trường hợp cần thiết."",
+    ""Tìm kiếm thêm thông tin về người bán từ các nguồn khác."",
+    ""Tham khảo ý kiến từ những người đã từng giao dịch với người bán.""
+  ],
+  ""tra_cuu"": {
+    ""tai_khoan"": ""CÓ trong danh sách cảnh báo của bộ dữ liệu Chợ Mẫu (5 lần bị báo cáo)"",
+    ""tin_dang"": ""không có mã tin đăng để tra cứu""
+  },
+  ""luu_y"": [
+    ""Nếu đã chuyển tiền và chưa nhận hàng, hãy lưu chứng từ và liên hệ ngân hàng hoặc báo cáo qua sàn."",
+    ""Kết quả chỉ mang tính tham khảo; người mua tự quyết định giao dịch (AI không chuyển tiền, không liên hệ người bán hay tố cáo thay).""
+  ],
+  ""ghi_chu"": []
+}",,,openai/gpt-4o-mini,2,4,1662,436,8.398,
+run-try@20261127-223855,B02,thuong,"Tin Galaxy A54. Tôi đã chuyển tiền theo yêu cầu gửi hàng, giờ người bán chặn liên lạc và máy chưa tới. Tôi phải làm gì?",dau_hieu_lua_dao,Dẫn chi tiết đã chuyển tiền rồi bị chặn. Hướng dẫn giữ chứng từ và liên hệ ngân hàng hoặc báo cáo qua sàn; không hứa lấy lại được tiền.,"{
+  ""muc"": ""dau_hieu_lua_dao"",
+  ""tin_hieu"": [
+    {
+      ""muc"": ""do"",
+      ""ma"": ""da_chuyen_bi_chan"",
+      ""mo_ta"": ""Người mua đã chuyển tiền, hàng chưa đến và người bán đã chặn liên lạc.""
+    }
+  ],
+  ""so_lieu"": {
+    ""gia_tham_chieu"": null,
+    ""chenh_gia_pct"": null,
+    ""coc_pct"": null
+  },
+  ""ly_do"": [
+    ""Người mua đã chuyển tiền nhưng chưa nhận được hàng."",
+    ""Người bán đã chặn liên lạc với người mua.""
+  ],
+  ""buoc_kiem"": [
+    ""Lưu lại tất cả các chứng từ chuyển tiền."",
+    ""Liên hệ với ngân hàng để yêu cầu hỗ trợ."",
+    ""Báo cáo sự việc qua sàn giao dịch nếu có.""
+  ],
+  ""tra_cuu"": {
+    ""tai_khoan"": ""không có số TK hoặc SĐT để kiểm"",
+    ""tin_dang"": ""không có mã tin đăng để tra cứu""
+  },
+  ""luu_y"": [
+    ""Nếu bạn đã chuyển tiền: chụp màn hình toàn bộ tin đăng, đoạn chat và biên lai chuyển khoản; liên hệ ngay ngân hàng để hỗ trợ tra soát và trình báo cơ quan công an."",
+    ""Kết quả chỉ mang tính tham khảo; người mua tự quyết định giao dịch (AI không chuyển tiền, không liên hệ người bán hay tố cáo thay).""
+  ],
+  ""ghi_chu"": []
+}",,,openai/gpt-4o-mini,2,4,1467,366,6.073,
+run-try@20261127-223855,B03,kho,"Tôi hẹn xem chiếc iPhone 13 trong tin. Người bán bảo vừa bán mất, mời tôi đến xem máy khác cùng giá. Tôi nên hỏi gì?",can_kiem_them,Nhận ra món được mời xem đã đổi. Yêu cầu thông tin hoặc ảnh đúng máy mới trước khi hẹn.,"{
+  ""muc"": ""can_kiem_them"",
+  ""tin_hieu"": [],
+  ""so_lieu"": {
+    ""gia_tham_chieu"": null,
+    ""chenh_gia_pct"": null,
+    ""coc_pct"": null
+  },
+  ""ly_do"": [
+    ""Chưa có dữ liệu giá tham chiếu cho điện thoại, không rõ đời máy."",
+    ""Thiếu thông tin về tiền cọc và giá bán."",
+    ""Không có số tài khoản hoặc số điện thoại để kiểm tra độ tin cậy của người bán.""
+  ],
+  ""buoc_kiem"": [
+    ""Yêu cầu người bán cung cấp thêm hình ảnh và thông tin chi tiết hơn về sản phẩm."",
+    ""Hỏi người bán về đời máy và giá tham chiếu của điện thoại đang bán."",
+    ""Đề nghị xác nhận thông tin liên lạc của người bán để tiến hành kiểm tra.""
+  ],
+  ""tra_cuu"": {
+    ""tai_khoan"": ""không có số TK hoặc SĐT để kiểm"",
+    ""tin_dang"": ""không có mã tin đăng để tra cứu""
+  },
+  ""luu_y"": [
+    ""Nếu quyết định chuyển cọc, hãy lưu giữ tất cả các chứng từ liên quan và liên hệ với ngân hàng để được hỗ trợ nếu gặp vấn đề."",
+    ""Kết quả chỉ mang tính tham khảo; người mua tự quyết định giao dịch (AI không chuyển tiền, không liên hệ người bán hay tố cáo thay).""
+  ],
+  ""ghi_chu"": []
+}",,,openai/gpt-4o-mini,2,4,1421,417,7.229,
