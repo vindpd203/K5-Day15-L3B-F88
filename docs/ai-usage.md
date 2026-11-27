@@ -16,7 +16,7 @@ README của nhóm có mục "Dùng AI vào việc gì" (2–3 dòng, bắt bu�
 | Viết câu thử và tiêu chí đánh giá | Codex | Soạn thêm B13–B20 cho CP3 (3 ca phỏng theo review có mã, 5 ca tự viết). Ở CP2 soạn 12 tình huống, gồm 4 ca viết lại từ trích review trong đề xuất, dự thảo cách chấm và chuẩn đạt | Chờ rà nguồn, đáp án và ngưỡng trước CP2 | Khánh; Vinh cùng duyệt chuẩn đạt |
 | Sinh data `synthetic` (nếu có) | | | Seed __ · kiểm tay __ dòng | |
 | Trình bày báo cáo phỏng vấn | Codex | Theo yêu cầu Minh, trình bày 3 báo cáo phỏng vấn (2 người mua, 1 người bán), nay ở `evidence/interviews/`. Ban đầu ghi là minh họa; ngày 27/11/2026 Minh xác nhận với nhóm đây là phỏng vấn người thật | Minh xác nhận nội dung khớp buổi hỏi; chưa có ghi chép gốc và ngày giờ từng buổi trong repo | Nguyễn Nhật Minh |
-| Chấm cột `pass` bằng LLM (nếu có) | | | Kiểm tra thủ công __ câu thử, khớp __/__ | |
+| Chấm cột `pass` bằng LLM (nếu có) | Coding agent + script Python | Đối chiếu tự động `so_lieu` với `traces/run-1.jsonl` và gợi ý nháp cột `pass`, `ghi_chu` theo `pass_criterion` cho Lượt 1 | Khánh kiểm tra thủ công lại 20/20 câu thử trước khi chốt | Khánh |
 | Slide, văn bản | | | | |
 
 **Không dùng AI để:** tạo người được phỏng vấn, trích dẫn, câu trả lời khảo sát; sửa kết quả các lượt đã chạy (`eval/run-*.csv`, `cost/simulate-*.csv`, `traces/`).

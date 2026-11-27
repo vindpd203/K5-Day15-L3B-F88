@@ -28,11 +28,11 @@ Chạy python run.py check để kiểm cấu trúc. Khi có model thật, chạ
 
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
-| 1 | | | | __/__ | | |
+| 1 | `run-1@20261127-191256` | `google/gemini-3.1-flash-lite` | Workflow 5 bước + 4 công cụ + luật G10 trên `main` (`30f6a39`) | 9/20 | 45% | Chưa (`muc_dung_nhan` 10/17 = 58,8% < 75%; đạt 0/4 lọt lừa, 0/8 báo oan, 17/17 khớp số liệu) |
 | 2 | | | | __/__ | | |
 
-Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
+Lượt chạy lại vì lỗi kỹ thuật, lượt sau Checkpoint 4: ghi thêm dòng, không sửa dòng cũ.
 
 ## 6. Lỗi chính
 
-Tóm 2–3 dòng từ `eval/report.md`: nhóm lỗi lớn nhất · đã sửa gì · còn lại gì.
+Ở Lượt 1, nhóm lỗi lớn nhất là **hạ nhầm về `can_kiem_them` ở giao dịch kiểm hàng trước trả tiền sau** (6/8 ca `tuong_doi_an_toan`: B05, B08, B13, B14, B17, B18) do prompt Bước 4 chưa nêu quy tắc G10 khi thiếu giá/STK; tiếp theo là **Bước 4 thiếu nguyên văn hội thoại gốc** làm mất chi tiết phụ cho `pass_criterion` (4 ca: B03, B04, B06, B19) và **gán nhầm `ngoai_pham_vi`** ở ca đã chuyển tiền rồi bị chặn (B02). Đã sửa gì và còn lại gì ở Lượt 2: cập nhật sau khi chạy `run-2.csv`.
