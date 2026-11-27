@@ -1,23 +1,19 @@
-# Data card — dữ liệu bản chạy thử dùng
+﻿# Dữ liệu đánh giá giao dịch điện thoại cũ
 
-> Điền ở guide bước 2.4 (bản đầu ở CP2, đủ ở CP3). Ôn lại: ngày 6 · lab ngày 6. Chấm ở rubric R4.
-> Một trang. Mỗi dataset một mục. Dữ liệu chạy thử (bài mẫu, thông báo mẫu, đoạn transcript…) để trong thư mục `data/` này.
-> Không commit nguyên tài liệu khoá, dữ liệu cá nhân thật hay nguyên file data BTC cấp — chỉ đoạn trích ngắn, bản viết lại, hoặc số đã tổng hợp.
+Bản đầu để duyệt CP2, ngày 27/11/2026.
 
-## Dataset 1 · [tên]
-
-| | |
+| Nguồn | Cách dùng và giới hạn |
 |---|---|
-| Dùng để làm gì | nguồn cho công cụ `…` · bộ câu thử · đào bằng chứng |
-| Từ đâu | data BTC cấp (`…` trong repo đề) · tài liệu khoá (trích / viết lại) · nhóm tự viết · sinh có seed |
-| Xử lý những bước gì | lọc __ · làm sạch __ · ẩn danh __ · chia __ (script: `…`) |
-| Số dòng / số đoạn | __ |
-| Phiên bản / ngày lấy | __ |
-| Nhãn | thật · `synthetic` |
-| Giới hạn | thiếu gì, lệch về phía nào |
+| Trích review Chợ Tốt trong [đề xuất §1](../docs/de-xuat-do-cu.md) | Đề xuất mô tả 5.000 review Google Play thu ngày 27/11. Bản này sử dụng bốn trích đoạn đã bỏ tên có mã C0070, C0342, C0005, C0124. Review là lời kể của người viết. Không suy rộng tỷ lệ mất cọc từ số lượt khớp từ khóa. |
+| [Benchmark CP2](../eval/benchmark.csv) | 12 ca tiếng Việt. B01–B04 phỏng theo bốn review tương ứng ở trên. Điện thoại, điều kiện giao dịch và hội thoại được dựng cho bài đánh giá; C0005 gốc nói về xe, C0124 là nhận xét chung. B05–B12 do AI soạn theo Canvas và đề xuất để Khánh duyệt. Toàn bộ đầu vào là tình huống viết lại, không chứa danh tính người bán. Soạn trực tiếp, không dùng lấy mẫu ngẫu nhiên hay seed. Số ca đã được thành viên nhóm rà tay chưa ghi nhận. |
+| [Tin đăng Chợ Tốt](../evidence/raw-chotot_listings.csv) · thật | Cào ngày 27/11/2026 từ API công khai `gateway.chotot.com/v1/public/ad-listing` bằng [script](../evidence/scrape_chotot_listings.py): 1.500 tin mới nhất (500 điện thoại, 500 laptop, 500 xe máy), `body` cắt 300 ký tự. Công cụ `tra_gia_thi_truong` gom giá điện thoại đã dùng theo `mobile_model` (bỏ "Dòng khác", bỏ tin mới `condition=1`, cần ≥3 tin) → 37 đời máy, khoảng giá = tứ phân vị 25–75%. `kiem_tin_dang` tra được mã tin Chợ Tốt (số trong link). Giới hạn: một lần cào, giá đăng chứ không phải giá bán, lẫn tin shop/trả góp; nhiều đời chỉ 3–10 tin (iPhone 13: 7 tin); laptop và xe máy không có trường đời máy nên chưa dùng cho giá; không có mã ảnh nên không kiểm được trùng ảnh. |
+| [Người bán Chợ Tốt](../evidence/raw-chotot_sellers.csv) · thật | Cào cùng ngày từ API `profile/{account_oid}` bằng [script](../evidence/scrape_chotot_sellers.py): 816 hồ sơ của người bán trong tập tin đăng. `kiem_tin_dang` lấy tuổi tài khoản (`account_age_days`, tính tại ngày cào) và điểm đánh giá (`seller_rating` của tin). API không trả số lượt đánh giá và số tin đã đăng nên hai trường này để trống, luật "chưa có đánh giá" không áp dụng cho người bán Chợ Tốt. Chưa ẩn danh: có tên hiển thị và địa chỉ thật của người bán. |
+| Giá tham chiếu · synthetic | Dự kiến khoảng 40 mục theo đời và tình trạng, giá ước tính để kiểm phép so giá. |
+| Tin đăng · synthetic | Dự kiến khoảng 60 tin để tra mã tin và trùng ảnh trong Chợ Mẫu. |
+| Người bán · synthetic | Dự kiến khoảng 40 hồ sơ để tra tuổi tài khoản, số tin và đánh giá. |
+| Tài khoản cảnh báo · synthetic | Dự kiến khoảng 15 mã giả để kiểm luật chặn. Chỉ có ý nghĩa trong Chợ Mẫu. |
+| Chat · synthetic | Dự kiến khoảng 30 đoạn hội thoại lừa, thật và mơ hồ. Dùng mã và hội thoại hư cấu. |
 
-**Data `synthetic` (nhóm tự sinh):** ghi cách sinh (prompt / script), seed, người kiểm, số dòng đã kiểm tay. Data tự dựng **không phải bằng chứng pain**.
+Năm tập Chợ Mẫu đang chờ bản dữ liệu từ Hùng. Seed thực tế, số dòng, phiên bản và số dòng đã kiểm tay chưa xác định. B01 dùng STK cảnh báo dựng sẵn và B09 dùng TD002 (trùng mã ảnh IMG-001 với TD001 của người bán khác) từ bộ dự phòng trong codebase/tools.py tại commit 1444053 của PR #13. Kiểm lại hai ca khi issue #6 có bộ CSV chính thức. Khi có dữ liệu, đối chiếu đời máy, tình trạng, mã tin và mã tài khoản cảnh báo với benchmark trước lượt chạy.
 
-## Dataset 2 · [tên]
-
-…
+**Phạm vi nhãn.** Mức kỳ vọng áp dụng cho thông tin người mua có tại thời điểm hỏi. Một review kể về mất cọc có thể gợi ý cách viết ca thử nhưng không xác minh danh tính của người bán trong hội thoại dựng lại. Metric trên main dùng mã expected để xác định nhóm ca lừa và ca người bán thật trong benchmark. Khi chạy, hệ thống chỉ nhận cột `input`; đáp án, tiêu chí và mã nguồn dùng cho người chấm.

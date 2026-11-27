@@ -87,7 +87,7 @@ flowchart TD
 
   | Nguyên tắc | Chỗ cụ thể trên sơ đồ / trong bản chạy thử |
   |---|---|
-  | G10 — thu hẹp phạm vi khi không chắc | Thiếu số TK, món không có trong bảng giá, người bán không có trong dữ liệu → ra `can_kiem_them` và nói rõ thiếu gì, không đoán "an toàn" |
+  | G10 — thu hẹp phạm vi khi không chắc | Chưa đối chiếu được số TK/SĐT hay tin đăng, và người bán cũng không đồng ý cho xem hàng rồi mới trả tiền → code ở bước [5] hạ "an toàn" về `can_kiem_them` và ghi rõ thiếu gì (`ghi_chu`). Có lời hẹn "xem/thử hàng rồi mới trả" thì vẫn được ra "an toàn" vì người mua không phải trả trước |
   | G11 — cho biết vì sao hệ thống làm vậy | Output luôn có `tin_hieu` (luật nào bật) và `so_lieu` (giá tham chiếu, % chênh, % cọc) để người mua tự kiểm lại |
   | G2 — cho biết hệ thống làm tốt đến đâu | Không bao giờ nói "chắc chắn an toàn" hay "chắc chắn lừa đảo"; mức cao nhất là "tương đối an toàn, vẫn nên xem hàng trực tiếp" |
   | G9 — dễ sửa khi sai | Người mua bổ sung thông tin (số TK, tình trạng máy) rồi kiểm lại; kết luận cũ không bị ghi đè âm thầm |
@@ -109,7 +109,7 @@ flowchart TD
 - Bị đòi ngoài phạm vi (lớp 3): · Trường hợp đặc thù lĩnh vực (lớp 4):
 
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
-- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — __ câu (thuong __ · kho __ · tu_choi __) · metric: `eval/metric_spec.yaml` (6 metric)
+- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 12 câu (thuong 3 · kho 6 · tu_choi 3) · metric: `eval/metric_spec.yaml` (6 metric)
 - **Chuẩn "đạt"** (chốt **trước 19:30 Thứ Sáu 27/11**, giữ nguyên đến 23:59 Thứ Bảy 28/11): "Đạt khi ≥ 75% câu thuong và kho có `muc` đúng nhãn, và 0 câu ca lừa bị báo `tuong_doi_an_toan`, và ≤ 1/8 (12,5%) câu ca người bán thật bị báo `dau_hieu_lua_dao`, và 100% số liệu trong `so_lieu` khớp kết quả công cụ."
 - Kết quả: lượt 1 __/__ (__%) · lượt 2 __/__ (__%) — run ID: __ / __ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 

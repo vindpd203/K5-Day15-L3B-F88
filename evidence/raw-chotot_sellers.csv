@@ -1,0 +1,817 @@
+﻿account_id,account_oid,full_name,create_date,account_age_days,phone_verified,email_verified,zalo_verified,is_active,address
+13344721,edea50d36649c3eaff54c2b96ed52ec2,Your Phone,2019-07-02,2705,t,t,f,True,267 Nguyễn Hoàng-Hải Châu-Đà Nẵng
+31634981,6f77f18648a77728f56c6520ce5232e1,Hội Đồ Điện Tử,2026-05-18,193,t,f,f,True,
+17304608,0458020b9ebcf73abb204a7bd6368f61,Sherry Nguyen,2020-07-05,2336,t,t,f,True,
+17339629,08592a7b9decb98bc375f4acb8b89ba8,Minh Hiệp CócXanhMobile,2020-07-08,2332,t,t,t,True," Quận Liên Chiểu, Đà Nẵng"
+2754364,107654daac8e4aac24c7f88ee33adebc,ThanhThan Tran,2016-06-21,3810,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+31891711,402b58ff794c57bc3117033237cf0b03,Bún Đậu Mắn Tôm,2026-06-20,160,t,t,f,True,
+1041698,8bd300a9e0d766ea0d4729d15933b167,Khó Quá Cho Qua,2016-02-24,3928,t,f,f,True," Huyện Gò Công Tây, Tiền Giang"
+31356925,16fe53fbbb9bee0c07102bf9800f5bc5,Quỳnh Trang ,2026-04-11,230,t,f,f,True,
+17896592,12ed622984bb2d1a98eceb6f70c22055,Kiên,2020-09-03,2276,t,f,f,True,
+29512294,0273e962d81cae6452ddb24f1098c5ed,cần đồ jun star8683,2025-07-21,494,t,t,f,True,
+31504146,0219473744d798cd200740facf3989f4,Tâm,2026-05-01,210,t,f,f,True,
+20687802,e636192fd41eac2c5db8435d1629e584,Thanh lý đồ cầm hết hạn,2021-05-29,2008,t,t,t,True," Quận Bình Tân, Tp Hồ Chí Minh"
+2073355,11e14a49bcf066d433a5d471fa1933c7,Võ Tấn Vui ,2016-03-03,3921,t,f,f,True,"Phường 7 , Quận Gò Vấp"
+11588551,0a15dfef622e44418c9eb4771d202259,duc,2019-01-01,2887,t,f,f,True,333 cc
+11024924,015a2236d90c9660e27caa6ee997df12,KT Hà Nội Mobile,2018-10-28,2952,t,t,f,True," Quận Đống Đa, Hà Nội"
+12050679,10d7727df0ec409ada5e4d0c9bc84fbc,Bunny ,2019-03-06,2823,t,t,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+14879959,9f47a986392bae828ad618c40fdcba95,Thanh Tùng,2019-11-07,2577,t,t,f,True,
+9678996,c897bd994bdbfadc670a636820dbdcdb,Diamond,2018-04-28,3134,t,f,f,True,Bình Thạnh
+11850573,32e93daf470c856aa45c66a315c441e1,Hoàng,2019-02-13,2843,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+30503001,bea4adae217fb332740851c76fa74b2f,Mimi,2025-12-16,346,t,t,f,True,
+13858009,4fe5ef6e18827582fd3d5d6f33bc4041,Đào Xuân,2019-08-15,2661,t,f,f,True," Hà Nội, Việt Nam"
+1285081,1b2f3b3a6ae0e0fd66966cde442224db,Lê Khang,2016-01-06,3977,t,t,t,True,190/15 Hẻm 190 30 Tháng 4 Phường Hưng Lợi Quận Ninh Kiều Cần Thơ
+4739035,c3bd11435efaf89814c4e6bdb364af02,tran phuong,2017-06-21,3446,t,f,f,True," Thành phố Biên Hòa, Đồng Nai"
+24062579,72d23fdbbf8521d42a6c594613a7cb9e,Gabi,2022-11-04,1484,t,f,t,True," Quận Ngũ Hành Sơn, Đà Nẵng"
+33063943,9b2957b06d60a429b1fe8d3a907bacf1,Tuân,2026-11-21,5,t,f,f,True,
+16425934,7cac287b85e08c97df9b823110ac3517,Hoàng Long Bình Tân,2020-04-06,2426,t,f,f,True," Thành phố Biên Hòa, Đồng Nai"
+5534908,252ef3e5621b3bcf3c6627ca4874efd6,hùng,2017-11-16,3298,t,f,t,True,Bà rịa vũng tàu 
+27227036,4e6a89dd6c9782913db6b6b88114abfd,Sang Mobile,2024-06-30,880,t,t,f,True," Quận 12, Tp Hồ Chí Minh"
+26421915,343a6fd4a3e1d3b9d889ddde9b058c4e,Phan Anh,2024-01-03,1058,t,t,f,True," Thành phố Vinh, Nghệ An"
+22582951,10656bdf9cf6d91d46e88b3ac3c180d3,Huy Sever,2022-04-13,1689,t,f,t,True," Bến Tre, Bến Tre"
+575940,422a30e9ca538d01e5d5e966b3d841d4,Nam Á Mobile,2015-12-23,3992,t,f,f,True," Quận 3, Tp Hồ Chí Minh"
+3025716,93774f95caabcafe3a6467cd93ff6dfc,Đạt,2016-08-02,3768,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+27237,857a2fe00fc74d3e1a010a92c371ac74,Nguyễn Văn Thành,2016-02-24,3928,t,t,f,True,
+1021723,7ca3822619618046d0457c9a72fa07e4,Triệu Phúc,2016-02-24,3928,t,t,t,True," Quận Bình Tân, Tp Hồ Chí Minh"
+33094488,0a79035145972148ef3013f501198681,user1795772997175,2026-11-27,0,t,f,f,True,
+27151280,7e453a48601fef56cb479b2a12d4755b,Tiến Đạt,2024-06-13,897,t,t,t,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+14403704,fdf0b822c8946db2993d4e33519a9102,Hoàng Anh,2019-09-30,2615,t,t,f,True," Quận Hà Đông, Hà Nội"
+2084674,11648c44e6c60f831b3a7c8bc88841e6,Quyền,2016-03-03,3921,t,f,f,True,Sư Vạn Hạnh
+4349653,74c61ed9a0e4855d408fa47cf04d4a41,Mai Nhật Long,2017-03-31,3528,t,f,f,True," P25, Bình Thạnh"
+11366034,da3a6d47cdc26a54de6b1040d131a9ed,Viet Bui,2018-12-04,2915,t,f,t,True," Hoàng Mai, Hà Nội"
+8982630,f79ff55dac77b9af502ca3ad45fe8f79,Lê Khuyến,2018-01-10,3243,t,t,t,True," Quận Đống Đa, Hà Nội"
+30682281,bacc75df9753fa03aa0144fe41a23cff,Dương Thịnh,2026-01-14,317,t,f,f,True,
+13181416,55fd1e98179df0eadb71f864bbd0bf41, Cam Táo mobile,2019-06-14,2722,t,t,t,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+19441973,5595d0fcb7decf601d93fe8dd39339e6,Henry Shop,2021-03-09,2089,t,t,t,True," Quận Cầu Giấy, Hà Nội"
+25626886,2581fb4701d8f276cd822165e571ce2f,Thànhh,2023-07-31,1214,t,t,f,True," Quận Hải Châu, Đà Nẵng"
+32517179,f783c3b97ecf5ed66c47e643a7eeebb8,nguyen don,2026-09-01,87,t,f,f,True,
+11802042,664b755ff15a65db16b3d8f2d30c8781,Mua Bán Âm Thanh Vs  ĐTDĐ Cổ ,2019-02-06,2851,t,f,f,True," Huyện Gò Dầu, Tây Ninh"
+3222082,e0ac95773df7e90b0938fa9711876da1,anh tâm,2016-08-31,3739,t,f,t,True," Quận 12, Tp Hồ Chí Minh"
+31075338,3b453a22cd14305bb3eb77a0dcccbb23,Thien,2026-03-11,261,t,f,f,True," Quận Liên Chiểu, Đà Nẵng"
+12044555,2ee7aed92dd573b58dddd1bde7e02000,DI ĐỘNG BULL,2019-03-05,2824,t,t,f,True," Quận Ninh Kiều, Cần Thơ"
+24309825,7acd71663e46b4beb5d47d70bb887f55,Hồ Lũng,2022-12-18,1440,t,f,f,True,
+24023971,c430bd678beaf72ef63ad2ca35ceb673,sơn,2022-10-30,1489,t,f,f,True,
+31787961,807099c4c66fb6c84910762cf41654e0,QHoang,2026-06-07,172,t,f,f,True,
+30232624,461aed347c8bd7ae4a8ebb3e48fa1f8b,Võ Nhật cường,2025-11-06,386,t,t,f,True,
+32272636,a3c82ccb54d01d7adf8b159ede1d2cb1,Hường Mai,2026-08-05,114,t,t,f,True,
+14228696,c00ba7e40f442b4123bfff0ed0d33a2c,Ngô Tráng T Mobile,2019-09-16,2629,t,t,t,True," Quận Thanh Xuân, Hà Nội"
+27188943,6d0fa324abec1adf616dd5e08c4f7dba,Phùng Quang Minh,2024-06-21,888,t,f,f,True,
+27999009,a24971c76ac6d8f8a330b3ff6a6ad210,Gin ,2024-11-24,733,t,t,f,True,
+25248503,a252bbb547ce9ef5b5a63e4e00a41423,Vũ,2023-05-25,1282,t,f,t,True,
+14243974,b90696cb1f73446f837e1f6b1972dcc2,Huy Trần,2019-09-17,2628,t,f,f,True,
+23395124,b7ac9f74d5f5e4e38c9e6076fd702cc3,T61,2022-08-06,1574,t,f,f,True," Thành phố Thuận An, Bình Dương"
+19229203,a748d364c08693e788461a147286d941,Quốc Trình,2021-02-17,2109,t,t,f,True,
+99660,756fde93ab8bd414c8c273f996e3f9b9,GIA NGUYỄN STORE,2015-12-18,3996,t,f,t,True," Bình Tân, Hồ Chí Minh"
+1369696,397eeee1fb71d29b84fca644a0212d1f,Lâm Bảo Tuyên,2015-12-23,3992,t,f,t,True," Quận Đống Đa, Hà Nội"
+27273799,258cf5e055d8e3b25e216a57b33ed3a9,a hảo,2024-07-09,871,t,f,f,True,
+22839979,9023730f995df69b2c5b105c1b0f8548,Mai Phương Duy,2022-05-19,1652,t,f,t,True,
+29242196,b89b1f278b60dfd57ab211bd91df46f0,Truong My,2025-06-10,535,t,t,f,True,
+14416371,98ffda93489bf9651cb89bba29c41d30,NGUYỄN XIỂN TX HN ,2019-10-01,2614,t,f,f,True," Hà Nội, Việt Nam"
+1199,2c5ee5dc8d9a1ae0ae86eb63e1482456,Mobigo,2016-02-24,3928,t,f,t,True," Quận Thanh Khê, Đà Nẵng"
+24167102,530f0aa362756de21d5e8dd68decc651,smartphone giá rẻ,2022-11-21,1467,t,f,t,True," Huyện Phú Tân, An Giang"
+12838585,eaf67a2b46c59ee3edc551fb61fb3b57,Good Phone,2019-05-14,2753,t,f,f,True," Quận Cẩm Lệ, Đà Nẵng"
+25834316,5aaa5588b210926672a1fd1d2a807ab7,Ả RẬP XÊ ÚT,2023-09-05,1179,t,f,f,True," Thành phố Huế, Thừa Thiên Huế"
+22146872,2627d905a11a419b557e3ae690ac625f,Trieu Le,2022-02-12,1749,t,f,f,True," Quận Ngũ Hành Sơn, Đà Nẵng"
+3958836,2fd5c892b28a66ec65bad93797a82074,Điện Thoại Tốt,2016-12-26,3623,t,f,f,True," Thành phố Long Xuyên, An Giang"
+586193,4c58e6f9916fe4572bd65006d0c1827c,Hưng Trần,2016-09-22,3717,t,f,f,True,Hồ Văn Quán
+32899728,6a5addb8b0f978a3b0522d30a5258577,Van,2026-10-24,34,t,t,f,True,
+32103536,396bf711b3405fe8b00fae6def9f75e3,Võ Tấn Thật,2026-07-15,134,t,f,f,True,
+32491914,bc6620abf91ab5f576112bd5dff69a11,ĐIỆN THOẠI AK MOBI TẬN TÂM TRÁCH NHIỆM UY TÍN,2026-08-28,91,t,f,f,True," Quận Long Biên, Hà Nội"
+8705063,7714f1f5599e7ed4aa811be5572943cc,ADAYROI ĐIỆN THOẠI RUBY ,2017-12-01,3283,t,t,t,True," Quận Long Biên, Hà Nội"
+2854191,3a47e9cea936a381b9ca5fcec47e2814,Cầm Đồ Tấn Lợi,2016-07-08,3793,t,f,f,True," Quận Ninh Kiều, Cần Thơ"
+4573377,8c760a056ee60d01aac689c33d018f21,Gạo Mobile,2017-05-17,3480,t,f,t,True, Đường Số 2 Phường Tân Phú Quận 7 Hồ Chí Minh
+10107444,9b59be990cfebd2be334352a91fa1320,Phương Thảo,2018-07-01,3071,t,f,f,True,"7 Ngõ 7 Phố Thái Hà Quận Đống Đa, Hà Nội Việt Nam"
+24759022,215ec6dc56e05d753a11cca180acd885,Cửa hàng Zinphones ,2023-03-07,1361,t,t,f,True," Quận Thanh Khê, Đà Nẵng"
+16311326,32b483f2d9065313245fa610f5f2c946,NAM TIẾN SAMZONE,2020-03-24,2439,t,f,f,True," Quận Thanh Xuân, Hà Nội"
+4415358,817e2cc6b39c35ea34738b57ff47eb8d,TRAN SONG HA,2017-04-12,3516,t,f,f,True," Hải Phòng, 04210 Vietnam (Việt Nam)"
+2940715,45a0dbab4f67bbb21a84f676a96b6ca2,HƯNG PHÁT Mobile,2016-07-22,3780,t,f,f,True," Quận Đống Đa, Hà Nội"
+33074496,8b433e49f06b06f1fb8a0a2874e3e8e4,Nguyễn Phương Nam,2026-11-23,3,t,f,t,True," Quận Bình Tân, Tp Hồ Chí Minh"
+29258902,6c80c80d9a3907432b3520ac8165f086,Tuan Manh,2025-06-12,532,t,t,f,True,
+9905222,d34b1faa96c7b179fa3770a46856ebc6,Chung,2018-06-01,3101,t,f,f,True,
+24988405,4e3a69cd62d873e51453d960f58d028b,Sơn Lưu Thái,2023-04-07,1330,t,t,f,True,
+2995234,9db009212a40df096399f0a059d4ce30,Mr Wind,2016-06-15,3816,t,t,t,True," Huyện Phụng Hiệp, Hậu Giang (TP Cần Thơ mới)"
+18690088,31c242e9ab878731a28781b2fa94e37b,DT MOBILE BIÊN HOÀ,2020-11-30,2188,t,f,t,True," Thành phố Biên Hòa, Đồng Nai"
+32726033,73cc79cfd296e2d90052bc59168f7603,Chuyên iPhone Zin Giá Sỉ Góp 0Đ Bao Nợ Xấu,2026-09-29,59,t,f,f,True," Quận 3, Tp Hồ Chí Minh"
+3694366,909355ff67a1952b873c5783181d60f4,T PLUS MOBILE MUA BÁN ĐIỆN THOẠI,2016-11-01,3678,t,f,f,True,"Huế, Thua Thien Hue"
+10254957,8fd6564599ca8d1021e2609fa86bf2dd,Nhã Uyên,2018-07-19,3052,t,f,f,True," Quận 7, Tp Hồ Chí Minh"
+11740563,bde04bdbdef8a0a6f735e1973c441cc9,Khánh Minh,2019-01-24,2864,t,f,t,True," Hồ Chí Minh, Việt Nam"
+23562308,3050e54053a69ca64b65c6394ac5d84c,Phạm Văn Biết,2022-08-27,1553,t,f,f,True," 71308, Vietnam"
+31649346,cc392d094aa5401ef17cf38f9a78682f,Thanh thanh,2026-05-20,191,t,t,f,True,
+21353463,4a34c29e834d5ad86308353c5637bba3,abcdfyfgh,2021-10-08,1876,t,t,f,True," Quận Nam Từ Liêm, Hà Nội"
+13548491,7c0b0585af3ff56055ee041cfbd99ab6,Dương văn Nam,2019-07-23,2684,t,f,f,True," Hồ Chí Minh 700000, Việt Nam"
+11180947,17cec702f70abfe1ab74d9fc47ce21fd,Phương Nghi Mobille,2018-11-13,2936,t,f,t,True," Quận 6, Tp Hồ Chí Minh"
+32957897,e9f977bdc50288cf5270e104aa8432a0,Lethilieu,2026-11-02,25,t,t,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+10872793,d3aa298e5e7e468e2da52e1ffa425e7b,Hiếu,2018-10-09,2970,t,t,f,True," Quận 9, Hồ Chí Minh"
+22692623,79d830dc59825b91e622a8da950817ae,Tạ Duy Lâm,2022-04-30,1672,t,t,t,True," Quận Đống Đa, Hà Nội"
+1710223,bd53971818fe10b7a13790fc22a659bb,Lê ngọc duy,2016-02-24,3928,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+3873488,fb79c30789296e0b9d632881e4fe4edc,Lưu Văn Tuấn,2016-12-15,3634,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+30305611,44d262603f82d4dab6315696f0d76e16,Mỹ Mỹ,2025-11-16,375,t,f,f,True,
+15029892,48be5f5c4a84aa75805bd0757b1beb6a,Long M10,2019-11-20,2564,t,t,f,True," Thành phố Nha Trang, Khánh Hòa"
+3478848,d2a0ce8233390a6a2177443c23f32c5b,Thanh Nhi,2016-10-20,3690,t,f,f,True," Quận 8, Hồ Chí Minh"
+5434595,aa52f3db77a480ea7777ce81677efa10,Hoang Club,2017-10-29,3315,t,f,f,True," Quận Hoàng Mai, Hà Nội"
+18882365,41fde0afe62856d7dca56c2d02c4652f,Hoàng Hiệp Mobile,2020-12-25,2163,t,t,t,True," Quận 7, Tp Hồ Chí Minh"
+9133314,3fb390714be9be38a36637bee825269e,Nguyen Pham Ngoc Hoa,2018-02-03,3218,t,f,f,True,7 Nam Kì Khởi Ngĩa. Q Ninh Kiều Cần Thơ
+32718451,0c558bead32844918095a1c2f5f3699c,Nhu Khang,2026-09-28,60,t,f,f,True,
+20820791,7ea24abaa4408594539fe596c86a34d9,Tiến Đat ,2021-06-15,1991,t,t,f,True," Hồ Chí Minh, Việt Nam"
+26293862,e390195c2290b22c75bfb70d081ac3d5,Gia Bảo,2023-12-05,1088,t,t,t,True," Quận 5, Tp Hồ Chí Minh"
+15195099,1bca43dde00e5a73c1e3f6d248cda464,trần Đức Quang,2019-12-04,2549,t,f,f,True," Quận 4, Tp Hồ Chí Minh"
+1280412,388ef91525b45c44f725e22a36a9bf78,Long Time,2016-08-31,3739,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+19166721,fd15877d712b78d95117aa80c96a199e,Huỳnh Việt Sơn,2021-02-04,2121,t,t,f,True," Hà Nội, Việt Nam"
+23244378,a5d9fd4960fd0613003b83f3eda085a9,Bee Smarphone,2022-07-17,1594,t,f,f,True," Quận 10, Tp Hồ Chí Minh"
+5015801,e9104d28a8ff6be711472e873172c3e4,trantam,2017-08-09,3396,t,f,t,True,"Cầu Giấy, Hà Nội"
+16438619,20a2a646e60b1e6de3d113a63ade694b,Nguyễn Nhật Minh,2020-04-07,2424,t,t,f,True," Thành phố Biên Hòa, Đồng Nai"
+3305411,9f6070c32ff21c6e3cd9e24181f55644,Hoàng Phúc,2016-09-23,3716,t,t,f,True,Dĩ An (Di An) Bình Dương Việt Nam
+9232699,6e201194ad65e52e17321344737c77f1, Phan Trung,2018-02-27,3195,t,f,t,True,Khu chung cư thuận giao-thuận an-bình duong
+26220463,59a120757ae0b53dc1160daa6c557143,Duy Hiếu Mobile,2023-11-20,1102,t,t,f,True," Quận Long Biên, Hà Nội"
+15898508,d4541190d587369374e9604561f2ee5d,Nghiêm Thượng Mobile,2020-02-16,2476,t,f,t,True," Quận Lê Chân, Hải Phòng"
+15133887,f92e08d7c4ffd76786e76dbefa7e0a40,Trần,2019-11-29,2555,t,f,f,True," Huyện Bình Chánh, Tp Hồ Chí Minh"
+32327623,cb0178f24c7f67399a170bca88792b58,Thuê Loa Chính Hãng Đà Nẵng,2026-08-11,107,t,f,f,True,
+14568463,1e9459ed5d4b488b42ad11ac14f4039d,Thanh Sang 168,2019-10-14,2601,t,f,t,True," Thị xã Phú Mỹ, Bà Rịa - Vũng Tàu"
+11733496,cac0d866c69b64e1023d66f5def72bd3,Quân Nguyễn,2019-01-23,2865,t,f,f,True,148 Đường Thạnh Lộc 3 Phường Thạnh Lộc Quận 12 Hồ Chí Minh
+26984643,ca508371d0be7aebe2d55e9e5dfc63db,Lehoang Minhphu,2024-05-09,932,t,t,t,True," Thành phố Biên Hòa, Đồng Nai"
+8976490,4ba0671aeaa49aac09e4ac8e123e1a48,Thảo Vy,2018-01-09,3244,t,f,f,True,
+30248041,cd1d496ea0236227d4ab6a856e2239c5,Son,2025-11-08,384,t,f,f,True,
+10177489,6f08b086c7bfc16fd3b8d511fd8e9fd8,Phạm Anh Tuấn,2018-07-10,3062,t,f,f,True,
+22257681,ca6290a5510addf555362b2afd139e09,Tu Vu Hoang,2022-02-26,1734,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+30607392,d960ab95818ed512851b0a4a0edacd03,San San Mobile,2026-01-02,329,t,f,f,True,
+4357482,f0c3e8f0c52aa594fbb892f019ab2240,Hoàng An Mobile,2017-03-31,3528,t,f,f,True," Huyện Châu Thành, Bến Tre"
+12084104,e25763d942e2b69488a9a7b7bb7e5fb8,Lý Hùng ,2019-03-09,2820,t,f,t,True," Quận Ngũ Hành Sơn, Đà Nẵng"
+19974777,a7fecf316d9da174fe6f305da75185a2,Nguyễn Thắng  Mobile,2021-04-27,2040,t,f,t,True," Quận Tân Bình, Tp Hồ Chí Minh"
+11927660,f3f666ff827b9cfc2f4c8d672dd82a3b,Đinh Viết Việt,2019-02-21,2836,t,f,f,True," Hồ Chí Minh, 72321 Vietnam"
+4169442,fb33ca9b3b95d3dd2f9940972f7afcc8,T83,2017-02-27,3560,t,t,f,True," Quận 3, Tp Hồ Chí Minh"
+30705048,4e4302bd3ff0127b171e913c8eac46f7,Huu Phuoc,2026-01-18,313,t,t,f,True,
+17864227,924b0a83e9af4edb7f857ce00aa6e889,Trung Hiếu,2020-08-31,2279,t,f,t,True," Hà Nội, Việt Nam"
+26073657,ab4517581d266e41c4c48eb745c0cdbd,TT PHONE,2023-10-20,1134,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+64948,c536f1758ff03b12143c6ebecf6f64ee,Audio,2016-02-24,3928,t,f,f,True," Q. Gò Vấp, TpHCM"
+33078338,91e2a69b126d9a30270b836cbeabe87c,Tống Văn Tuấn,2026-11-24,3,t,f,f,True,
+1555941,a1a4aa8ec4b4e460f050600757d23522,Nghiệp,2015-12-23,3992,t,f,f,True,"Tân Phú, Hồ Chí Minh"
+2191491,391d8bcce03c13f1738a4ecd06acca8a,VU XUAN DANG,2016-03-22,3901,t,f,f,True," tan phu, hcm"
+18460036,db2cde3b044e38954f80a13d3fa6a95e,Tú MB,2020-11-03,2215,t,t,t,True," Quận Thanh Khê, Đà Nẵng"
+23909995,390e8f1538e1af7f8718423cf548041b,Lê Hoàng,2022-10-14,1505,t,t,f,True," Quận Hà Đông, Hà Nội"
+23133739,1c36a1cf4fadbd0c16362096073e9ef6,Phi Đăng Sơn Store,2022-06-30,1610,t,t,f,True," Quận 10, Tp Hồ Chí Minh"
+26671390,80c5821ef062938ff375a0b79caacf1e,Phan Luận,2024-03-06,996,t,t,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+3722206,0aa75def1f340449104ab4e36512ef16,VANH AT Mobile Hitech 766 Trương Định HN,2016-11-01,3678,t,t,t,True," Quận Hoàng Mai, Hà Nội"
+24160059,b2ec78c38dc1253cf58ab2dbee2ee1f7,Chương Vy mobile,2022-11-19,1468,t,t,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+22152128,71522596a7cf0417e825385804403eec,Tài Phạm,2022-02-13,1748,t,f,f,True,
+5178281,83126b8e55a04dd8ca9de1ff6cf0815b,Thùy Dung,2017-09-11,3364,t,f,f,True,31 Kiệt 4 Trần Quý Cáp - Thuận Lộc - Huế
+28331890,b26dfca4e299c8c800a1cc9fb53e504e,Hải Đăng Mobile,2025-01-24,672,t,f,f,True," Thành phố Châu Đốc, An Giang"
+12451162,e9e0ce4b5f17e49ec5193b9dc1d35305,Lộc,2019-04-11,2786,t,f,f,True,
+29636806,4683e4915341b057112a9b71cfd1cc6d,Cửa hàng Phone 43,2025-08-08,476,t,f,f,True,
+16165844,e236ea7c87b3cb498aea461ba6dbe521,Anh Nam,2020-03-10,2452,t,f,f,True," Hà Nội, Việt Nam"
+444498,265156fa9f3c4ab9778097e0a8586bbf,Lâm Đạt Mobile,2016-01-12,3972,t,f,t,True," Huyện Châu Thành, Trà Vinh (Vĩnh Long mới)"
+18525156,5065d10855e0c8bf6d05684ce5c7b726,Võ Chí Bảo,2020-11-10,2207,t,t,t,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+26029572,e0d74f048feccc2bd6767539e33dff35,Bùi Thị Lan,2023-10-11,1143,t,f,f,True,
+1031175,ef8c6ae753b8832db14d9ccc44c4fbc2,Anh,2015-12-18,3996,t,f,t,True,Go vap
+30975135,e15b52da647ffec914d114815aeec785,minh long,2026-03-01,271,t,f,f,True,
+2573180,2df6c7fb23b5f09f6aa8ea21dedfd596,Thọ,2016-05-18,3845,t,t,f,True,Tphcm
+26007824,bc29e9a459a82737af15259c7d519ddd,Linhpt,2023-10-07,1147,t,t,f,True,
+26017989,cca3ce22c48a09abcf2fa4dc8d0af95f,Toản,2023-10-09,1145,t,f,f,True,
+8899794,27cc27a09186dea28ce27087c7dbbfad,lê văn kiếm,2017-12-27,3256,t,f,f,True," Thanh Khê, Đà Nẵng"
+666470,be078d0da91fb69fa5e774f5daab9126,Thiên Hòa  mobile ,2016-02-24,3928,t,t,t,True," Quận 8, Tp Hồ Chí Minh"
+29365324,9e35678241e280fa3fe2dad40636a0f3,Táo 9999,2025-06-29,515,t,t,t,True," Quận Cầu Giấy, Hà Nội"
+25333856,bf590b9b2496cc73f7845e2dbfb1e1ca,HANA STORE ,2023-06-10,1265,t,t,f,True," Quận Liên Chiểu, Đà Nẵng"
+12996934,350a995f86e777ad0ce4c60bb973490b,Tiến,2019-05-28,2740,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+28312532,457acd7019170399d4a01694520d58bf,Trương Gia,2025-01-19,677,t,t,f,True,
+27802112,425e4f296686252ea2b9aaf641898551,anh sơn,2024-10-25,763,t,f,f,True,
+24068778,99f125cbe8fcf4a81d2ce306e8aa8c99,minh sang,2022-11-05,1483,t,f,f,True," Hải Phòng, Việt Nam"
+33022036,d4a04f2839145887f9d809eda286f865,Vu Huy,2026-11-13,14,t,t,f,True,
+3106520,dbd28997720fcd640548c4589ab517ad,HStore,2016-08-02,3768,t,f,f,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+3678994,3780dac9c9573620ab1856856d241426,Hiếu GSM,2016-11-01,3678,t,f,f,True,Xã An Thạnh Huyện Mỏ Cày Việt Nam
+22575109,35daae474ab5a75d146f5625e8643c92,Minh Cường,2022-04-12,1690,t,t,f,True,Mỹ Tho Tiền Giang Việt Nam
+23851247,363f60dfa854f758bef1340d6d82a1db,đặng phạm,2022-10-06,1513,t,t,f,True,
+32383486,3faba0c6b2df3c86b93b1ad653cd5e97, Vân Anh,2026-08-16,103,t,t,f,True,
+13168954,a44aca77012dec8aad6189f67ea9b97f,Minh Quang Bùi,2019-06-13,2724,t,t,t,True," Hà Nội, Việt Nam"
+203446,3166c57635622cb051bfec6d12810186,Shop phố smartphone 2,2015-12-18,3996,t,t,t,True," Quận Bình Tân, Tp Hồ Chí Minh"
+1276026,242940cc0c086c9382e8ee0f92055dfc,Nguyen Thanh,2015-12-23,3992,t,f,f,True," Hà Nội, Việt Nam"
+31993618,d0a6102f565b221f591795aa935394b4,Phạm Bằng Vĩnh Long,2026-07-02,147,t,f,f,True," Thành phố Vĩnh Long, Vĩnh Long"
+17501430,5dec2f31f0c12dcec1f06e1f3888f15a,Ngọng Store,2020-07-24,2316,t,f,f,True," Quận 10, Tp Hồ Chí Minh"
+33060112,f60a9932e17c2140a79e192b3b114f64,Chung,2026-11-20,6,t,f,f,True,
+24634908,d230993c3bc0af8f72037c2a968c9c9e,Tom,2023-02-21,1375,t,f,f,True, Kiệt 672 Trần Cao Vân Phường Xuân Hà Quận Thanh Khê Đà Nẵng
+29304125,9e53dffc0d52e2dd8b3cdaf83cf2ab6d,Mạnh Nguyễn Duy,2025-06-20,525,t,t,f,True,
+30868926,6682dbfa086be4b2c2e710816a2b9e48,TranVoKy,2026-02-17,283,t,t,f,True," Huyện Bến Lức, Long An"
+27151969,71ed6504f511cf58d2a044dd82c24d76,Thẩm Mỹ Hòa Thư,2024-06-13,896,t,f,t,True,
+30893779,977f64983859ad82944a3073e1fcae8e,Dương Hoàng Anh,2026-02-21,279,t,t,t,True," Thành phố Dĩ An, Bình Dương (TP Hồ Chí Minh mới)"
+2080282,d0f643f9d0aedc8c912686a8a732d10f,A Hiếu,2016-11-01,3678,t,t,f,True," Quận Bình Tân, Tp Hồ Chí Minh"
+30690766,013a6c12292303ad4282b43120be987b,Cong Trung,2026-01-15,315,t,f,f,True,
+21042441,a8dc7b29d49298f91f748e3a2e0cd2c3,Kimluy Luu,2021-07-20,1955,t,f,f,True,
+23388330,91a24f5b717b1af866cce5345fcca57e,Nam khang store,2022-08-05,1575,t,f,f,True,
+9835180,6c7a4bb10d1ab0aa1bf25d2a6e15442b,Minh Vương Mobile Thủ Đức,2018-05-21,3111,t,f,f,True,Việt Nam
+1598496,0f71418fd6c88793ca5d608557110849,Thành,2016-02-24,3928,t,f,t,True," Quận Cầu Giấy, Hà Nội"
+22268024,52f8e474bc2cc17a0b910c6843ece63a,Dũng,2022-02-28,1733,t,t,t,True," Hà Nội, 11306 Việt Nam"
+17005039,061be894c9b76be4da336c7446591062,Mr phong ,2020-06-04,2367,t,f,f,True," Quận Bình Tân, Hồ Chí Minh"
+26020319,ef4df792dae3ea7b0f0be22a01b7a56b,Khánh Ngân,2023-10-09,1144,t,f,f,True,
+30316293,42ffcb9b9a3aaf771506289f357ab90f,Dũng,2025-11-18,374,t,f,t,True,
+1219867,ec179df1b642f462aff07fdfa34a6f06,Mr Chiến,2016-02-24,3928,t,f,f,True," Quận Thanh Xuân, Hà Nội"
+17856295,e3f23c5fb5b1ce547d4475741c5cb834,Thích Bán Rẻ,2020-08-30,2280,t,t,f,True,Bình Thạnh
+19353432,dd049509bf0038471f8eba66ba80f25d,Tống Giang ,2021-03-01,2097,t,t,f,True," Thành phố Buôn Ma Thuột, Đắk Lắk"
+389128,3a51432ba75dc4eb61925e3b57b5c4ce,Nguyễn Đức Ngà,2016-02-24,3928,t,f,t,True,294 Tôn đản đà nẵng
+25616309,a50514c58ad43d6224b7752e1c9ac97e,2000Store,2023-07-29,1216,t,f,f,True," Thành phố Cam Ranh, Khánh Hòa"
+27536665,a51134231a1fa9abe4fa26e8442468c6,TRẦN MINH HOÀNG,2024-08-31,818,t,f,f,True,
+13134614,54f085dab3097f1f4d9b52ce5e43a574,Anh Đức,2019-06-09,2728,t,f,t,True," Hà Nội, Việt Nam"
+16822260,f02c3f37331a3dfcfc3c097f359a866b,Khoa America,2020-05-16,2386,t,f,f,True,
+8877846,7a60b2022266238ba6e6b47a3fa3b600, Trần Minh,2017-12-24,3260,t,f,f,True," Quận Nam Từ Liêm, Hà Nội"
+29505037,0cae8ccc086a287c5689676dd0300ca5,Trường,2025-07-20,495,t,f,t,True,
+32692843,96cd61be72f68067b3ed07c9dee4e568,Risephone1314,2026-09-24,64,t,f,f,True,
+9066841,29c4bd93300d3aefd73f962f00a953b0,Thịnh,2018-01-22,3230,t,t,t,True," Quận 10, Tp Hồ Chí Minh"
+9973251,3df8016cde1f8f813d03bb7d187f4876,Mê Đồ Si Hiệu,2018-06-12,3090,t,f,f,True," Quận 3, Tp Hồ Chí Minh"
+30873474,991c27b8c4c669006db805fb9fc6bba3,Lê Thị Thẩm,2026-02-18,282,t,f,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+12327800,e7ae8eef89a2c81800d32fa433cd249e,Gia Minh,2019-04-01,2797,t,f,f,True," Quận 12, Hồ Chí Minh"
+14932828,3b11ee03bad31f53adce13bc37c2070f,Thanh Phước mobile,2019-11-11,2572,t,t,t,True," Quận Sơn Trà, Đà Nẵng"
+18645640,ef1e0d8b773cc6661f3237dda8bfa338,đt củ,2020-11-25,2193,t,t,f,True," Quận 12, Tp Hồ Chí Minh"
+18661783,b791eacb91d0efae2d0ad4d18bbdf3fb,Hoang Thai,2020-11-27,2191,t,f,f,True,"Huyện Hóc Môn (Huyen Hoc Mon), Ho Chi Minh City Vietnam"
+32094446,ebf5e2e33af326320033ca4128313228,titi tutu,2026-07-14,135,t,t,f,True,
+33092850,e3881ee7ae7bcdbce4c78882981de0c0,Phan Huy,2026-11-27,0,t,f,f,True,
+14972249,e23a578e00e9c4739862cbd401deacf0,TH,2019-11-14,2569,t,t,f,True,
+30156026,712892119ec18e08e4c7d34796fcbcf1,Dũng,2025-10-25,398,t,f,f,True,
+30687436,fd267ba671f2cd51e28a7240116bf3e9,Ngoc Dung,2026-01-15,316,t,f,f,True,
+64394,e0d386afbab926257dfbabb1d3f921a1,Lona Nguyễn,2016-02-24,3928,t,f,f,True," Quận Ngũ Hành Sơn, Đà Nẵng"
+9312003,6380154a649558e32807590248080e03,Ngô Minh Mobile ,2018-03-10,3184,t,t,t,True," Quận Tân Phú, Tp Hồ Chí Minh"
+16951862,428fda1c5f11ef993757c4c026446dd9,PHƯƠNG NAM,2020-05-29,2372,t,f,t,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+11548152,9df6b215c717b9eef124084b28f6e31c,Hn Store,2018-12-27,2892,t,t,f,True," Quận Đống Đa, Hà Nội"
+4561607,c93c73155f4bc716c8760c151ddf03e8,Tran Phuong,2017-05-15,3483,t,t,f,True," Quận 4, Tp Hồ Chí Minh"
+138660,2c50380236436467c7976d5cc5b32116,Long blue 9x,2015-12-23,3992,t,f,f,True,Số 1 ngõ 120 Hoàng Quôc Việt
+31215249,c82965a67a523f49a24e795ad793c91a,Thiện THP Auto,2026-03-26,246,t,f,f,True,
+5389274,8c195534ee9f40340e14216b7edc0711,Đức Phong,2017-10-22,3323,t,t,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+29367847,16f6c6c133cd7d50862881ad1eb2e9fb,Anh Đồng NÁt,2025-06-30,515,t,t,f,True,
+11682512,2d28dca89fcbf888e4e88726268301eb,Sơn TH,2019-01-14,2873,t,f,f,True," Quận Cầu Giấy, Hà Nội"
+23011902,802ab9a640c673c8f74f741b21f2c028,thành loc ,2022-06-13,1628,t,t,f,True," Quận Bình Tân, Hồ Chí Minh"
+23814439,c4c74b335a22970ab42215f823b8fd1c,Tony Mobile,2022-10-01,1518,t,f,f,True,
+2541849,f26a6d6bb3c670c92bc1e28d5182b5b9,Duy Thức chuyên iphone Lock Cần Thơ,2016-05-18,3845,t,t,t,True," Quận Ninh Kiều, Cần Thơ"
+29238831,d37f8c1365c1f118236491b8bbbfef4f,lê minh tuấn,2025-06-10,535,t,f,f,True,
+10459259,538bc99abf54dd35209bc2de2a70f511,StoreUS,2018-08-16,3025,t,f,t,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+29720996,1c5be2e776d274f2eea82632f0dc7ab2,Tấn Trần Phúc,2025-08-20,463,t,t,f,True,
+19983990,c9ebe8d6325d654886e12c9fa451cd6d,Thanh Tri,2021-04-28,2039,t,t,f,True," Quận Gò Vấp, Hồ Chí Minh"
+23664272,fb45c078d70281ac77560de9bb71f1f3,khánh minh nguyễn,2022-09-11,1538,t,f,f,True," Quận 8, Hồ Chí Minh"
+11485724,4caa24402dbf71da777e48ea1ba3ec18,Nguyễn Xuân Tuấn,2018-12-20,2899,t,f,f,True,
+32290230,5cefc99bbe89033b4d931bd4d35dcef3,Nguyen Trong Nhan,2026-08-07,111,t,t,f,True,
+1657021,80bd97f61b37f5ea144444535b920d88,Võ Diện,2015-12-18,3996,t,t,t,True," Cần Thơ, Việt Nam"
+9401151,c98ca4f2e78bfc5a45b523aef535db34,Phan Đang,2018-03-21,3172,t,t,f,True,255 Đường Nguyễn Khang Phường Yên Hòa Quận Cầu Giấy Hà Nội
+22466808,14775e9e0abc08515f5030bb690d6671,Tin Học Cường Phát,2022-03-27,1706,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+11418174,0532bbdfdef016673b64debce1627ac7,Lâm Thanh Hải,2018-12-10,2908,t,f,f,True,
+9598047,2a70c48aeafa3c0b7c621f11d72a66ba,vh,2018-04-17,3146,t,f,f,True,
+674948,d03ed0368ee4d2e936c76a6ac7701f8c,Win Store,2016-02-24,3928,t,f,t,True," Thủ Dầu Một, Bình Dương"
+11985,bc40237129060a35c3f09f40192df40b,Thành,2015-12-23,3992,t,f,f,True,Biên Hòa
+10487331,f958e9b2864e18229b47253235dd2265,Trần Công Đức,2018-08-19,3021,t,t,f,True," Quận 12, Hồ Chí Minh"
+31633143,05b1c4b128091eaab19e0b9bc0e6e00f,Khôi Nguyên Trần Đức,2026-05-18,193,t,t,f,True,
+25222369,1361dc90d9effba46b5877322bd6be3d,Nguyễn Minh Anh,2023-05-20,1287,t,t,f,True," Thành phố Biên Hòa, Đồng Nai"
+21654696,c5fb87177dad5d36f07bc5262650af70,TD,2021-11-23,1830,t,f,f,True,
+10870725,c7450f6c1a50bf49b0041aea048e1fbf,Hoàng Thành,2018-10-09,2971,t,t,f,True," Quận Đống Đa, Hà Nội"
+20428363,577b7d02cb016141c1fef2033f33b95f,Đức Tính Zcomputer Thủ Đức,2021-05-15,2021,t,t,t,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+10296679,84cc069153cc3b69fd8b7aa5b703eee6,Nguyễn Tiến Lợi,2018-07-25,3047,t,t,f,True," Quận Đống Đa, Hà Nội"
+24063619,634e2619b929a0210193ff6ccadec661,Như Hạnh,2022-11-04,1484,t,f,t,True," Hồ Chí Minh, Việt Nam"
+11068962,5078fef223b12ca1e1060f885d13a8ec,Nguyễn Phong,2018-11-02,2947,t,f,f,True," Hà Nội, Việt Nam"
+11551649,e84233272b20c787d20ee94524e92ad3,Second Hand Japanese Laptop,2018-12-27,2892,t,t,t,True," Quận 1, Tp Hồ Chí Minh"
+27635989,f27204f9694b120e57b67bb852746d78,Lê Hoàng Gia Bảo,2024-09-21,797,t,f,t,True,
+2863422,09053a6c25fa05f94be2913266345bf2,LÊ LINH TÂM,2016-07-08,3793,t,t,t,True," Quận 7, Hồ Chí Minh"
+5302079,759db0fa9c16df7da044ad8d9f90754d,Laptop macbook sumi,2017-10-06,3339,t,f,f,True," Quận 3, Tp Hồ Chí Minh"
+1724801,c26ce124623f47fc9b737574c6482976,Tuấn Minh,2016-11-01,3678,t,f,f,True," Quận Thanh Xuân, 11406 Việt Nam"
+499937,8641d672dea231a9615224ac6f555ff2,Quốc Trường,2015-12-23,3992,t,t,f,True," Quận Cầu Giấy, Hà Nội"
+20831048,1f1ba326afe04b291f64885bb6153a71,Phan Trường Giang,2021-06-16,1990,t,f,f,True,
+1426227,6ec3c52fff8b936bdd09d5721c1848a2,"Laptop Chính Nguyễn, Rẻ Nhất, Uy Tín Nhất",2015-12-23,3992,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+5110110,ce27cfc396069b8c1a9e1097bab0f52e,KHO SỈ COMPUTER VN,2017-08-27,3378,t,t,t,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+31925781,c99a14e2a082a3591ab17085901ebbd0,Nguyễn Thu,2026-06-24,155,t,f,f,True,
+19442081,c53be011dd42bb6af9261638eba4137a,Tên chưa cung cấp,2021-03-09,2089,t,f,f,True,
+353959,403001b76ca8246d55eadd03f71a4e79,NGUYEN VAN TAI,2016-02-24,3928,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+4624920,e0f299d1b691c8110498ba3c0d8b7784,Tonoto Vn,2017-05-29,3469,t,f,f,True," Quận Hải Châu, Đà Nẵng"
+25850536,c0ccf5a57b8b99eb5d8a27f10768de05,Hoàng,2023-09-08,1176,t,f,f,True,
+29753531,c5f94bd0fe55d9164f26b9f348dd7e59,Quang Minh,2025-08-25,459,t,f,f,True," Quận Hoàng Mai, Hà Nội"
+26957,b97dea94f4f239a46ebbff30582d44bb,Nguyễn Văn Chính,2015-12-18,3996,t,f,f,True," 50306, Vietnam"
+32912736,f7087c3db22a0682a56d8e32dd6ca9d2,Sunsea,2026-10-26,32,t,f,t,True,
+21512922,dfb0c392e1e26ab91622c1a6a7190277,Vũ Quang Khải,2021-11-01,1851,t,t,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+32227329,3ff0a46a73e8e3c472ceb4d2959a5ed1,Lê Nguyễn Quốc Tiến,2026-07-31,119,t,f,f,True,
+28466246,8a8f745243c4b43df23ab8d10b8e506c,Đức Nho Technology,2025-02-15,650,t,t,t,True," Quận Thanh Khê, Đà Nẵng"
+93770,b25ef70381ee0a0be432cba341bdcd24,T T Center,2016-02-24,3928,t,f,f,True," Phường An Cựu, Huế Vietnam"
+27286007,63efaa682ed70367c10d23b74d414273,Nguyễn Hữu Phúc,2024-07-11,868,t,t,f,True," Quận Ninh Kiều, Cần Thơ"
+15358597,5531761c9b893d58e470bd52f77975e8,Trần Mạnh Cường,2019-12-17,2537,t,f,t,True," Quận Hồng Bàng, Hải Phòng"
+475394,031f089bd58a02e7e7ce8d131786ba80,Cầm Đồ Thanh Lý,2015-12-18,3996,t,t,f,True," Quận 12, Hồ Chí Minh"
+25387606,e81e67555ae0c34eca308abbe1abb498,vy,2023-06-20,1256,t,t,f,True," Quận Tân Bình, Tp Hồ Chí Minh"
+2746860,d8b61985adb563143a3699fe8c26c9d1,Tống Đình Toàn ,2016-06-20,3811,t,f,f,True,
+423893,b21cd82ea986c25a6937070c7891c833,LAPTOP MIỀN NAM TD,2016-02-24,3928,t,t,t,True," Thủ Đức, Hồ Chí Minh"
+14127081,4d1c618457412b070ad5c251e81a578a,BRVT,2019-09-06,2638,t,f,f,True,
+3746794,0c9ffc4525439ca7ee94d489caa3c822,huỳnh trung lâm,2016-11-01,3678,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+29642186,2ffe5a9a87fb94bce99516b98531ae55,Akiba shop,2025-08-09,475,t,f,f,True," Quận Hai Bà Trưng, Hà Nội"
+28563641,4e1a525ae516606182a51f44f98a12a6,Đỗ Thị Nguyên,2025-02-27,637,t,t,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+229070,49a176012efad2f425b9aaddde373fcd,HoangAnh 255,2016-02-24,3928,t,f,t,True," Quận 10, Tp Hồ Chí Minh"
+22905176,433a00ac4234cebcbf1dd07648efe598,ĐỒ MỚI GIÁ CŨ,2022-05-29,1643,t,t,f,True," Quận Tân Bình, Tp Hồ Chí Minh"
+33094160,76d61793d2186ea50dcfe37602ce37d1,NGUYEN DUY KHANH,2026-11-27,0,t,f,f,True,
+24161,56cf07c89fc2bad007757628686481f7,chuyenlaptopcu,2015-12-18,3996,t,t,t,True,20/9 Đoàn Văn Bơ P9 Q4
+2576854,36b06abb874f48172496a16a4a587db1,Toàn,2016-05-18,3845,t,f,f,True," Thành phố Nha Trang, Khánh Hòa"
+1722305,f424a5303aa15e3f70050b1eac744f62,Ngọc Hưng,2015-12-18,3996,t,f,f,True," Quận 9, Hồ Chí Minh"
+4191295,753a63fc6376bb5955d9be82854abfc0,Trần Quang Quỳnh,2017-02-27,3560,t,t,f,True," Quận Hoàng Mai, Hà Nội"
+25663,37051aa73afcd1fdb6277ddb692af38b,Trần Thanh Hiền,2015-12-18,3996,t,f,t,True," Quận 4, TP.HCM"
+23030,e792b96126fbface42751352174bc0a6,Laptop Hoàng Phát,2016-02-17,3936,t,f,t,True," Thành phố Thủ Dầu Một, Bình Dương"
+24006877,9bd2d16648229afa80831c81e49c6bde,Laptop Tèo Em,2022-10-27,1491,t,f,f,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+634774,dae424759ad3849815ab192420f5cbed,Duy Bình Ford,2016-01-06,3977,t,t,t,True,Hồ Chí Minh
+1559398,13d64fa3400a396d4d2eb7736a081bba,Huy Lê,2015-12-23,3992,t,f,t,True," Quận Thanh Xuân, Hà Nội"
+182,aca4294700208a8776da255b84d0b41d,khanh laptop,2015-12-18,3996,t,f,f,True,116 LÊ THỊ RIÊNG . Q1 . HCM 
+2024403,151e5251ce007bf6072aed01855548ec,Đăng Khoa,2016-02-24,3928,t,t,t,True," Quận 11, Tp Hồ Chí Minh"
+10984683,afae17a3c95edaff088458a8b77c8895,Mr T,2018-10-23,2957,t,t,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+314715,f7b2bddc3bf1062e6a5fc033d6403a07,Nguyễn Đức Toàn,2016-01-20,3963,t,f,t,True," Quận Ba Đình, Hà Nội"
+1853343,9ceb8b6bb1dd8b9dad0a3cf0899fbfab,LÊ HỒNG SƠN,2016-01-12,3972,t,f,f,True,Ha noi
+11518849,1bd71ce4331a511192f5742d115c2283,Quang Trường,2018-12-24,2895,t,f,f,True,
+9008503,b8ad7a7616c417c88b4b0280e3080d60,Tuấn Laptop 990,2018-01-13,3239,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+9337094,61b3a6099dba559c06f86d08b78719a7,Mr Vũ,2018-03-13,3181,t,t,f,True,CT4 Tam Đảo P15 Q10
+134106,f00f200f2d1d9f59b6e4c8fa8b59e9b8,Laptop Minh Quân,2016-01-12,3972,t,t,f,True," Quận 12, Tp Hồ Chí Minh"
+22769737,8f872f5e81eaab77acb2700b3f446831,Mac Hiền 50 Nguyễn Cửu Vân,2022-05-10,1661,t,t,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+19412042,4e0db05d14e6f22ef1a149501d28b908,Huyền Anh Nguyễn,2021-03-06,2092,t,t,f,True,
+13774346,418e230e66874a880b2fa3450d430c64,Trang Linh,2019-08-10,2666,t,f,f,True,
+17562679,d2e14dd8156f844f75a90b95a294f7b0,T COMPUTER,2020-07-31,2309,t,t,t,True," Huyện An Dương, Hải Phòng"
+8884,a377273c7aceded68df4a687af7d604c,Việt Hoàng,2016-12-15,3634,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+26330441,5ba26ea6e9f7b108f5c3285e03ead3c9,Huu Nghia,2023-12-13,1080,t,t,f,True,
+33094022,ffaed7e2b4a063e595d51d9aea504427,Muối,2026-11-27,0,t,f,f,True,
+462148,b2d333a4adca0dc910b39e6d67919fe1,Laptop Gia Huy Bình Dương,2015-12-23,3992,t,f,t,True," Thành phố Thuận An, Bình Dương"
+5591269,c10c8b741c174c5f9b98894a92a8e936,Quốc Tuấn ,2017-11-27,3287,t,f,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+12203772,4f2d3a479feba9a48bd71079f67d4ee1,BƠ BƯ Macbook Cũ,2019-03-22,2807,t,f,f,True," Quận Sơn Trà, Đà Nẵng"
+91154,90917f5e9bf9099ea75417e59bce9dfb,Thanh Lý Ve Chai Đồ Cũ,2015-12-23,3992,t,t,t,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+31074538,b3fac8b92ce3ee58716b79baf94d74e3,Nhân,2026-03-11,261,t,t,f,True,
+8888825,b65b73ffccabf82a63b6b24aefc25c5c,Đào Tuấn Đạt ,2017-12-26,3258,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+2270808,62c511740777f3e6360a0d51e95834a3,Thien Nguyen,2016-03-31,3893,t,t,f,True," Từ Liêm, Hà Nội"
+30671796,4807612a4f0ce6cd63749793f5e90cad,Azshop Usa,2026-01-12,318,t,f,t,True,
+9658148,7978d241c40fa30cc592c68a5c257aea,NGỌC PHÚC LAPTOPS,2018-04-25,3138,t,f,f,True,1071 Trần Hưng Đạo Quy Nhơn Bình Định
+28085583,62ffe8db42f1d1c60fb2428570d5d337,Tanji,2024-12-07,720,t,t,f,True," Quận Sơn Trà, Đà Nẵng"
+28172942,48c2e6f6a5267d44ceec461d67ce91ab,Luu van son,2024-12-22,704,t,f,f,True,
+5311502,ca66349e3b5024c7a2529a98fade8287,Ngọc Nguyên,2017-10-08,3337,t,f,f,True,"Phường Giang Biên Quận Long Biên, Việt Nam"
+10243101,0d02e48b83318970e7b2fadf9e8cd440,Long,2018-07-18,3054,t,t,f,True,
+3882481,96038cf5587a2560993785119f117f3f,Trương Toàn,2016-12-15,3634,t,t,f,True," Tân Bình, HCM"
+10481991,84289c95a65a835b6a2747e24b24f31c,Đời Là Thế,2018-08-19,3022,t,t,f,True," Huyện Cái Bè, Tiền Giang"
+11442258,257601d79737857b32227cbd362fc07e,Bình Ipad ,2018-12-14,2905,t,f,t,True,"250 Đường Số 6 Phường 7, 71407 Quận Gò Vấp Việt Nam"
+26504,efbe49fb74873bc8b80c10825b38ace5,Mac98,2016-12-26,3623,t,t,t,True," Hà Nội, Việt Nam"
+15564112,ae9d6ab07f761562988347e25c16ab30,Laptop Gaming VN,2020-01-08,2514,t,t,t,True," Quận Tân Bình, Tp Hồ Chí Minh"
+1396135,27b83c448054945baf58404db3fa7c4d,ĐIỆN THOẠI LAPTOP ANH HUY,2016-02-24,3928,t,t,f,True, Hẻm 132 Đường 3 Tháng Phường Hưng Lợi Quận Ninh Kiều Cần Thơ
+367755,f3253279404754d571e3267864fa8621,facebook Tiệm Hoa Lilith ,2015-12-23,3992,t,t,f,True," Quận 10, Tp Hồ Chí Minh"
+32838464,4c767aaf377424cabb70fc59bcd3f766,Nguyễn phong,2026-10-15,43,t,f,f,True,
+24434045,c9ee16baf229bb247115249eb5b4e0e9,PhoeBe Laptop,2023-01-17,1410,t,f,f,True," Quận Ninh Kiều, Cần Thơ"
+797979,e779ca6b8afd05ee40412b79832b6448,Đặng Nhất Long,2016-02-24,3928,t,f,f,True,Eahleo ĐakLak
+1903578,e8c4838a6b9a13f46d40efed082c6a22,Hoàng Anh Tứ,2016-02-24,3928,t,f,f,True, Hương Lộ 2 Xã Hòa Long Bà Rịa Bà Rịa-Vũng Tàu
+9522993,2309e45df46f229f0457e0021a89a16b,Nguyễn,2018-04-06,3156,t,t,f,True,
+26345153,4cdb1952c3ae26d6ede39dff78d7eaab,Hb,2023-12-16,1077,t,t,f,True,
+1291250,48b6a4c039768e8c02d7ea733d1663af,LAPTOP HYMINH,2016-02-24,3928,t,t,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+1701362,abf2409fc98a92b94492c89bf061aa9e,Tùng Lâm,2015-12-23,3992,t,f,f,True,đông anh - hà nội
+2085158,5bcbaaac77d3b4ba56f6e676d1d5af9f,Văn Minh,2016-03-03,3921,t,f,f,True," Thành phố Biên Hòa, Đồng Nai"
+1882430,67534ed2741d24b9ac7cc5f1459d0246,Lê Thanh,2016-01-12,3972,t,f,f,True,Long an
+4100786,701dceb31b708639cb702a63a643ee8d,Hoàng Tiến,2017-02-14,3573,t,t,t,True,"Số 9 - Ngõ 96 Đê La Thành (nhỏ),  mặt sau 338 Xã Đàn - Đống Đa - HN"
+18328803,73fd689ba6bd2dfd781da93b9bbc99b1,Trần Ngọc Đức Minh,2020-10-18,2231,t,t,f,True,
+817391,e0123a25b75fab205e8a3aaee07e78a8,Doãn Duy laptop store ,2015-12-23,3992,t,f,t,True," Thành phố Vĩnh Long, Vĩnh Long"
+13821699,b4dc7e7b9b9f3d05e491e3cb9673ab6d,Gia Long,2019-08-13,2663,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+4533106,7c62bcf8d898c23a8b44d52a0ad7035c,Cũ Giá Rẻ,2017-05-09,3488,t,f,t,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+26490597,a41bb0d0e23f1126d5146a2fd364475e,Nguyễn Thị Tố Quỳnh,2024-01-21,1040,t,t,f,True," Quận 10, Tp Hồ Chí Minh"
+1388077,d6861d40957d5301ea26560564d75db2,Võ như tuấn,2015-12-23,3992,t,f,f,True,95 đỗ quang
+739283,a970ef856907a80cc6e5d948075fe6ad,Laptopplusvn,2016-02-24,3928,t,t,f,True," Quận Nam Từ Liêm, Hà Nội"
+18180495,374e7d5443131994e106368afa8367f7,Hitech Store ,2020-10-02,2247,t,f,t,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+3520581,3e5875a72f4632d3e5400de343f10728,Ánh Ánh,2016-10-27,3683,t,t,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+12535295,1694aae59c9ebd1bd622acab7ed545ae,Tin Học Hải Minh,2019-04-18,2779,t,t,f,True," Huyện Nhà Bè, Tp Hồ Chí Minh"
+69835,d3da10b103eb148b7a2fd60bac00a92f,Phúc,2016-02-24,3928,t,f,f,True,"Đà Nẵng , Nha Trang"
+835840,0f700d1979cc758c22bd6829bfa07ddb,Diệp Trương,2015-12-18,3996,t,t,t,True," Hồ Chí Minh, Việt Nam"
+23065791,128340177e45944b286c35b87dc72565,Kim Thanh ,2022-06-20,1620,t,f,f,True," Quận 3, Tp Hồ Chí Minh"
+2256053,53b3bf253d730c7ae1bf3d30e36b0608,Dũng ,2016-03-03,3921,t,f,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+13532843,e5bd3c857d5d6864a702b530bd6eaa2d,Laptop Kim Cương Xanh,2019-07-21,2685,t,t,f,True," Quận 12, Tp Hồ Chí Minh"
+9499,a9c34b3eb9d9098cb3148205d026d18f,LaptopNSC,2015-12-23,3992,t,t,t,True," Quận 12, HCM"
+4508403,022ac8ab9202735356c891d6cbcfc213,Minh Vy,2017-05-05,3493,t,f,f,True,Thành phố Hồ Chí Minh
+19772012,19ab7781f1b17a868d0d8cccfd6953eb,An FA,2021-04-07,2059,t,t,f,True,
+29502322,43b4bfa0017a3836d0d926ea9c6e3ce0,Tân Nguyễn Thanh,2025-07-19,495,t,t,f,True,
+13433981,b6642bf04999ef383568b051561000a4,Thành Tiến,2019-07-11,2696,t,t,f,True," Đà Nẵng 550000, Việt Nam"
+5431803,4513c2245fd05ebad25db606b8b74434,thông,2017-10-29,3316,t,f,t,True," Quận 10, Tp Hồ Chí Minh"
+27754665,7b91bbdab721fed3c1488fca2e955f81,văn hoang,2024-10-15,773,t,f,f,True,
+23310292,4d24da7f9016b9abd504ab2cbd353be9,TTCenter 484 NÚI THÀNH,2022-07-26,1585,t,t,f,True," Đà Nẵng, Việt Nam"
+19590166,effbfd8e6f799b62611f8b8d67d8d9f0,Thaaadaaaa,2021-03-21,2076,t,f,t,True,
+31848112,ea720b8a4d0be8d6da1109338a58cb18,Đức Khoái Laptop ,2026-06-15,165,t,t,t,True," Quận Hai Bà Trưng, Hà Nội"
+14942440,efa72e56b20294b9d8a39a27dbf880e3,Dat Tien Kieu,2019-11-12,2572,t,f,f,True,
+28244500,373a359e437f5df51cbd47880ba8838b,Laptop 2H,2025-01-05,691,t,f,t,True,
+27654195,b52020a4adb8bf166aa4a290d374e0aa,Thanh Hải,2024-09-24,793,t,f,t,True,
+32304077,68757c097c2cf8bc6efedc93231623c5,mua bán đồ công nghệ,2026-08-09,110,t,f,f,True,
+21712487,740a5fa89b5fa210981c9fdb98f18673,CỬA HÀNG VI TÍNH THIÊN LONG,2021-12-01,1821,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+272151,030932e9a8069b8c7c2549b053bbb475,Tùng Dương,2016-01-06,3977,t,t,t,True," Quận 9, TP. HCM"
+4547444,b4d4ecb37a49143bfe4b8425474db4be,GM,2017-05-12,3486,t,t,f,True,HCM
+8845,43f684d646ecde428955553f9ea9b1d2,Nguyễn Thị Mol,2015-12-18,3996,t,f,t,True," Quận Ninh Kiều, Cần Thơ"
+17989848,59e5af9ded1306c3d7fba4b3838dd9f6,Bo,2020-09-12,2267,t,t,f,True,
+2420731,9ef38569cd703bef833e4e74b7506ad4,KHÔI Computer,2017-01-17,3601,t,t,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+31574324,6907913048e7ec488b554d7819a79316,Le Dang,2026-05-10,201,t,f,f,True,
+9752361,603b5bc54563db61a228506d605b4840,Lê Công Hậu,2018-05-09,3123,t,f,f,True," Hồ Chí Minh, Việt Nam"
+9024418,621146af9ae85040d980b009afa25ca8,Long,2018-01-16,3237,t,f,f,True," Ho Chi Minh City, Vietnam"
+9769974,ecd1f710dc1cd4fdac4f8f05404a2db5,Nguyễn thế duy,2018-05-12,3121,t,f,t,True," Quận Tân Bình, Tp Hồ Chí Minh"
+17311520,21b632685065771184cf52f79c6b5ab6,Shop Máy Tính,2020-07-06,2335,t,f,f,True," Quận Hà Đông, Hà Nội"
+36655,0a617ac3e21fd5a1e79b56f53933dc3e,Mr Duong,2016-02-24,3928,t,f,f,True," Hồ Chí Minh, Việt Nam"
+1258122,d4a9ab45b34f249620c89925949bee1f,Văn Dũng,2015-12-23,3992,t,f,f,True,Hoàng Hoa Thám - Tây hồ - Hà Nội
+5528983,6978cc02354488bc0b2932aee25d70ba,Phúc Phát Computer ,2017-11-15,3299,t,f,t,True," Quận Ninh Kiều, Cần Thơ"
+12999995,3746e2af484f97a6ae1e936c5513c18b,Phát Triển,2019-05-28,2740,t,t,t,True," Quận Tân Phú, Tp Hồ Chí Minh"
+24774879,50e7779cc3373692183318db92dd5800,Meo meo,2023-03-09,1359,t,f,f,True,
+29402933,de4c57351fd710ba0df1a7caf332203b,ProG Central,2025-07-05,510,t,f,f,True," Quận Bình Tân, Tp Hồ Chí Minh"
+17901242,5e50bbc58ddf1926bbd6118795d5a8b3,Z Computer,2020-09-03,2275,t,t,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+9935,560285880d110151a2a4128819d9b882,TẤN PHÁT,2015-12-18,3996,t,f,f,True," Quận Tân Phú, Ho Chi Minh City Vietnam"
+29165159,58c5abee548e79a477501052d7b364f4,Phong Tran,2025-05-29,547,t,t,f,True," Quận Hoàng Mai, Hà Nội"
+77527,fcb119e5a127f53cd5cb330fc735dbe7,Sang,2015-12-18,3996,t,f,f,True," Tân Phú, Hồ Chí Minh"
+26090456,f79cbe7d8da9ae286e545eaf9f5ab267,Nhi Trần,2023-10-23,1130,t,f,f,True,
+71732,e3f7b0fb59fe47d504e87bea9021fb50,DUY HAI,2015-12-23,3992,t,f,f,True,200bui dinh tuy f12 quan binh thanh
+24468210,87630b12e5df84194cd01ee6c3be8343,Viễn Huy Shop,2023-01-28,1399,t,f,t,True," Quận 10, Tp Hồ Chí Minh"
+23237221,e3729bd2424590e3b232dcff7a743220,ThinhMac 2HAND,2022-07-16,1595,t,f,f,True," Quận 10, Tp Hồ Chí Minh"
+8708240,705164ce5f0daf7cf88c51355eb2c6a3,Laptop Cũ Giá Rẻ,2017-12-01,3283,t,t,f,True,Đà Nẵng
+25871631,57cf3676830bde7dccc2ace1ca521ea6,Phan Thế Phong ,2023-09-12,1172,t,t,f,True," Quận 5, Tp Hồ Chí Minh"
+22834481,031a640a86e4844949d073cc26778d70,MacBook Giá Sỉ,2022-05-19,1653,t,t,t,True," Hồ Chí Minh, Việt Nam"
+467284,a19387c4a2bbfba78abd2d2faa2d9748,Đạt,2015-12-23,3992,t,t,f,True," Bình Tân, Hồ Chí Minh"
+33083329,13e5f18d45486d2f25bda6489d4c4b8b,Nguyễn Thị Quyễn Nhi,2026-11-25,2,t,f,f,True,
+1743567,16db36a2009cd421dc9957c73ec86068,Đinh Thị Hoài,2015-12-23,3992,t,f,f,True,601/12 cmt8 p15 q10 tphcm
+30843388,8ed835f224430d21a693ceb20f49ddf4,Hoàng Huy,2026-02-11,289,t,f,f,True,
+2103514,1fd4b2a34fc36da07fe1660c2149be73,VũHùng,2016-03-03,3921,t,f,f,True,Go vấp
+11935096,a14754a57496113d8612feae6acb25fd,TRINH LAPTOP SỈ SG,2019-02-22,2835,t,f,t,True," Quận 10, Hồ Chí Minh"
+3643869,40c0771c022aeeb32d86025febf80f26,Nguyen Ngoc Thi Tuyet,2016-11-01,3678,t,t,f,True," District 9, Ho Chi Minh City"
+2066149,d3ac2430c94906e938c0f317efef7161,Suong thinklapus,2016-02-24,3928,t,f,f,True," Hồ Chí Minh, 71910 Việt Nam"
+29250660,843af6d0438232bfe262d637cb90f5b2,Phuong,2025-06-11,533,t,f,f,True,
+446139,799d3bb19bbc244ee2979284c30ca44f,hung,2016-01-20,3963,t,f,f,True, Nguyễn Tư Giản F12 Gò Vấp
+16769424,2fe9dce933645a55546233b0f0272fa8,Truong Le,2020-05-11,2390,t,f,f,True," Quận Tân Phú, Hồ Chí Minh"
+912954,efb0d25bcf3500aa90ec2af841d99a01,tran,2016-02-24,3928,t,f,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+12978467,4db30648f69713e269de430015026b0e,KẺ BUÔN TÁO STORE,2019-05-26,2741,t,f,t,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+2740050,6df6e8539a198b44a68d3c415b4af020,HANG THANH LY,2016-06-09,3822,t,t,t,True," Hồ Chí Minh, Việt Nam"
+4075663,3e2770edcb705a43f31492191ad12452,Hàng Thanh Lý Giá Rẻ,2017-02-07,3580,t,t,t,True," Huyện Bình Chánh, Tp Hồ Chí Minh"
+33092303,38ea27e1eeb6488e78efecea4d4f8175,Anh Vũ,2026-11-27,0,t,f,f,True,
+599016,4dbfa34458ee4d800fbe1dce2d4ec8f0,PHAN ĐINH LĂNG,2016-02-24,3928,t,t,f,True," Hồ Chí Minh, Việt Nam"
+32684358,c3473f2c20ad95a846d2f592cdcf8e95,huy,2026-09-23,65,t,f,f,True,
+32628391,9708566c38ead22714b0d798659c83a7,Phụng Việtt,2026-09-15,72,t,t,f,True,
+25130333,cffd7fcb48a558066f8435fe33efb314,TH laptop,2023-05-03,1304,t,f,f,True," Quận 7, Tp Hồ Chí Minh"
+6364,33839e573d050e8d1cb1cfc3bf7af2e4,Huỳnh Anh Tuấn,2016-01-12,3972,t,t,f,True," Quận 8, Hồ Chí Minh"
+14698517,74afd08ddb628fcec08c69ca8d584e77,LAPTOP PC UY TÍN NGON BỔ RẺ,2019-10-23,2592,t,t,t,True,16/67 phương lưu
+31075748,ac0211bd311617baa63bac51e83762eb,Thuận Nguyễn Duy,2026-03-11,261,t,t,f,True," Thành phố Biên Hòa, Đồng Nai"
+4840317,758d27f6a04230a46dcefe97b8a62941,Phát Tiến,2017-07-10,3426,t,t,f,True," Thành phố Mỹ Tho, Tiền Giang"
+10862842,15ceed283d64b5f9f992115682d55772,Cửa Hàng BT Mobile Chuyên Iphone Quốc Tế Giá Tốt,2018-10-08,2971,t,f,t,True," Hồ Chí Minh, 71406 Vietnam"
+22598069,3ea04e66f789c6f10b36a5d501cbf418,hn,2022-04-15,1687,t,f,f,True,
+31557185,7a292ee6cbc85dc08d256ca98bd8dbc1,Cheese,2026-05-08,203,t,f,t,True,
+8761841,3c5bb0591a39775f7daa3f28c3aef37a,Phong,2017-12-08,3276,t,f,f,True,"Đường Yên Đỗ Phường 1, 72318 Quận Bình Thạnh Việt Nam"
+12296421,a8fb2fee261ff2bab09924a5259e8a57,Hoài Nam,2019-03-29,2800,t,f,f,True," Huyện Bình Chánh, Tp Hồ Chí Minh"
+786,28b892722e8e19f2476868d87662129a,Nguyễn Phi triều,2017-02-27,3560,t,f,f,True," Quận Tân Bình, TP HCM"
+32568016,8ed3ad88d54ff47d164fe039d641ae07,Phú Mỹ Nguyễn,2026-09-07,80,t,t,f,True,
+32074559,e83ec8dc1ac2a72a630485f73fc57fd0,hùng nguyễn,2026-07-12,138,t,t,f,True,
+9620775,fbcc8d6f260f6e0117d51e3e560d16eb,Laptop Phúc Đạt,2018-04-20,3143,t,t,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+1684387,3fdf0afd2b12d6cbb353cf6d1fc6e1ea,Quý Hoàng,2015-12-23,3992,t,t,t,True,Văn miếu
+1583018,090ffe5749f6f8916c6c26d6ce99a752,Nguyễn Chí Ái,2015-12-18,3996,t,f,f,True," Quận Tân Bình, Tp Hồ Chí Minh"
+29195885,67e6c886d47682e575d787f1d3d93310,Laptop YG,2025-06-03,542,t,f,f,True,
+5093074,3d480fd50794a279a02415d4a81c2e94,ĐẶNG HOÀNG PHÚC,2017-08-24,3382,t,f,f,True," Quận Tân Bình, Tp Hồ Chí Minh"
+18372276,eb94be256a09ea3c0e9da83bf7ce0e93,Quý Mobile Cần thơ,2020-10-23,2226,t,t,t,True,"486 Đường 30 Tháng 4 Phường Hưng Lợi, 94116 Quận Ninh Kiều Việt Nam"
+19516307,d7a1e7e35e74641e72d54cf43e5b0856,Nhật Minh Laptop,2021-03-15,2083,t,t,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+29533489,b63674f854e0d4ffc9490b35ca5d6001,Laptop NT1,2025-07-24,491,t,f,f,True,
+4669835,be6ae167796f3ec037be7004c115cf13,vo nhu thanh hoang,2017-06-07,3460,t,f,f,True,Nguyễn dục tam kỳ
+5233236,60149c140ef8c48addca12e45f13921b,Minh Nhựt,2017-09-22,3353,t,t,f,True,
+19877417,d07be3ec6028d12f0ab5baafe2ad9980,Nguyen ,2021-04-18,2049,t,f,f,True," Quận Ba Đình, Hà Nội"
+18629165,8166fb428c4f4a1d036d690f2fb05c31,Tuan AT,2020-11-23,2195,t,t,f,True," Ho Chi Minh City, Vietnam"
+741587,187d43d264f4e94beaffc65f65485519,Toàn,2016-09-26,3714,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+26451699,55706f9d758d324ae6f65b4fb75da244,Laptop và Surface giá rẻ Đà Nẵng,2024-01-11,1051,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+9188933,cef7214ede3339a0728b9af0958cfedd,Hồng Ngọc,2018-02-19,3203,t,f,f,True,
+816426,36fc6ea7ffb86641d163fdd288ff087e,Hoa mười giờ,2016-02-17,3936,t,t,f,True," Quận 3, Hồ Chí Minh"
+17528634,c461f573347b4cfad36ee84edf8ddbc4,Nguyễn hữu thắng ,2020-07-27,2313,t,t,f,True," Huyện Xuyên Mộc, Bà Rịa - Vũng Tàu"
+16219899,edd83f8ca7fd0c5c6984c4691afa9a3b,Macbook Gia Re,2020-03-15,2447,t,t,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+24173464,588b5460422dd9905ad7f14aaeba2ad6,Laptop AN NAM,2022-11-22,1466,t,t,t,True," Huyện Mộc Hóa, Long An"
+477652,4c8ca574fa938e247bbd298830727d62,Hùng,2016-02-24,3928,t,f,f,True," Thành phố Dĩ An, Bình Dương"
+27178142,e60ce6becb425b507e0d142d7c78956c,TT CENTER,2024-06-19,891,t,f,f,True," Quận Ninh Kiều, Cần Thơ"
+9776594,236e1a84f0bea504bd6a694afb7cea92,Thắng Trần,2018-05-13,3120,t,f,t,True," Hồ Chí Minh, Việt Nam"
+31383393,ce1187ddf70dd54ad5e3c4da465b3d3d,Hoàng Ngọc Anh,2026-04-14,226,t,f,f,True,
+33087776,63b69432988d5533a8cc451b7381b399,Nghĩa Endy,2026-11-26,1,t,f,f,True,
+33093039,1a2a4126d4f1373e4154b40065617d88,Xuân Long,2026-11-27,0,t,t,f,True,
+93151,5008f38a3ddd8c253add1be6d8723660,Cầm đồ Anh Quốc ,2016-11-01,3678,t,t,t,True," Quận Tân Phú, Tp Hồ Chí Minh"
+14910221,0ba33bffd97983fe8743b092702c4437,Ri,2019-11-09,2574,t,f,f,True,
+32506115,b15d8c68dc8e56bc793f77eb127fb1ca,Mai Thanh Vinh,2026-08-30,89,t,f,t,True," Quận Sơn Trà, Đà Nẵng"
+30782642,7f7fa7dc7bff45ce51633e6dc98861fc,DzungPhan,2026-01-31,300,t,f,f,True,
+24727383,d905df4a75eb5e3b57dfe06c8af22839,Hoà Đỗ,2023-03-03,1365,t,f,t,True," Hồ Chí Minh, Việt Nam"
+1662408,934362421360baff6caaef66e0bbb972,Trần Ân,2015-12-23,3992,t,t,t,True," Quận Tân Phú, Tp Hồ Chí Minh"
+3138497,8425bc71e557e6bdbaf72fc8d7e450e9,LAPTOP XÁCH TAY NGUYÊN ZIN,2016-08-25,3746,t,f,t,True," Quận Bình Tân, Tp Hồ Chí Minh"
+1691274,236baf1d2b37e0b1a6416ae698e4a7dc,Thái Hữu Tín,2015-12-23,3992,t,f,t,True," P. BHH, Q. Bình Tân (Hẻm 764 Lê Trọng Tấn)"
+28503093,b4401e86cd6704a723e9842378078a32,Dat,2025-02-19,645,t,f,f,True,
+1998739,ad14ade7466d4fccac27186610d9a6d2,Laptop Tại Gia,2016-12-07,3642,t,t,t,True," Quận 12, Tp Hồ Chí Minh"
+32806929,e195e47a620f7e8313eecfd7a34b747b,Ân Ng,2026-10-10,47,t,t,f,True,
+142734,66747f7be73ec42f766747958b3305f8,Anh Tuan,2015-12-23,3992,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+1196991,adc4475d48d4031d0a1f0b490f1f802f,Cơ Nguyễn PC,2015-12-23,3992,t,t,f,True," Quận Đống Đa, Hà Nội"
+32920143,86d86bcf6ab7fc7ea89636f455a0d813,Nguyen Van Tam,2026-10-27,31,t,f,f,True,
+12606829,6cf2cfdd21a23aff17b3ddf521226288,Trần Hải Nam,2019-04-24,2773,t,t,t,True," Hồ Chí Minh, 71406 Vietnam"
+31904076,7445106d18a2bb27dd0b571ee2182c75,Hiệp,2026-06-22,158,t,f,t,True,
+2720010,3fd81c0a60380164e6e9a6911ec4d4e5,Nguyễn Hoàng,2016-06-15,3816,t,f,t,True," Thành phố Buôn Ma Thuột, Đắk Lắk"
+10457333,a2ae21cc2cd4a74421a60e146529bc3c,Bảo Bảo,2018-08-15,3025,t,t,f,True," Hồ Chí Minh, Việt Nam"
+21400036,dd79b963055148f4891e618991dd3bfb,phong,2021-10-15,1869,t,t,f,True," Lâm Đồng, Việt Nam"
+26411850,113ccf1a0ddc63ce58e92d382f37a09c,Nguyễn Nam,2024-01-01,1060,t,t,f,True,
+2717451,d274f02c1ea16f170c840ca0d505dd71,TicoSmartphone,2016-08-31,3739,t,t,f,True," Hà Nội, 11313 Việt Nam"
+351281,9ae0a2af0bfe70dd7a0281e5208ca042,Hữu Tài Computer,2016-02-24,3928,t,f,f,True," Thành phố Vĩnh Long, Vĩnh Long"
+33092780,184432fb2ab444a300d3c41152d5679e,Thế Thắng,2026-11-27,0,t,f,f,True,
+15413205,f16df8f1d480e056b4acc0ae1817e713,Nguyễn Ngân,2019-12-21,2532,t,f,f,True," Long An, Việt Nam"
+8807876,0d4ddbb5ea5ce07d3ec199324f5e36b0,Nguyễn Đình Nguyên,2017-12-14,3270,t,f,f,True," Ho Chi Minh City, Vietnam"
+5026190,b5d16b223f5e152625fe4d7a3d2cada8,le cuong ,2017-08-11,3395,t,f,f,True," Nha Trang, Khánh Hòa"
+23927561,404129b7add7f262591f8faad824114d,sang hoàng,2022-10-17,1502,t,f,f,True,
+242379,d96e2cc135e5b511437f04e1eb6bffca,ChocoPie,2016-11-01,3678,t,f,t,True," Quận 12, Tp Hồ Chí Minh"
+38914,6851e8212ffddd027473cc5188a1ed9d,HBA LAPTOP Mua Bán Ký gửi ,2016-02-24,3928,t,f,t,True," Hồ Chí Minh, Việt Nam"
+2163013,52441464baec23636ce553f97e2de8fa,VõHữu,2016-03-15,3909,t,t,f,True,Q10
+12114669,7dea8f7ebab2eff485282da76d0a4294,NQ Laptop,2019-03-12,2816,t,t,t,True," Huyện Đông Anh, Hà Nội"
+25161410,d940e066235fd4c7828541ee1ac06f4c,Nguyễn Thị Bích Vân,2023-05-09,1298,t,f,f,True,
+3517895,c31a4fe2ebdd4869e525d320b0ad1885,Bảo Táo Store,2016-10-27,3683,t,t,t,True," Quận Đống Đa, Hà Nội"
+24168101,0dd986d8e80fce6c1f0bea894d65f896,JapanLikeNew,2022-11-21,1467,t,f,f,True,
+32986159,387abb6230373e4336b8ae3387703b3e,duykhanh,2026-11-07,20,t,f,f,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+31713007,a2b2b16ab70d886adcbbdafbea4b9341,Bảo Việt,2026-05-28,182,t,f,f,True," Quận Hà Đông, Hà Nội"
+3909332,f6ddfd600ed90f57ac43646c8c3f01cb,Laptop COHOTECH,2016-12-26,3623,t,f,f,True," Hồ Chí Minh, 72120 Vietnam"
+9779074,630d497fa574c65954d4cefeaf661a7e,Laptop nhập khẩu Mỹ Nhật giá rẻ có bảo hành ship COD Toàn quốc ,2018-05-13,3119,t,f,f,True,"Hồ Chí Minh, Việt Nam"
+4075767,3f03b2c0df54a982a2e5e1cd3801e661,VZ COMPUTER,2017-02-07,3580,t,t,f,True," Thành phố Huế, Thừa Thiên Huế"
+26210386,307b7baebd3975b226c05b31babecb51,Nguyễn Gia,2023-11-18,1105,t,t,t,True,
+24937053,59dafa7a51f8d91017fdaee20215b53e,Laptop Zen Protech sỉ lẻ,2023-03-30,1337,t,f,t,True," Thành phố Dĩ An, Bình Dương"
+24461587,31ed2f41aac44ec546d9e332839b53c4,Kiều Sơn,2023-01-27,1400,t,f,f,True," Quận Thanh Xuân, Hà Nội"
+4444811,3fec3c94d476f093e427d7b595d5f3ab,Tuấn,2017-04-22,3506,t,t,f,True," Quận Thanh Xuân, Hà Nội"
+32002827,1299a382a4db479f506fe3435765c100,MR THÔNG ,2026-07-03,146,t,f,f,True,
+32109743,2939217e0058ed85b8463311cd2275e2,Nam Đường Láng,2026-07-16,134,t,f,f,True," Quận Đống Đa, Hà Nội"
+22872036,7e773e931f33c6f341f65f40dd8c43e5,Laptopgiacao,2022-05-24,1648,t,f,f,True,"86 Đường Làng Tăng Phú Phường Tăng Nhơn Phú A, 71207 Thủ Đức Việt Nam"
+18423349,aa194a689cacad97699af447fbb0339b,Cửa Hàng Máy Tính Laptouch VN,2020-10-29,2220,t,f,f,True,"184/9 Hẻm 184 Điện Biên Phủ Quận Bình Thạnh, Ho Chi Minh City Vietnam"
+64943,8889dc5f08dec8bf33f34ee43694fc85,Tống văn Kien,2015-12-18,3996,t,f,t,True,Số nhà 98 ngõ 42 triều khúc
+31908,a83b8fcf272ae6dfaf6602a5f7e79362,Ng GiangNam,2015-12-18,3996,t,f,f,True,KP9-Tân Biên-Biên Hòa-ĐN( Sau Lưng Bệnh Viện Thánh Tâm -  Hố Nai)
+29118696,54f090ec1aff863eab2cf87eb55b0c05,Tấn Vũ Bat,2025-05-22,554,t,f,t,True,
+126835,83a7cf76db4243c5c623877c434bc11f,tuấn,2016-02-17,3936,t,f,f,True,Thanh xuân
+5030572,bfd54a3a6823493941a61c3dbdc4158f,Tín Phát Apple,2017-08-12,3394,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+77830,1f5358d260abf5e2c6412c600d9df679,LAPTOP TUẤN ĐẠT ,2016-02-24,3928,t,t,f,True,354 -ngũ hành sơn -quận ngũ hành sơn -thanh phố đà nẵng
+31126892,97ee4d1291aa9485fd19d11458fc321a,Laptop Phát Minh,2026-03-16,256,t,t,f,True,
+18565,2b8b6180ee616e9ffdbde3481cc3666e,LAPTOP THẢO NGUYÊN,2015-12-23,3992,t,t,t,True," Quận Liên Chiểu, Đà Nẵng"
+21381385,52a49724fbb3dc802822dafec528d032,TP Store Chuyên IPhone Samsung,2021-10-12,1872,t,f,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+28941958,9bf74d853d92bd09df3ea5437c2f05bd,Nguyên Khang Store,2025-04-24,582,t,t,t,True,
+26112158,2ba2776cd92763d2fe0326864884248f,Phạm Thừa Khai,2023-10-28,1126,t,t,f,True," Quận Ninh Kiều, Cần Thơ"
+28986,5b26f5f133beceae036ed75d2a6bed26,Huỳnh Thắng ,2015-12-18,3996,t,t,t,True," Thành phố Thủ Dầu Một, Bình Dương"
+21374492,45f7b2b47a4b3984c730ba5624e565ff,LƯƠNG TÂM THỊNH,2021-10-11,1873,t,t,f,True,"Ho Chi Minh City (Hồ Chí Minh), Vietnam"
+521327,eefdd170431f2e3453d0fa2d12d84dfc,Laptop xách tay Mỹ,2016-02-24,3928,t,t,f,True," Quận 10, Tp Hồ Chí Minh"
+32823547,e7cb369c8e91f068ee5412e4df6cc70a,Nhật,2026-10-13,45,t,f,t,True,
+21635429,7a8647f34b372119bcec62e05f3182c3,van toan,2021-11-20,1833,t,f,f,True,Quận Cầu Giấy Hà Nội Việt Nam
+2546281,2b91a5e6f055754a11dde6542221b4c4,Mr,2016-05-18,3845,t,f,f,True,"Phan Xích Long, Hồ Chí Minh"
+24918802,2065a8ab9e7d6d0738b3a63bb3b1e893,Hùng,2023-03-28,1340,t,t,f,True,
+3976037,2738462690556f916d7ebf7f7c3c82cf,PHAN MINH MB,2017-01-10,3608,t,t,f,True," Quận 5, Tp Hồ Chí Minh"
+31038827,9a9493efbb6b92fa3f1f4dbc2a8ba67b,Hong Chuong,2026-03-07,265,t,f,t,True,
+5251219,b429d8d85761ce7e28cf5f5e3a98d648,Hoàng Trọng,2017-09-26,3349,t,f,f,True," Bình Thạnh, Hồ Chí Minh"
+12054582,7046f24effb196c45639a8f04ddd5385,Thái sơn,2019-03-06,2823,t,t,f,True," Phường 7, Quận Gò Vấp"
+25835471,4279c828a2578ec88eb74be21f648f9c,Nguyễn Quý,2023-09-05,1178,t,t,f,True,
+1319814,205e0937f276876a687219bd495e6999,DIEU HOA,2016-02-24,3928,t,f,f,True," Quận 1, Tp Hồ Chí Minh"
+26327826,e48357be4e8cf09396772a53e5408767,Hoàng Bách ,2023-12-12,1081,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+2911947,8b24cf041c8f1e776877d1830cc84fe3,Mai văn giang,2016-07-14,3788,t,f,t,True,26/7B nguyễn bỉnh khiêm phường đa lao quận 1
+23672055,1c1c075dbb215bb641e20d32f717ed78,Xe Máy Ngọc Hưng,2022-09-12,1537,t,f,f,True,  Xã Tây Hòa Huyện Trảng Bom Đồng Nai
+3563301,45db9d5ed0757835d110efde934d65a8,Tuấn,2016-11-01,3678,t,f,f,True,Đà Nẵng
+2703577,d51e113a388ec579c64e00a9a30010cc,Chương Decal,2016-06-09,3822,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+4619917,5230efd31cb10be7fc8ea8b3819a060f,Tuanduy,2017-05-28,3470,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+26824643,e6dd28964f0869aece862961f1d04926,Trần Văn phú,2024-04-04,966,t,f,f,True,
+1466602,bbca6cb4437d62fdbeb8a5ca1bce6798,Sửa xe Hưng,2016-02-24,3928,t,f,t,True," Quận Gò Vấp, Hồ Chí Minh"
+2526971,62804135e116578b9d3e13cddbf27489,Trần minh Tạo,2016-04-29,3863,t,t,f,True,Cần Thơ
+28675725,1b10e3b0b4c11c1a32beeadc6936ff02,Nguyễn hiếu,2025-03-15,622,t,f,f,True," Quận Liên Chiểu, Đà Nẵng"
+867073,0d171e85497d1dc4f3d35c403aa8c80f,Phan Tấn,2016-02-24,3928,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+4740308,ee1364a965c683893f6de16262f24c78,Vunghia,2017-06-21,3445,t,f,f,True,Hà nội phố
+5092260,7ff9ec848ad5b929874d4365068908c3,Ti,2017-08-24,3382,t,f,f,True," Cần Thơ, Việt Nam"
+11587438,98e286f002dbe8701d4200573e80cd76,Xe Máy Thảo My,2019-01-01,2887,t,t,f,True," Hồ Chí Minh, Việt Nam"
+4543757,671050badbdc28d589f8067197144581,Văn Sắc,2017-05-11,3486,t,f,f,True," Hồ Chí Minh, Việt Nam"
+26684929,df6c548a1eda75b685963470272efc92,XE MÁY THỊNH PHÁT XE LƯỚT GIÁ RẺ,2024-03-08,993,t,t,f,True," Quận Bắc Từ Liêm, Hà Nội"
+1123864,8e40c48c85bcf57ed5a521e0e56bacd3,Xe máy Việt Trần,2016-02-24,3928,t,f,f,True,Bà Rịa - Vũng Tàu
+9804356,4404dc87a27f9dfdf582b5ff9fcbe594,XE MÁY BÀ RỊA,2018-05-17,3116,t,f,f,True," Thành phố Bà Rịa, Bà Rịa - Vũng Tàu"
+29851355,b1d81d63aec5bb738baef0cab5531686,xe máy quốc hưởng,2025-09-08,445,t,f,f,True," Quận Hồng Bàng, Hải Phòng"
+22635939,eec5c24fc5429c58f557b46c93106ea4,Pham Quang Dung,2022-04-21,1681,t,t,f,True,
+20720164,ed0a824711deac2ae84a8729485b4dc4,Tong motor xe may,2021-06-02,2004,t,t,t,True, Phố Quan Hoa Phường Quan Hoa Quận Cầu Giấy Hà Nội
+219307,110c63ce4bb89830575ea09b3b6c7484,nguyenxuanthinh quận tân phú ,2015-12-18,3996,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+29523453,204d60efea9b2d6b0e8fbb65baa4a5de,Nguyễn hảo,2025-07-23,492,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+3419813,d1358066841d7bb64f1fe8c7797fcdaa,LÊ TRUNG VIỄN.,2016-09-26,3714,t,f,f,True,Hồ chí minh
+4992504,94d9b40db128e74dd89b810fc495696d,CHXM Thanh Hồng hẻm 233,2017-08-05,3400,t,f,f,True,"227-15 Nguyễn văn cừ thành phố cần thơ , hẻm 223 "
+1115326,a93dd96d2960cea25e137fcee81521a9,Hậu phương,2016-02-24,3928,t,f,f,True," Huyện Châu Phú, An Giang"
+25067869,3faf91b053ab5a749a9a5f7a6397a95c,xe ga Phát Lộc,2023-04-20,1317,t,f,f,True,
+5373492,7cd1adcf66ae4fc0ee18c923221fbc44,Tên chưa cung cấp,2017-10-18,3326,t,f,f,True,
+15614209,f6dc94430a7dfa77a3b3f6e39bca9105,Nguyễn Trọng Hồng,2020-01-14,2508,t,f,t,True,"Đường 36 Xã Phượng Mao, Huyện Quế Võ Việt Nam"
+1079050,8fd0a5b9b76bf654ad5094eef4ddacab,Hưng Từ,2016-02-24,3928,t,t,f,True," Quận 6, Tp Hồ Chí Minh"
+10458341,26cff7de147666bce067b116eaec7ac2,Lê Bình,2018-08-16,3025,t,f,f,True,
+4911626,90ae15f47f1c9b0102dbb871cbd8c8d7,Minh sơn,2017-07-22,3414,t,f,f,True,
+12280754,97e6b79d89606c1f0a10af5549681db3,Tiến Tạp Hoá ,2019-03-27,2801,t,t,t,True," Quận Ô Môn, Cần Thơ"
+18920941,c14fefb031a9586d0edb40e521e01d18,Nguyên Phạm,2020-12-30,2158,t,f,f,True,
+27006795,145d3b3777f1bf6ccff77f0fb956ba6f,Vo Nikki,2024-05-13,927,t,t,f,True,
+30007849,22ff7647154768169d167d32e14200e1,Nguyễn Đức Tùng,2025-10-01,422,t,f,f,True,
+242135,e26f43df5075f79f70e98ac0e8f7414c,tú anh,2016-09-26,3714,t,f,f,True,Qtp
+23017205,77694cc7a1428b726ecbac34176e484c,truc han,2022-06-13,1627,t,f,f,True,
+8778602,42a5be1e640966adb7aebf8be09865b0,Nguyễn hoàng thiện,2017-12-10,3274,t,f,f,True,
+138712,990368582e4f396254b2b272bb7d584a,Nguyễn văn Hùng,2016-02-24,3928,t,f,f,True,316/3.Hoàng Hoa Thám.P1.Gò Vấp
+9236539,c8aef84664ee036f2235e30dabb15fd5,Nguyễn Tấn Thành,2018-02-27,3194,t,f,f,True,
+8848263,5e0e15ff065db67daa9727a5c262412c,nguyễn hoàng thiện ,2017-12-19,3264,t,f,f,True,
+4698518,ca7af7ea365a600e2e8b35a7ab1cc4f6,quốc bảo,2017-06-13,3454,t,f,f,True,
+2461166,a57c2a2d9586ba3d3049b2ec8a6a722e,xe máy cũ Miền Nam Anh Duy,2016-04-29,3863,t,f,f,True," Huyện Đơn Dương, Lâm Đồng"
+24573096,2f990bf36d7eff134bf10e4b651509c8,Hùng Nguyễn Xe Kiểng,2023-02-12,1384,t,f,f,True,
+16482845,49b95a1bf637b27123ceb77bee4367c7,đang van thng,2020-04-12,2419,t,f,f,True,
+552733,6bec12852da6c8df6af95e35c092265b,Cửa hàng xe Thiên Phước 2,2016-02-24,3928,t,f,f,True," Huyện Chợ Mới, An Giang"
+25570484,38ada02ef044d2da3e31ab8115a71182,Xe Máy Minh Tuấn,2023-07-21,1224,t,t,f,True," Thành phố Bà Rịa, Bà Rịa - Vũng Tàu"
+28660862,30d61aef5bd1cf807a828751f228cc2b,Lập Phương,2025-03-13,624,t,t,f,True," Quận 7, Tp Hồ Chí Minh"
+5285836,a769e1de711f5e4f4dabef6f9080ea28,khánh ngọc cầm đồ,2017-10-03,3342,t,f,f,True," Huyện Di Linh, Lâm Đồng"
+25325735,a118f99d5dcd8d63a9629e788910bd38,minh,2023-06-09,1267,t,t,f,True," Thủ Đức, Hồ Chí Minh"
+32961772,cf28a6593b854578f0eef7befaf7b8f4,Minh Phúc,2026-11-03,24,t,f,t,True,
+23314223,6a439f28e65827e76b87ab737a21a160,nts,2022-07-26,1585,t,f,f,True," Quận Bình Tân, Hồ Chí Minh"
+287856,49c2a067329a2105f43cb43b8b9aed4a,Xe Máy Thành Chung,2016-02-24,3928,t,f,f,True, Đường DKA5 Xã Thới Hòa Thị Xã Bến Cát Bình Dương
+1377976,a9be7c4c454ef65e6322baa137558082,ĐỨC DŨNG SUỐI TIÊN,2016-09-26,3714,t,f,f,True," Quận 9, Hồ Chí Minh"
+26581752,6a752e67f68e507b5421e3fde2adca68,Lê Hạnh,2024-02-19,1012,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+27342070,7b531302dbeb626aa5377ab26e4e55e9,Lê Trung Tín,2024-07-23,857,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+1898341,6356c1332be8022081f98babbf416586,XE MÁY HẢI THANH,2016-01-20,3963,t,f,t,True," Quận 12, Tp Hồ Chí Minh"
+16973661,1291296c314098eaf4a239fe138b2bf8,Anh Phúc,2020-06-01,2370,t,f,f,True," phường Bình Khánh, Q2"
+8767089,20c3543ca1a916b891dd915031390d62,Nguyễn Phi Kiển Phong,2017-12-08,3275,t,f,f,True,ấp hòa trung xã sơn hòa bến tre
+27905669,9f983a2dda3dc4675503f9a1bf62526e,Minh hoang Ho,2024-11-10,747,t,t,t,True,
+19028830,c535be56e6ae500bdd0fc31b8d20f9b1,xe39com,2021-01-14,2143,t,f,f,True," Hồ Chí Minh, 72216 Việt Nam"
+25566233,2ddfe33e8f51b3932139cda3e5375f59,PhiLong,2023-07-21,1225,t,f,f,True," Quận 1, Tp Hồ Chí Minh"
+26441922,b23c0f188717b2e3f3c75adce5cd7ede,KENSA XE CŨ 5 Sao,2024-01-08,1053,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+783789,ca6a5873b9d0e314e16e27fe24eb1833,Trường,2015-12-18,3996,t,f,f,True," Huyện Đất Đỏ, Bà Rịa-Vũng Tàu"
+14025762,24e7d3cf1dca6ad4bb3a166af3d11c93,Trần văn Tuấn ,2019-08-27,2649,t,f,f,True,Ha nôi
+20677898,371588436885b789950b266bc58c8755,Nguyễn Minh Hoàng,2021-05-28,2009,t,f,f,True," Huyện Củ Chi, Ho Chi Minh City Vietnam"
+5483335,5eadf2ebaf43b64e018e6ff0e34efff2,Ma Lâm,2017-11-07,3307,t,f,f,True, Hẻm 345/34 Nguyễn Văn Công Phường 3 Quận Gò Vấp Hồ Chí Minh
+4473509,5b106db47966a519a92bf04908f349e5,Anh Thịnh,2017-04-27,3501,t,f,f,True," Hồ Chí Minh, Việt Nam"
+10934417,3eb80c448fb3f48cba7b71201dca3d69,Linh,2018-10-16,2963,t,t,f,True," Quận Bắc Từ Liêm, Hà Nội"
+20706762,dcad44cc64c61aa2049551afdc5e02f9,Huỳnh Ngọc bảo ,2021-05-31,2005,t,f,f,True," Ho Chi Minh City, Vietnam"
+198601,1d3c286006c7c02bcb23f985dc869fa1,đạt,2016-01-06,3977,t,f,t,True,Tphcm
+13722695,f0b73688187738f68de861dc1beb7511,Đức Thịnh,2019-08-06,2669,t,f,f,True,
+4880696,32d54da8421802153837ac1aa8d12ee0,Vạn Thành ,2017-07-17,3420,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+28685987,83e1bfe5ba200993a7e4ad2523eaa824,Huynh Duc Thang,2025-03-16,620,t,f,t,True," Huyện Xuân Lộc, Đồng Nai"
+28475,a2d1604b7f77136ac54244be528669ad,Ngoc tu,2015-12-23,3992,t,f,f,True," Huyện Nhà Bè, Tp Hồ Chí Minh"
+13508632,a1c135cbe279fa9db61fc9f9b49926db,nguyễn nguyễn,2019-07-19,2688,t,f,f,True," Quận 5, Tp Hồ Chí Minh"
+31747293,87451ecfad5d50026a970d1929e29a41,Văn Minh,2026-06-02,178,t,f,t,True,
+10979111,10290c9487bee7213a9cb4a23a564b9b,tran thang,2018-10-22,2958,t,f,f,True,
+11817931,332d4f55690c7031f261d28e34d42e5d,Lê Xuân Thứ,2019-02-09,2847,t,f,f,True," Hồ Chí Minh, Việt Nam"
+1685500,3cd78ddb55b7b20141d8ad46fd7e521a,Vinh,2015-12-23,3992,t,f,f,True,Vinh
+12878920,31cc63b49185df4e115877afd204d802,Xe Cũ Hiếu CT,2019-05-18,2750,t,f,f,True," Quận 7, Tp Hồ Chí Minh"
+1978476,be676d1328b3ae3e30f7086d39693644,Châu Phước Vinh,2016-01-20,3963,t,f,f,True, TL.942 Xã Mỹ An Hưng B Huyện Lấp Vò Đồng Tháp
+15681751,b094d30c6e7ec0d39ed474d17b7a543a,tú,2020-01-27,2496,t,f,f,True," Trảng Bom, Đồng Nai"
+4581096,4ee7ce2bb859730a0522bd1f7382fe8e,sam sung,2017-05-19,3479,t,f,f,True," Hai Bà Trưng, Hà Nội"
+22342223,3b875c0a2a97debea0881e21585a11b0,Hi,2022-03-09,1723,t,f,f,True,
+29188875,58c99458ec594a7f5b11af5c5dc91643,Nguyễn Đức Thịnh,2025-06-02,543,t,f,f,True,
+4675004,d85de25784f4b12e2814375505767068,Nguyễn duy,2017-06-08,3459,t,f,f,True," Hồ Chí Minh, Việt Nam"
+5231223,998bfc00cde7ca172a78e95ef088ab0f,Xe Máy Hoàng Thọ ,2017-09-22,3353,t,f,t,True," Huyện Hóc Môn, Tp Hồ Chí Minh"
+25771848,b27be7ef51639a4971589dfd443a4ada,Lương Trung Thịnh,2023-08-24,1190,t,t,f,True,
+140270,4dc92906bd298e327098bebbdaa8ebde,Đại,2016-02-17,3936,t,f,f,True," Huyện Lấp Vò, Đồng Tháp"
+21837210,e0e83f77fe0928b85573cb5c76768ea2,Hoàng Hậu,2021-12-20,1803,t,f,f,True,
+1314158,9d8eeb21020ed13729db48c22b00e4ac,Nguyễn thị ngọc yến,2015-12-18,3996,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+2794877,f86362d427d29dc5f6d46e3a1936fbe9,Đức Anh,2016-06-15,3816,t,f,t,True," Quận Tây Hồ, Hà Nội"
+5183971,65017b47e7a4fd2ca23f4bee6401e816, long việt ,2017-09-12,3363,t,f,f,True," Thành phố Nam Định, Nam Định (Ninh Bình mới)"
+20726461,6115fd8fc9ab40aca572828ac28a60d7,Đàm Hiếu,2021-06-03,2003,t,t,f,True," Hồ Chí Minh, Việt Nam"
+26942573,3b40e05bbf8e062fd458a9c3012db9aa,Đinh An Duy,2024-04-30,941,t,f,f,True," Quận Tân Bình, Tp Hồ Chí Minh"
+32023331,915972c7d7578852d29a4280c79bf7c3,Sang Ec,2026-07-06,144,t,f,f,True,
+32426279,149181a869ff9060845e7bea3b28cb9b,Minh Quân,2026-08-20,99,t,f,f,True," Quận Cẩm Lệ, Đà Nẵng"
+3300598,6cb0ce9e08c43771aaf893fc8fee43b7,Dũng,2016-09-22,3717,t,f,f,True,Hóc môn
+1355588,b5700663ca0c9e017b8d415e06fe42d5,a tien,2015-12-23,3992,t,f,f,True,"Trường Chinh, Hồ Chí Minh"
+1025315,81cce7ef5b056e47a2d0352c8e013035,HỘ KINH DOANH DƯƠNG VĂN CƯỜNG 1991,2015-12-18,3996,t,f,f,True," Quận Cẩm Lệ, Đà Nẵng"
+32947543,b9ebe0403d9bc27c8df414a4b4010399,Hien Nguyen,2026-10-31,26,t,t,f,True,
+31322697,3baa66dad2179d0589f024e1a60073cf,Linh Bá Nguyễn,2026-04-07,234,t,t,f,True,
+14834946,b57b594d5e38f3ff26bc8ac2b0c3df76,Trí Nguyễn Xe máy 68,2019-11-03,2581,t,f,t,True," Quận Gò Vấp, Hồ Chí Minh"
+32749169,dde24b8fd63be94d80891b5e9878722e,dung,2026-10-02,56,t,f,f,True,
+1906384,74b4c617dcc30a39ec8838e608b481e1,Nguyễn Hoàng Minh ,2016-10-13,3696,t,f,f,True,Hà Nội
+206119,961413b1f2877f14265387287b77f5b6,Ngô Hà,2015-12-18,3996,t,f,t,True," Phường 9 , Quận Phú Nhuận"
+11640756,fd246e4b2c1d8d875ec8c0cbd187c91a,Cầm đồ thanh lý,2019-01-08,2880,t,f,f,True," Huyện Bình Chánh, Tp Hồ Chí Minh"
+4857889,0133f97ac446c538b30622dec8a770b6,Cửa Hàng xe máy Hoàng Hải,2017-07-13,3424,t,f,f,True," Ninh Kiều, Cần Thơ"
+25683971,23b5c35a40f9e3e14e67932796e5cf98,Pham Thanh Vượng,2023-08-10,1205,t,f,f,True," Quận 8, Tp Hồ Chí Minh"
+9141866,ddd5bf45ddc4e61d418540c84bb19fee,Hiêu,2018-02-05,3217,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+31395105,08deead5e9d1e124d77446a594bb457f,Khánh Linh Tô,2026-04-16,225,t,t,f,True,
+32361016,7122d76105ba428db21d5db68c41bf35,Xe Điện 3sGo,2026-08-14,105,t,t,f,True," Quận 12, Tp Hồ Chí Minh"
+4537748,043f1ac68268feb4ab4037dfa6f551a4,Kim Hoàn,2017-05-10,3487,t,t,f,True," Huyện Đất Đỏ, Bà Rịa - Vũng Tàu (TP Hồ Chí Minh mới)"
+21213800,c8b4841e25933342037639f36daaf2b5,I TA LI ,2021-09-06,1908,t,f,f,True,Hồ Chí Minh 
+3763984,c52afdcb5836aa531bb897860a2b3d19,luân,2016-12-02,3647,t,t,t,True," Quận 12, Tp Hồ Chí Minh"
+2771944,50a3e5802e802f334b8015d4dad2cf96,TUẤN MOTOr 263 lý triện Đà Nẵng ,2017-02-27,3560,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+831900,a639de55c5f93dba105de0f328cb5239,DŨNG HOÀNG ,2015-12-23,3992,t,f,f,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+9334689,59acba306450682cae9e9577d608bcfd,Xe Máy Tấn Hiền ,2018-03-13,3181,t,f,f,True," Quận Nam Từ Liêm, Hà Nội"
+805818,f1697a71a64ddb2e5af73f3c0d608c03,ba hai ba,2016-02-24,3928,t,t,f,True," Quận 11, Tp Hồ Chí Minh"
+15711158,80b765f6952ee209de4a55416e7b4217,Trần Văn Lộc,2020-01-31,2492,t,f,t,True," Hồ Chí Minh, Việt Nam"
+17230259,b8a57e237d7f0e84b73499d005ac8dce,XE MÁY HOÀNG YẾN,2020-06-28,2343,t,t,t,True," Quận Ninh Kiều, Cần Thơ"
+62991,d04919411ce7622eb55df15e659d2a52,BINH MOTO,2016-02-24,3928,t,f,f,True," Quận Tân Phú, Hồ Chí Minh"
+27829630,be376ef22de9956663c7451ae885af98,Xe Máy Trường An Phát,2024-10-30,758,t,f,f,True," Thành phố Huế, Thừa Thiên Huế"
+10317590,d1b2482da54c138e1bf6cb79ca864c89,Huy,2018-07-28,3044,t,f,f,True," Bình Tân, Hồ Chí Minh"
+1525256,eba8ac64640f9960a271045dd7363e5d,AnhD,2015-12-23,3992,t,f,f,True,"Trường Mầm Non di Trạch Huyện Hoài Đức, Hà Nội Việt Nam"
+23336996,d91091e574863733b073724fe69c09f4,Tấn Thành,2022-07-29,1582,t,f,f,True,"827 Đường Lê Văn Lương Xã Phước Kiển, 73207 Huyện Nhà Bè Việt Nam"
+10287851,59c37c0aa641236ae17028173c4ee70b,Trần văn thanh,2018-07-24,3048,t,f,f,True,Du nội-mai lâm -đông anh-Hà nội
+29820725,01e8a1ee935cf478786e9ab6665a0e91,Nguyễn Thuyết,2025-09-03,450,t,f,f,True,
+444900,6141d4e1867e1d93bfa00a0d2fb0ea12,Hoàng Anh,2015-12-23,3992,t,t,f,True,"Quận 12, Ho Chi Minh City Vietnam"
+18849101,6320d325eb614dfea9d6a0c332f02da7,Đoàn Khoa,2020-12-21,2167,t,f,f,True,56/32  Phường 5 Quận 8 Hồ Chí Minh
+16015843,27984653a11c8077627a8fa17cad8100,Lan Phương,2020-02-26,2466,t,f,f,True," Quận Nam Từ Liêm, Hà Nội"
+17087651,43ac7b69817f51568a1055f91bcbb06f,nguyễn thị hà,2020-06-13,2358,t,f,f,True,
+1511358,782517082ea5b062bc7eefb574dae785,cuong cuong,2015-12-18,3996,t,f,t,True," Huyện Củ Chi, Hồ Chí Minh"
+32921675,ce5516ad87e8ee9461ed54e0d43c8931,Lam Phương,2026-10-27,30,t,t,f,True,
+31064820,50e344cca5e3c9fb954017f853e8b729,Camera Pin Thẻ Nhớ,2026-03-10,262,t,t,f,True,
+29130014,02673e6e697dbad1306408cf18d06797,Trần Cường,2025-05-24,552,t,f,f,True,
+33077041,d695e56cf6173c88707f764416fbdb4d,Nguyễn Trần Thanh,2026-11-24,3,t,f,f,True,
+4785297,f73fef3d46ec9fed73aaa990ea47f969,Quyphan,2017-06-30,3437,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+669042,cd9b355211a3fce4ddda04d012c23fb1,Trần Đặng Thanh Phương,2016-02-24,3928,t,t,f,True,Quận Bình Tân
+14498588,ab63badb004f446aa575972b8011d4ba,XE MÁY MẠNH TƯỜNG,2019-10-08,2607,t,f,f,True," Quận Bắc Từ Liêm, 11917 Việt Nam"
+15194864,7f7053564865510a70b0628f25759196,Tý tay ga,2019-12-04,2550,t,t,f,True," Quận Tân Bình, Tp Hồ Chí Minh"
+4558145,daf8b4110908cbc645a54a866b8e35c9,duy khang,2017-05-14,3483,t,f,t,True,Huyện Phụng Hiệp Hậu Giang Việt Nam
+33094074,2e59f15394c6abd85c7e4b69ffa27643,Lô Thánh Trang,2026-11-27,0,t,f,f,True,
+13168097,dae1a6c2de8057b1629bf2630b895239,Minh Nhựa,2019-06-13,2724,t,f,f,True," Đà Nẵng 550000, Việt Nam"
+13297306,1636dace00e02dfa1f42c816812d23a4,Bách Khoa K56,2019-06-27,2710,t,f,t,True," Quận Bình Tân, Tp Hồ Chí Minh"
+18923300,b8e1c3850040a2ca0fa3e82c3af8e3d7,phú,2020-12-30,2157,t,f,f,True,
+5038302,1ffd0da9e3db3da0dc2650e2da72771b,Nghĩa Huỳnh,2017-08-14,3392,t,f,f,True," Hồ Chí Minh, Việt Nam"
+9083175,9595160f8260888a767cc9dd4777ed2c,BÁN TRẢ GÓP NỢ XẤU ,2018-01-25,3227,t,f,f,True," Quận Thanh Khê, Đà Nẵng"
+1145135,66072caed9946b30fccf3df44fadebf2,Tâm,2016-12-02,3647,t,t,f,True," Hồ Chí Minh, Việt Nam"
+28306400,a4520760c687526dda8acb23e21bc0a9,Minh Thảo ,2025-01-18,678,t,f,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+10915349,6726c5d1ef8f91f4eef3799608a252e2,Trưởng Phòng,2018-10-14,2966,t,t,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+20674755,39f1bd73a005e0bc9080079337765868,          CẦM ĐỒ TÍN PHÁT,2021-05-28,2009,t,f,f,True,"Đường Nguyễn Ảnh Thủ Huyện Hóc Môn, Hồ Chí Minh Việt Nam"
+1126027,2bc8d96ad29808f7436fe8c80b3a507c,Trương Minh Đạt,2016-02-24,3928,t,t,f,True," Quận Gò Vấp, Tp Hồ Chí Minh"
+1007083,17f2b35c6196c9682efdaaa89db1fe6a,Dũ,2016-11-01,3678,t,t,t,True," Quận Bình Tân, Hồ Chí Minh"
+4299,cd019d56f0164792fb93945657908638,Cầm Đồ Cường Phát,2015-12-18,3996,t,f,t,True,298 Dương Quãng Hàm_P5_Gò Vấp_TPHCM
+32324507,4af2784fc7a8c74b9564763d910782c4,Nguyễn Ngọc Tuấn ,2026-08-11,108,t,f,f,True,
+31035892,02d56a6a83fb131a446d54cb1cb23950,Minh,2026-03-07,265,t,f,t,True,
+306972,e0d32234731bb56c748443052ace941e,Bùi văn hiếu,2015-12-23,3992,t,f,t,True," Hồ Chí Minh, Việt Nam"
+2476290,456d66e18a778cc82157becf9e0cc1bd,Lê hiếu diệp,2016-04-29,3863,t,t,t,True," Hồ Chí Minh, Việt Nam"
+32277710,3a720de81a7afab78b1a6134532d9d27,Mitsubishi Motors Bến Thành,2026-08-06,113,t,t,f,True," Quận Bình Tân, Tp Hồ Chí Minh"
+20869249,de068e572b091a1c82d51f1ce39c6339,Minh Phúc,2021-06-21,1984,t,f,f,True," Quận 7, Tp Hồ Chí Minh"
+20713693,795861e72b5f851a86787f6a13623295,Thiem Le,2021-06-01,2005,t,f,t,True," Huyện Thủy Nguyên, Hải Phòng"
+1258335,c8332a717ed7a59d23730a63177396a1,thy,2016-11-01,3678,t,f,f,True," Hồ Chí Minh, Việt Nam"
+332642,66dabc72a3f155fb1f5503a7c456b5d3,Mạnh thắng,2015-12-23,3992,t,f,f,True,ha noi
+361367,216ddeb471ba5aae2fb9097b17beba09,MINH THIỆN bán xe trả góp,2016-10-20,3690,t,f,f,True," Quận Ninh Kiều, Cần Thơ"
+985810,2c94a8a7707270056fb6d1368b64fe7a,Minh Huỳnh,2015-12-23,3992,t,f,f,True,239 Tây thạnh
+656039,b157d0fa2eba82f80f9139004a396199,LeeteeHung,2016-02-24,3928,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+3404245,3296c97a5a58d06bc5b96ab04f05099d,Hoàng,2016-09-26,3714,t,f,f,True,
+17348593,d195f3ca09aa9ebd59f48ea211c1175b,Xe Máy Phúc Hưng,2020-07-09,2332,t,t,f,True," Huyện Gia Lâm, Hà Nội"
+804022,dd6d44cbf02eb79c3ad6df25bde6ba80,Cửa Hàng Xe Gắn Máy PHONG uy tín ,2015-12-23,3992,t,f,f,True,Lai vung dong thap
+1917710,572784799a32c0bc17bb1d456821d451,Thuận,2016-01-20,3963,t,t,f,True,A49 ấp tiền lân xã bà điểm huyện hóc môn
+15362332,33f8097b3f2c9b682e2ee1f159df936d,  CỬA HÀNG XE MÁY PHƯỚC THỌ,2019-12-17,2536,t,t,t,True,Quận Tân Phú
+10645090,74e258b68572076b34af80102de84fcb,Cầm Đồ Minh Tấn,2018-09-10,2999,t,f,t,True," Quận Cái Răng, Cần Thơ"
+33093998,be1c49f0ab86abdeaab60362c2451b16,thành đàm,2026-11-27,0,t,t,f,True,
+18670513,76f98b013565367d35d50a7b9526dbf2,Ngọc khờ,2020-11-28,2190,t,f,f,True," Quận Bình Tân, Hồ Chí Minh"
+21200877,def19bd33daef7f4605bb7fe9d52a0fa,le văn hận ,2021-09-02,1912,t,f,f,True,
+16904062,d86789edb59dffe4102f22c3a53820e6,Kim Ngân,2020-05-25,2377,t,t,t,True," Thủ Đức, Hồ Chí Minh"
+2603939,db4787a36599bb6a46ecd0495d4d5940,Thiết Bị Vệ Sinh Giá Tốt,2016-05-26,3836,t,f,f,True," Quận Bình Tân, Tp Hồ Chí Minh"
+5133480,a4bd923e13ac48422b16ba32ea86ba34,Quảng Hậu GIÁ TỐT,2017-09-01,3373,t,f,f,True," Hồ Chí Minh, 73021 Việt Nam"
+14335701,c346edb5503d2729658b4323d5e08ea3,Lê Văn Tâm,2019-09-24,2621,t,f,f,True," Thuận An, Bình Dương"
+26565625,0b65e4ccee6198f1f9814782800c4ccf,Phương nguyễn ,2024-02-16,1015,t,f,f,True," Thành phố Biên Hòa, Đồng Nai"
+25156784,4136225b696ee6e91a8132a46e660a39,Tony,2023-05-08,1299,t,f,f,True,
+313629,21c3fa7feee1b6b49ca8b3a8d36d11cc,Loa kéo Khải Nhiên,2016-01-12,3972,t,f,t,True," Huyện Củ Chi, Hồ Chí Minh"
+32625379,40f6cc30adbe4c9b81baf8ce621de9e0,KuTin Nguyễn ,2026-09-15,73,t,f,f,True,
+4337445,d36063f2911639e271200b5596f19bce,Thanh Trương ,2017-03-31,3528,t,f,f,True," Đà Nẵng, Việt Nam"
+21517152,6aaa08af90720c0c632443e6875c8683,Hoàng Nhân,2021-11-02,1851,t,f,f,True,Biên Hòa Đồng Nai Việt Nam
+27800828,52f7361b6e47dd12e9806ab110ffc5a9,trần sang,2024-10-25,763,t,t,f,True,
+23164234,883e13b98d8815b870b1a9fa913679a6,Trần Thanh Tú,2022-07-05,1606,t,f,f,True,
+19612691,54513a8a10a8acfcff415e1d4c00923a,ALO TÂM GHE,2021-03-23,2074,t,f,t,True," Quận Liên Chiểu, Đà Nẵng"
+38012,f49e8715c72662e0afd769d0be4d8fc0,Trần Nam,2015-12-23,3992,t,f,f,True," Quận 8, Tp Hồ Chí Minh"
+11629119,d09cec37dc09ed5fcb56ee7c1c6a4603,Nguyễn Hoàn Mỹ Uyên,2019-01-06,2881,t,f,f,True," Quận 10, Hồ Chí Minh"
+13436725,44169f0c1137543aa7edb67dd7a8f020,nguyễn anh khoa,2019-07-11,2695,t,t,f,True," Quận 11, Hồ Chí Minh"
+673676,45be563a696ed257fa090525396b63db,Xe máy THẢO VY ,2016-02-24,3928,t,f,t,True,Q 9
+23574787,54bbbc7c716e38fbb6d92c72fb718218, Long Việt,2022-08-29,1551,t,f,f,True," Thành phố Nam Định, Nam Định"
+11743131,b0f918d8b24f7edfa475bc5d0d5c64e6,NguyênQB,2019-01-24,2863,t,f,f,True,
+1416814,0d4222fdc63c09fbf73f8f173a1cf81e,Phan luân,2015-12-18,3996,t,f,f,True,Thủ đức
+18285564,d331fb7004b4ece3734bece4981527e4,Nguyễn Ngọc Trí,2020-10-13,2236,t,f,t,True,Quận Tân Phú Hồ Chí Minh Việt Nam
+28838080,032b5f3c8440c5528e896080b306b76c,Pon Nguyễn,2025-04-08,597,t,t,f,True,
+4682,c92ae8a1be1994c17716aeba00efd355,Xe Máy Nam Thi,2016-02-24,3928,t,f,f,True,ha noi
+5022524,4e0a6070e22d98d20b1447a3e9e8e9bd,LÊ VĂN GIÀU,2017-08-10,3395,t,f,t,True,"Cầu Rạch Dơi Huyện Nhà Bè, Hồ Chí Minh Việt Nam"
+9601296,2312b7e67d4d6cbfb4980ddf6c806687,thanh,2018-04-17,3146,t,f,f,True,
+32875252,ce4c8fc02630cf57ebcf288ded9a5e60,Tan Giang,2026-10-20,37,t,f,f,True,
+10407894,83e10a0ba8f27f360f6c0b4b7d23e048,mai xuân tiên,2018-08-09,3032,t,f,f,True,300 đống đa
+17726921,28d991a113c6525ce2fe666103d5e7f9,có gì bán đó,2020-08-17,2292,t,f,f,True, Đường Tô Hiến Thành Phường 15 Quận 10 Hồ Chí Minh
+5300297,93b02114ecc4c49e739d889298d13124,Toàn,2017-10-06,3339,t,f,f,True,"hàm thuận nam , bình thuận"
+2648996,2f2c90e341b2fec32e048a2f1927e929,MUA XE CỦ GIÁ CAO ,2016-06-02,3830,t,f,f,True," Hồ Chí Minh, Việt Nam"
+16313204,3cfe70e1a0d7afd3b597394018d12529,Bảo Gia,2020-03-24,2439,t,f,t,True,"513 Đường 2 Tháng 9 Phường Thắng Nhất, Vũng Tàu (Thanh Pho Vung Tau) Việt Nam"
+31111772,90490a40959d4f49c2b1f16b3e868671,Mít,2026-03-15,257,t,f,f,True,
+3602662,c3fac1fce5042f8e2f54031de1c07d41,Tuấn Giang,2016-11-01,3678,t,f,f,True," Quận Hoàng Mai, Hà Nội"
+30018483,928b280c8e444244eb8c11421f271363,MotoGiáRẻTPHCM,2025-10-02,420,t,f,f,True,
+25976811,9b7f2a310a0ac6ead3f6956a9356a415,u kiều,2023-10-01,1153,t,f,f,True,
+26169370,07ad15988a953e84f89b2783cd8cfbf0,phuong thanh,2023-11-09,1114,t,t,f,True,
+19221018,96a5e80ffd686e13b344999448b79434,t1991,2021-02-16,2110,t,f,f,True,
+33093813,0146200c493353163daa5806bd0904fa,Tâm Lữ Văn,2026-11-27,0,t,t,f,True,
+28245240,0176d987c4daab00807a34f8c0ec20a0,VĂN CHƯƠNG NGUYỄN,2025-01-05,690,t,t,f,True,
+322911,13b3306d930557fdd795c6f9191e896b,DŨNG DỄ DÃI LUXURY,2015-12-23,3992,t,f,f,True,Cầu giấy
+12478841,61a10d424d4cb5058cc264a5b59b82c2,quốc đại,2019-04-14,2784,t,f,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+2217174,95a69d7db747c45a12cbed61b1946076,Minh Dũng bán trả góp 136 vân đồn ,2016-03-24,3900,t,f,t,True," Đà Nẵng, Việt Nam"
+21323769,4c9f151271270f814404aa16238b1256,Bùi Duy Phong,2021-10-03,1881,t,f,t,True,"Đường Hoàng Diệu Quận 4, Hồ Chí Minh Việt Nam"
+23357215,c539cbafef8ab103e7f2623c2cc6d925,Xe Điện Kim Thảo,2022-08-01,1579,t,t,t,True," Quận 12, Tp Hồ Chí Minh"
+4240278,5df10a2b01d82362cc57f6e5c48be483,EVBATTERY,2017-02-27,3560,t,t,t,True," Quận Tân Bình, Tp Hồ Chí Minh"
+32806523,9749be522616cde2214669ee3e796396,Quốc Dũng,2026-10-10,48,t,f,f,True,
+21010577,686181aa48687e1ff64e490b5606c023,Trường nguyễn,2021-07-14,1962,t,f,t,True," Huyện Thới Lai, Cần Thơ"
+30562308,524abb92647f8b5a6c38fe325e1cf34c,Trương Đức Tây,2025-12-25,336,t,t,t,True,
+874116,2f14d1a00370b6203010ee06b7cf41a4,xe máy phước thịnh,2016-02-24,3928,t,f,t,True,thuận giao bình dương
+1976129,e511bda1505a908ea79056c989472a81,Phong Vũ,2016-01-20,3963,t,t,t,True," Huyện Bình Chánh, Tp Hồ Chí Minh"
+14275044,2407db4210536b188954720e4ccc28b2,tuân anh ,2019-09-19,2625,t,f,f,True," Hồ Chí Minh, Việt Nam"
+10992908,99eb717670c0088de7268cb7a7b44714,viet,2018-10-24,2956,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+14315823,3c4ca4119a27299c725d033f174ec014,Phạm A Khắc,2019-09-22,2622,t,f,f,True," Quận 7, Hồ Chí Minh"
+20953939,314abba4fad6a859c75949fbbbd67d75,tung,2021-07-04,1971,t,f,f,True," Quận Tân Bình, Hồ Chí Minh"
+20930480,7d7f4032dd341cbf5e9d6b6f6f459e56, Võ SH318,2021-07-01,1975,t,f,t,True," Hồ Chí Minh, 72013 Việt Nam"
+18466938,19bc7269df25a93da036f8500eb541f0,XE MÁY THỦ ĐỨC ,2020-11-04,2214,t,t,f,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+733354,3dfd6463b235967197aea8a090df37fe,Ngọc Huy,2015-12-18,3996,t,f,f,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+28262173,c79475f2845c31c91aa3e9e07a86f466,NP Store,2025-01-08,687,t,t,f,True," Quận Ninh Kiều, Cần Thơ"
+2766715,24b8ce7a44d2bd1331c92de96d00e3bf,An Nhiên Nguyễn,2016-06-22,3810,t,f,f,True," Quận Nam Từ Liêm, Hà Nội"
+18055658,2d8f8b218b04c912e9340b8f894262c3,Anna Nguyen,2020-09-18,2260,t,t,f,True,
+2303429,d7f5dcb0f9f80137fb59b898aedf0fee,Anhvu,2016-12-15,3634,t,f,f,True,467 Tôn đức thắng
+1714922,14e424c2a4899bc082967bf21acc1454,Chú Út ,2016-02-24,3928,t,f,f,True,"Hẻm 71 Nguyễn Bặc Quận Tân Bình, Hồ Chí Minh Việt Nam"
+4494389,3381617c5b1250d5fc2ae6ab0cc2a9d9,trần tuấn dũng,2017-05-02,3496,t,f,f,True," Quận 12, Tp Hồ Chí Minh"
+3891202,33c963131199788de38504d988fc57b2,Đình Khương,2016-12-15,3634,t,t,f,True," Hồ Chí Minh, Việt Nam"
+21782609,d44984fca4fc3fd6b22707a61691eb59,Cửa Hàng Xe Máy Gia Kiệt,2021-12-12,1811,t,f,f,True,
+17220361,a8110105f5113aebf6430172bb58b28b,Nhân sự Shinhan Financel VN,2020-06-27,2344,t,f,t,True," Q.1, HCM"
+1205444,67197eb09481a891ac244b4a4a6b580f,Thành,2015-12-18,3996,t,f,f,True," Hồ Chí Minh, Việt Nam"
+25124592,f3d4fde20adbcad15cc75983524be08e,Nguyễn văn cường,2023-05-02,1305,t,t,f,True,
+2174682,b4c77f9d8f4563143d9692a1e503ba3c,Nguyễn văn lộc,2016-03-15,3909,t,f,f,True," Tân Thuận Đông, Quận 7"
+23049158,aa1ba99c38457759448212e7df99e2d3,Minh Quân,2022-06-18,1623,t,f,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+9067798,b277e28a7a6d59c3efc51975b313858f,XE ĐẸP  GÓP BAO NỢ XẤU THỦ ĐỨC,2018-01-23,3230,t,f,t,True," Hồ Chí Minh, Việt Nam"
+27803562,c9f9dfc4d74836f5e032834b45a3a798,Lâm Dung,2024-10-25,762,t,f,f,True,
+24569630,4d1e0dd4743a7d5a71f97553cac559f6,Song Nhân,2023-02-12,1384,t,f,f,True," Hồ Chí Minh, Việt Nam"
+21811455,6da1c29623df33a1efd34a96e38e2501,Xe Ba Chín Tphcm,2021-12-16,1807,t,f,f,True," Quận Phú Nhuận, Tp Hồ Chí Minh"
+504483,84939bf609958ba506504eb7cdb5d162,Đức Hùng,2016-02-24,3928,t,t,f,True," Quận Tân Phú, Tp Hồ Chí Minh"
+489818,0c36240e85e116da5f06eaaba6705ce7,Nam Nguyễn,2015-12-23,3992,t,f,f,True,Gò vấp
+2597092,f012c4c2993dde2a8e1ec32f647b80a9,MrS Linh Xe39,2016-05-26,3836,t,f,f,True," Hồ Chí Minh, Việt Nam"
+1238496,bb23cdd0a46be23de6ae753b21beb08d,A. Hải,2016-12-15,3634,t,f,f,True,406 Pham the hien p3 q8
+21355810,f6fe2a7e2e1b9ed7c60c1d810efbcc3c,Tấn Hồng,2021-10-08,1876,t,f,f,True," Quận Tân Phú, Hồ Chí Minh"
+32164494,559567465d56aa6a4502684d0e18995f,Minh Mẫn,2026-07-23,127,t,f,t,True,
+9811947,05fa12314e5cab9769e6bc63fd883348,nguyễn bích thuỷ,2018-05-18,3115,t,f,f,True," Hà Đông, Hà Nội"
+9941063,465465fe670528e1a68b3d0dbf816798,diep chi bao,2018-06-07,3095,t,f,f,True," Quận Bình Thạnh, Tp Hồ Chí Minh"
+4616,cd51cda8d4139b1e3352399aa39f9b7e,Haquocthanh,2015-12-23,3992,t,f,t,True,Thủ Dầu Một Phú Cường BD
+25779205,5a82c5a6834fbf15a149040fcca05fa9,Trần Viễn,2023-08-25,1189,t,f,t,True," Thành phố Thủ Đức, Tp Hồ Chí Minh"
+3901133,da4559f090b2e57657cc38c19c044eb9,XE MÁY CŨ LONG AN,2016-12-26,3623,t,f,t,True," Huyện Đức Hòa, Long An"
+26869169,c533860671f77575dfced0e4fbe2edeb,Nguyễn Ngọc Nguyên,2024-04-13,958,t,t,f,True,
+23103612,4d405be38d4fd519e611c7b13ca1acee,nguyễn Lê My,2022-06-26,1615,t,f,f,True,
+23879782,3443ff3f2b7696ab3aa56ca2a779902c,Quân ,2022-10-10,1509,t,f,t,True," Quận 8, Tp Hồ Chí Minh"
+14425112,c40385141b914a13cbe2534d8412c6f5,Thanh Phong,2019-10-02,2613,t,f,t,True," Huyện Hóc Môn, Tp Hồ Chí Minh"
+15596,6b40bd87d58f69f12b10af13f89fd4cf,An Phú,2015-12-18,3996,t,f,f,True,Đà Nẵng
+9545636,2fa74b41814548e5f0d9c0df95c046bf,phạm văn quốc,2018-04-10,3153,t,f,f,True,236/37 Thái Phiên - P8 - Quận 11
+11290935,4628bc02bf038389b122d6025d6c25bd,Selena Pham,2018-11-25,2924,t,t,f,True,
+2841128,bcb197bed37d72443241c8d660785ad3,Anh Đức,2016-06-22,3810,t,f,t,True," Hà Nội, Việt Nam"
+27806345,5283ddff5909657814855c4cb356580d,nguyenchuyenpin,2024-10-26,762,t,t,t,True,
+1029537,015e6ebe13362ff5508bbd555f8427b7,thuy,2016-02-24,3928,t,f,f,True,806 Le van hien
+15942202,64b8f7c7e6820d4f7fd2b836238fea01,Nguyễn bảo thanh thảo,2020-02-19,2472,t,f,f,True," Quận Bình Tân, Tp Hồ Chí Minh"
+21946077,7b38a7baf1fe59932bcebeec917c0cac,Thanh Châu,2022-01-06,1785,t,f,t,True," Quận 12, Tp Hồ Chí Minh"
+1065051,a519ef6423ac6661ac44274252358ccd,CỬA HÀNG XE MÁY VŨ Fi,2015-12-23,3992,t,f,t,True," Quận Bình Thuỷ, Cần Thơ"
+10993539,718e5df4da2f2cb1b45dde2690d370d8,Trần Phước ,2018-10-24,2956,t,f,f,True," Quận 11, Tp Hồ Chí Minh"
+26260186,8e51648f8fe1e0fc7b005d7131541f8c,Trần Hưng,2023-11-28,1095,t,f,f,True,
+20424320,c41cf89f30fe1535eea36213284f37ee,Tùng Thanh,2021-05-15,2022,t,f,t,True,Huyện Bình Chánh Hồ Chí Minh Việt Nam
+11073920,f87e0e2fd83e9e0a7dc2698e321eae15,Anh khuê,2018-11-02,2946,t,f,f,True,"8 Đường Lê Văn Quới Quận Bình Tân, Hồ Chí Minh Việt Nam"
