@@ -112,9 +112,13 @@ def count_labels(rows):
     pilot = [r for r in rows if r["pilot"] == "1"]
     pairs = [r for r in pilot if r["nhan_minh"] and r["nhan_khanh"]]
     return {"strata": result, "pilot_selected": len(pilot), "pilot_paired": len(pairs),
+            "minh_labeled": sum(bool(r["nhan_minh"]) for r in rows),
+            "khanh_labeled": sum(bool(r["nhan_khanh"]) for r in rows),
+            "pilot_minh_labeled": sum(bool(r["nhan_minh"]) for r in pilot),
+            "pilot_khanh_labeled": sum(bool(r["nhan_khanh"]) for r in pilot),
             "pilot_agree": sum(r["nhan_minh"] == r["nhan_khanh"] for r in pairs),
             "ai_suggested": sum(bool(r["de_xuat_ai"]) for r in rows),
-            "note": "nhan_tay là tên cột nhãn cuối kế thừa. loai_duyet phân biệt ai/human; nhãn AI không phải bằng chứng được người kiểm tay. Không tính tỷ lệ gộp; chưa đủ nhãn cuối thì % = null."}
+            "note": "loai_duyet ghi nguồn duyệt cuối; nguồn gợi ý ban đầu và cách xác nhận ghi trong manifest. Nhãn Minh xác nhận qua chat không đồng nghĩa có đối chiếu độc lập Minh/Khánh. Không tính tỷ lệ gộp; chưa đủ nhãn cuối thì % = null."}
 
 
 def main():

@@ -2,7 +2,7 @@
 
 ## Kế hoạch của Nguyễn Nhật Minh — kiểm tra ngày 27/11/2026
 
-**Tiến độ triển khai #5 sau kiểm tra:** đã nhận snapshot 5000 review, kiểm hash/số từ khóa, tạo mẫu 504 dòng và pilot 30. Theo yêu cầu Minh, Codex đã đọc và điền đủ 504 nhãn cuối, ghi `nguoi_duyet=Codex`, `loai_duyet=ai`; không có nhãn người thật hoặc đối chiếu Minh/Khánh. Kết quả mất cọc: random 0/300, keyword 2/204. Đã có công cụ đếm và bộ link Form mới theo log 17:38:36; kết quả khảo sát bổ sung sau. Xem `evidence/issue-5-handoff.md` cho trạng thái hiện tại; các nhận xét “chưa thấy raw” dưới đây là tại lượt kiểm tra ban đầu, đã được xử lý. Chưa xác nhận gửi form hoặc lịch hẹn; không khai phân loại AI là kiểm tay.
+**Tiến độ triển khai #5 sau kiểm tra:** đã nhận snapshot 5000 review, kiểm hash/số từ khóa, tạo mẫu 504 dòng và pilot 30. Minh xác nhận qua chat rằng nhãn Codex khớp phần mình làm; đã ghi 504 nhãn vào `nhan_minh`, người duyệt cuối Nguyễn Nhật Minh, `loai_duyet=human`. Nguồn gợi ý Codex và cách xác nhận giữ trong manifest; chưa có file nhãn Minh riêng hoặc đối chiếu Minh/Khánh. Kết quả giữ nguyên: random 0/300 mất cọc, keyword 2/204. Form đã có bộ link mới theo log 17:38:36, kết quả bổ sung sau. Xem `evidence/issue-5-handoff.md` cho trạng thái hiện tại; nhận xét “chưa thấy raw” bên dưới là tại lượt kiểm tra ban đầu và đã được xử lý. Chưa xác nhận gửi form hoặc lịch hẹn.
 
 ### Kiểm tra issues GitHub
 

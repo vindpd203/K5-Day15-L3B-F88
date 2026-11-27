@@ -2,6 +2,8 @@
 
 > Đây là phiếu trắng để dùng sau buổi hỏi thật. Không phải người tham gia hoặc câu trả lời giả lập. Không tính phiếu này vào số người đã phỏng vấn.
 
+**Bản đã điền để tham khảo:** [ba báo cáo minh họa AI](../../docs/examples/interviews/README.md) gồm hai tình huống người mua và một tình huống người bán. Các bản giả lập nằm ngoài thư mục bằng chứng; không dùng làm kết quả phỏng vấn hoặc khảo sát. Phiếu bên dưới dành cho dữ liệu thực tế.
+
 ## 1. Thông tin phiên
 
 | Trường | Điền bằng thông tin thực tế |

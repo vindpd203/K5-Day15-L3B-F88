@@ -72,6 +72,18 @@ class EvidenceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             count_labels(queue)
 
+    def test_minh_confirmation_does_not_create_khanh_review(self):
+        queue, _ = make_sample(fixture(2), 1, 2, 0)
+        for row in queue:
+            row.update(nhan_minh="khong_lien_quan", can_cu_minh="Confirmed in test",
+                       nhan_tay="khong_lien_quan", can_cu="Test reason",
+                       nguoi_duyet="Nguyễn Nhật Minh", loai_duyet="human")
+        report = count_labels(queue)
+        self.assertEqual(report["minh_labeled"], 2)
+        self.assertEqual(report["strata"]["random"]["human_reviewed"], 2)
+        self.assertEqual(report["khanh_labeled"], 0)
+        self.assertEqual(report["pilot_paired"], 0)
+
     def test_stats_keep_raw_denominator(self):
         rows = fixture(4)
         rows[1]["content"] = rows[0]["content"]

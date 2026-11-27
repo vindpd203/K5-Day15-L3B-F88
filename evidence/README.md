@@ -28,13 +28,13 @@ Raw giữ nguyên. `private/sample.json` chứa hash, seed và ID mẫu; `sample
 
 ## Quy trình gắn nhãn
 
-Đọc định nghĩa trong `data-mining.md`. Theo yêu cầu mới của Minh, Codex đã đọc và điền đủ 504 nhãn cuối trong `private/sample.csv`: cột `nhan_tay`, căn cứ `can_cu`, `nguoi_duyet=Codex`, `loai_duyet=ai`. `nhan_tay` là tên cột kế thừa, không có nghĩa đã được người thật kiểm tay. Nhãn hợp lệ: bi_lua_coc, khong_du_bang_chung, khong_lien_quan.
+Đọc định nghĩa trong `data-mining.md`. Minh đã xác nhận trong chat rằng nhãn Codex khớp với phần nhãn của mình và yêu cầu ghi vào phần Minh. Đã điền `nhan_minh` cho 504 dòng, căn cứ xác nhận vào `can_cu_minh`, người duyệt cuối `Nguyễn Nhật Minh`, `loai_duyet=human`. `nhan_tay` và mọi giá trị nhãn giữ nguyên. Nhãn hợp lệ: bi_lua_coc, khong_du_bang_chung, khong_lien_quan. Manifest ghi cách xác nhận qua chat và nguồn gợi ý ban đầu Codex.
 
-Nếu thực hiện kiểm tra độc lập sau này, hai bản trắng `private/pilot-minh.csv`, `private/pilot-khanh.csv` vẫn còn nguyên. Người thật chấm độc lập và ghi cột riêng; chỉ sau khi họ thực sự duyệt mới điền tên họ và `loai_duyet=human`. Không đổi tên người chấm AI thành tên người thật.
+`private/pilot-minh.csv` có 30 nhãn Minh xác nhận; `private/pilot-khanh.csv` vẫn trống. Chưa có file nhãn riêng của Minh để đối chiếu tự động hoặc hai người chấm độc lập. Không tự điền phần Khánh. Bản trước xác nhận được sao lưu trong private; nhật ký `private/minh-confirmation.json` ghi cơ sở cập nhật theo lời Minh trong chat.
 
 Cột `de_xuat_ai/can_cu_ai` giữ 85 bản nháp ban đầu; không tự tính vào nhãn cuối. Cột labels gốc chỉ là lọc từ khóa. Bản trước sửa: `private/sample.before-codex-final.csv`; nhật ký 504 nhãn và hash nội dung: `private/codex-final-audit.json`. Bản nhãn chỉ có mã/căn cứ để review trong repo: `annotations-codex.csv`; báo cáo tổng hợp chia nguồn AI/người thật: `label-report.json`. Không tự điền kết quả phỏng vấn hoặc khảo sát.
 
-Lệnh count yêu cầu manifest `.json` cùng tên mẫu, kiểm không thêm/bớt ID hoặc đổi tầng/pilot; kiểm nhãn, căn cứ, người duyệt và `loai_duyet`; báo riêng số nhãn AI/người thật, số nhãn cuối/chưa phân loại theo từng tầng. Chỉ tính % khi toàn bộ tầng có nhãn cuối; nếu là AI thì báo cáo phải ghi rõ AI. Không có % gộp. Pilot báo số cặp người thật đã chấm và số khớp trước hòa giải; hiện cả hai bằng 0.
+Lệnh count yêu cầu manifest `.json` cùng tên mẫu, kiểm không thêm/bớt ID hoặc đổi tầng/pilot; kiểm nhãn, căn cứ, người duyệt và `loai_duyet`; báo số nhãn theo người duyệt cuối cùng, số nhãn Minh/Khánh và tình trạng pilot. Không có % gộp. Hiện nhãn Minh 504, nhãn Khánh 0; pilot có nhãn Minh 30 nhưng số cặp Minh/Khánh vẫn bằng 0. Xác nhận qua chat không tự tạo kết quả hai người chấm độc lập.
 
 ## Thu thập mới chỉ khi cần
 

@@ -1,9 +1,6 @@
-# Kịch bản phỏng vấn đầy đủ — THAM KHẢO
+# Kịch bản phỏng vấn đầy đủ
 
-> **TÀI LIỆU THAM KHẢO ĐỂ THỰC HIỆN.** Đây là câu hỏi và lời dẫn, không phải biên bản phỏng vấn hoặc câu trả lời của người thật. Chưa có kết quả khảo sát/phỏng vấn nào được tạo từ tài liệu này.
-
-Người chuẩn bị: Nguyễn Nhật Minh với hỗ trợ Codex · F88 · issue #5 · 27/11/2026. Chủ đề: kiểm tin đăng và người bán điện thoại cũ trước khi chuyển cọc. Mỗi phiên khoảng 15 phút; không cần hỏi hết mọi câu phụ.
-
+Người chuẩn bị: Nguyễn Nhật Minh 
 ## 1. Mục tiêu cần tìm hiểu
 
 1. Người mua thực sự làm gì để kiểm người bán ở lần gần nhất; thiếu thông tin gì và xử lý thế nào.

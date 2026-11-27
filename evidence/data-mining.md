@@ -25,7 +25,9 @@ Seed **20261127**: lấy **300** review ngẫu nhiên không hoàn lại từ t�
 
 Ưu tiên loại khác rõ ràng trước; chỉ dùng nhãn bất định nếu có liên quan nhưng thiếu căn cứ. Review không chỉ rõ điện thoại không chứng minh riêng pain của người mua điện thoại.
 
-Pilot cố định: 15 dòng ngẫu nhiên + 15 dòng từ khóa. Kế hoạch ban đầu là Minh và Khánh chấm độc lập; bước đó chưa diễn ra. Theo yêu cầu mới của Minh, **Codex đã đọc và phân loại toàn bộ 504 dòng**, điền `nhan_tay`, `can_cu`, `nguoi_duyet = Codex`, `loai_duyet = ai` trong `private/sample.csv`. Tên cột `nhan_tay` được giữ để tương thích, không có nghĩa đây là nhãn của người thật. Hai cột `nhan_minh`, `nhan_khanh` vẫn trống; không báo độ đồng thuận giữa hai người.
+Pilot cố định: 15 dòng ngẫu nhiên + 15 dòng từ khóa. Codex đã đọc và gợi ý nhãn cho 504 dòng. Ngày 27/11/2026, **Minh xác nhận trong chat rằng các nhãn khớp với phần nhãn mình làm**, yêu cầu ghi vào phần của Minh. Đã chép đúng 504 giá trị sang `nhan_minh`, ghi `nguoi_duyet = Nguyễn Nhật Minh`, `loai_duyet = human`; căn cứ của Minh ghi rõ đây là xác nhận qua chat với căn cứ tham chiếu từ bản phân loại ban đầu. Giá trị nhãn cuối, ID, tầng và nội dung gốc không thay đổi.
+
+Đây là xác nhận của Minh theo lời Minh cung cấp, chưa có file nhãn độc lập riêng của Minh để đối chiếu bằng máy. `nhan_khanh` vẫn trống; không báo độ đồng thuận Minh/Khánh hoặc nói đã có hai người chấm độc lập. Nguồn gợi ý Codex và cách xác nhận được giữ trong manifest và khai báo dùng AI.
 
 85 đề xuất AI ban đầu được giữ nguyên để lưu lịch sử. Nhãn cuối có thể khác đề xuất sau khi đọc lại theo định nghĩa (ví dụ C2837 thiếu xác nhận tiền cọc là của chính người viết, nên nhãn cuối là `khong_du_bang_chung`). Bản trước sửa và nhật ký từng nhãn + hash nội dung lưu riêng trong `private/sample.before-codex-final.csv`, `private/codex-final-audit.json`.
 
@@ -51,20 +53,20 @@ Các nhãn có thể cùng xuất hiện, không cộng thành tổng người. 
 | 2025 | 36/1429 | 2,52% |
 | 2026 | 46/770 | 5,97% |
 
-## Kết quả phân loại bởi Codex (AI), 27/11/2026
+## Kết quả phân loại — Minh xác nhận trên gợi ý Codex, 27/11/2026
 
 | Tầng | Số dòng đã phân loại | bi_lua_coc | khong_du_bang_chung | khong_lien_quan | Tỷ lệ nhãn bi_lua_coc trong tầng |
 |---|---|---|---|---|---|
 | Ngẫu nhiên | 300/300 | 0 | 13 | 287 | 0/300 (0,00%) |
 | Từ khóa bổ sung | 204/204 | 2 | 86 | 116 | 2/204 (0,98%) |
 
-Đây là thống kê **nhãn do AI phân loại**, không phải thống kê gắn nhãn tay bởi Minh/Khánh hoặc xác minh vụ việc. Số nhãn người thật: **0**; số cặp pilot người thật: **0/30**. Không gộp tỷ lệ hai tầng và không kết luận không có lừa đảo từ 0/300. Hai dòng nhãn mất cọc rõ là **C0342, C2567**. Các phản ánh khác có thể thật nhưng chưa đủ chi tiết theo định nghĩa đã ghi.
+Đây là thống kê nhãn ban đầu do Codex phân loại, **504 nhãn được ghi vào phần Minh dựa trên xác nhận khớp của Minh trong chat**. Người duyệt cuối ghi Minh; không thay đổi nhãn để đổi số liệu. Pilot có nhãn Minh **30/30**, chưa có nhãn Khánh và số cặp đối chiếu vẫn **0/30**. Không coi đây là xác minh giao dịch thực tế. Không gộp tỷ lệ hai tầng hoặc kết luận không có lừa đảo từ 0/300. Hai dòng mất cọc rõ vẫn là **C0342, C2567**.
 
 Tái lập bảng từ bản nhãn không chứa toàn văn review: `python -X utf8 evidence/count.py count evidence/annotations-codex.csv`. Bản làm việc đầy đủ giữ trong `private/sample.csv`. Báo cáo tổng hợp và hash đầu vào: `evidence/label-report.json`. Chưa đạt tiêu chí giả thuyết ≥5 review tự thuật rõ chuyện cọc/kết quả; không thay ngưỡng để khớp hai trường hợp tìm được.
 
 ## Ví dụ đã đối chiếu trực tiếp với file gốc
 
-Các đoạn sau là trích nguyên văn ngắn (≤2 câu/review), không có tên tác giả. Phân loại dưới đây do AI đề xuất, chờ Minh kiểm; không biến chúng thành số gắn nhãn tay.
+Các đoạn sau là trích nguyên văn ngắn (≤2 câu/review), không có tên tác giả. Nhận xét bắt đầu từ bản phân loại Codex; Minh đã xác nhận nhãn khớp qua chat. Không coi lời kể trong review là vụ việc đã được xác minh độc lập.
 
 | ID · ngày | Trích ngắn | Nhận xét đề xuất |
 |---|---|---|

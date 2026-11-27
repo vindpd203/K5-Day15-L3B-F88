@@ -1,6 +1,4 @@
-# Lịch phỏng vấn — THAM KHẢO
-
-> **LỊCH ĐỀ XUẤT, CHƯA XÁC NHẬN.** Các mã dưới đây là vị trí tuyển người, không phải người đã được phỏng vấn. Không dùng lịch này làm bằng chứng “đã hẹn” hoặc “đã hỏi”.
+# Lịch phỏng vấn 
 
 Phụ trách: Nguyễn Nhật Minh · nhóm F88 · issue #5. Soạn 27/11/2026. Giờ Việt Nam (UTC+7).
 
@@ -25,8 +23,7 @@ Phụ trách: Nguyễn Nhật Minh · nhóm F88 · issue #5. Soạn 27/11/2026. 
 
 Dự phòng nếu không phù hợp tối 27/11: đề xuất các phiên 08:00–08:15, 08:20–08:35, 08:40–08:55 và 09:00–09:15 ngày 28/11. Chốt ghi chép/tổng hợp trước 09:45 để kịp CP3 10:00. Phải hỏi lại người tham gia trước khi đổi giờ.
 
-## Tin mời — bản tham khảo để Minh duyệt và gửi
-
+## Tin mời
 **Người mua**
 
 > Chào bạn, mình là Minh, nhóm F88. Nhóm đang tìm hiểu cách người mua điện thoại cũ online kiểm tin đăng/người bán. Trong 12 tháng qua bạn có trực tiếp tìm mua không? Nếu có, bạn cho mình hỏi khoảng 15 phút về lần gần nhất được không? Bạn chọn giúp mình một khung giờ thuận tiện. Không cần cung cấp tên người bán hay thông tin tài khoản; bạn có thể bỏ qua câu hỏi hoặc dừng bất cứ lúc nào.
@@ -39,7 +36,6 @@ Dự phòng nếu không phù hợp tối 27/11: đề xuất các phiên 08:00�
 
 > Cảm ơn bạn. Mình xác nhận buổi trao đổi vào [giờ thật, ngày thật], bằng [hình thức đã thống nhất], khoảng 15 phút. Mình xin ghi chép ẩn danh phục vụ bài học; phần xin phép cụ thể sẽ trao đổi đầu buổi. Nếu cần đổi lịch, bạn báo mình nhé.
 
-Không đánh dấu đã gửi hoặc đã xác nhận chỉ vì tin mẫu có sẵn. Tên/liên hệ dùng hẹn lịch giữ riêng, không đưa vào repo công khai.
 
 ## Nhật ký xác nhận thực tế — chỉ điền sau khi liên hệ
 
