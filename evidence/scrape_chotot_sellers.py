@@ -1,7 +1,7 @@
 """Cào profile người bán từ Chợ Tốt API công khai, dựa trên account_oid trong raw-chotot_listings.csv.
 Chạy: python -X utf8 evidence/scrape_chotot_sellers.py
 Ra: evidence/raw-chotot_sellers.csv
-Dùng cho tool kiem_tai_khoan: tuổi tài khoản, xác thực, số tin đã bán.
+Dùng cho tool kiem_tin_dang: tuổi tài khoản và tên người bán của tin Chợ Tốt (kiem_tai_khoan là danh sách cảnh báo, không dùng file này).
 """
 import csv, json, os, sys, time, urllib.request
 from datetime import datetime

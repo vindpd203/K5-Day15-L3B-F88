@@ -87,7 +87,7 @@ flowchart TD
 
   | Nguyên tắc | Chỗ cụ thể trên sơ đồ / trong bản chạy thử |
   |---|---|
-  | G10 — thu hẹp phạm vi khi không chắc | Thiếu số TK, món không có trong bảng giá, người bán không có trong dữ liệu → ra `can_kiem_them` và nói rõ thiếu gì, không đoán "an toàn" |
+  | G10 — thu hẹp phạm vi khi không chắc | Chưa đối chiếu được số TK/SĐT hay tin đăng, và người bán cũng không đồng ý cho xem hàng rồi mới trả tiền → code ở bước [5] hạ "an toàn" về `can_kiem_them` và ghi rõ thiếu gì (`ghi_chu`). Có lời hẹn "xem/thử hàng rồi mới trả" thì vẫn được ra "an toàn" vì người mua không phải trả trước |
   | G11 — cho biết vì sao hệ thống làm vậy | Output luôn có `tin_hieu` (luật nào bật) và `so_lieu` (giá tham chiếu, % chênh, % cọc) để người mua tự kiểm lại |
   | G2 — cho biết hệ thống làm tốt đến đâu | Không bao giờ nói "chắc chắn an toàn" hay "chắc chắn lừa đảo"; mức cao nhất là "tương đối an toàn, vẫn nên xem hàng trực tiếp" |
   | G9 — dễ sửa khi sai | Người mua bổ sung thông tin (số TK, tình trạng máy) rồi kiểm lại; kết luận cũ không bị ghi đè âm thầm |
