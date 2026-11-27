@@ -2,14 +2,15 @@
 
 Mỗi công cụ là một hàm Python có @tool, docstring ghi đủ 4 ý theo spec.md §4:
     tên · input · output · có tác động ra ngoài không.
-Tất cả công cụ đều CHỈ ĐỌC dữ liệu dựng "Chợ Mẫu" trong thư mục data/
-(có dữ liệu mẫu tối thiểu dự phòng khi file CSV chưa được tạo ở Issue #6).
+Tất cả công cụ đều CHỈ ĐỌC: dữ liệu dựng "Chợ Mẫu" trong data/ (có dữ liệu mẫu dự phòng khi file CSV
+chưa được tạo ở Issue #6) cộng dữ liệu Chợ Tốt thật đã cào trong evidence/raw-chotot_*.csv.
 Chỉ dùng thư viện chuẩn Python.
 """
 import csv
 import io
 import os
 import re
+import statistics
 import unicodedata
 
 from tracing import tool, TOOLS  # noqa: F401
@@ -53,13 +54,17 @@ _FALLBACK_NGUOI_BAN = [
 # Hàm tiện ích nội bộ
 # ---------------------------------------------------------------------------
 
-def _norm(text: str) -> str:
-    """Chuẩn hoá chữ thường, bỏ dấu tiếng Việt và ký tự thừa để so khớp linh hoạt."""
+def _bo_dau(text: str) -> str:
+    """Chữ thường, bỏ dấu tiếng Việt, GIỮ dấu câu (để còn đọc được '6.5tr', '6.500.000đ', link)."""
     s = (text or "").replace("đ", "d").replace("Đ", "D")
     s = unicodedata.normalize("NFD", s)
     s = "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
-    s = re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
-    return s
+    return re.sub(r"\s+", " ", s.lower()).strip()
+
+
+def _norm(text: str) -> str:
+    """Như _bo_dau nhưng bỏ luôn ký tự không phải chữ/số để so khớp linh hoạt."""
+    return re.sub(r"[^a-z0-9]+", " ", _bo_dau(text)).strip()
 
 
 def _norm_digits(text: str) -> str:
@@ -102,6 +107,64 @@ def _load_csv(filename: str, fallback: list) -> tuple:
         if any(cleaned.values()):
             rows.append(cleaned)
     return rows, "data/%s" % filename
+
+
+EVIDENCE_DIR = os.path.join(ROOT, "evidence")
+NGUON_CHOTOT = "evidence/raw-chotot_*.csv (Chợ Tốt, cào 27/11/2026)"
+_CHOTOT = {}
+
+
+def _chotot() -> dict:
+    """Dữ liệu Chợ Tốt thật (evidence/raw-chotot_listings.csv + raw-chotot_sellers.csv) đổi sang
+    cùng schema với data/*.csv: gia (bảng giá), tin (tin đăng), nb (người bán). Đọc 1 lần rồi giữ lại."""
+    if _CHOTOT:
+        return _CHOTOT
+
+    def read(name):
+        path = os.path.join(EVIDENCE_DIR, name)
+        if not os.path.exists(path):
+            return []
+        with open(path, encoding="utf-8-sig", newline="") as f:
+            return list(csv.DictReader(f))
+
+    listings = read("raw-chotot_listings.csv")
+    sellers = read("raw-chotot_sellers.csv")
+
+    # Bảng giá: điện thoại đã dùng (condition 1 = mới, bỏ), gom theo mobile_model, khoảng = tứ phân vị 25–75%
+    gia_theo_doi = {}
+    for r in listings:
+        doi = (r.get("mobile_model") or "").strip()
+        gia = _to_int(r.get("price"))
+        if r.get("category_name") == "Điện thoại" and doi and doi != "Dòng khác" and r.get("condition") != "1" and gia > 0:
+            gia_theo_doi.setdefault(doi, []).append(gia)
+    gia_rows = []
+    for doi, prices in gia_theo_doi.items():
+        # shortcut: laptop / xe máy không có trường đời máy trong API nên chưa có giá; cần ≥3 tin mới lập khoảng giá
+        if len(prices) < 3:
+            continue
+        q1, _, q3 = statistics.quantiles(prices, n=4)
+        gia_rows.append({
+            "mon": "điện thoại", "doi": doi, "tinh_trang": "đã dùng (giá đăng Chợ Tốt)",
+            "gia_min": str(int(q1)), "gia_max": str(int(q3)),
+            "ghi_chu": "%d tin" % len(prices), "nguon": NGUON_CHOTOT,
+        })
+
+    # Người bán: tuổi tài khoản từ hồ sơ, điểm đánh giá từ tin đăng; API không trả số lượt đánh giá → để trống
+    diem = {r.get("account_oid"): r.get("seller_rating", "") for r in listings}
+    nb_rows = [{
+        "ma_nguoi_ban": s.get("account_oid", ""), "ten_nguoi_ban": (s.get("full_name") or "").strip(),
+        "tuoi_tai_khoan_ngay": s.get("account_age_days", ""), "so_tin_da_dang": "",
+        "danh_gia": diem.get(s.get("account_oid"), ""), "so_danh_gia": "",
+    } for s in sellers]
+
+    tin_rows = [{
+        "ma_tin": r.get("id", ""), "mon": (r.get("category_name") or "").lower(), "doi": r.get("mobile_model", ""),
+        "tinh_trang": "", "gia": r.get("price", ""), "mo_ta": r.get("subject", ""),
+        "ma_anh": "", "ngay_dang": "", "ma_nguoi_ban": r.get("account_oid", ""), "nguon": NGUON_CHOTOT,
+    } for r in listings]
+
+    _CHOTOT.update(gia=gia_rows, tin=tin_rows, nb=nb_rows)
+    return _CHOTOT
 
 
 def _to_int_or_none(val):
@@ -148,8 +211,9 @@ def _doi_compatible(q_doi: str, r_doi: str) -> bool:
 def tra_gia_thi_truong(mon: str, doi: str = "", tinh_trang: str = "", gia_dang: int = None) -> dict:
     """tra_gia_thi_truong · Input: mon (str), doi (str), tinh_trang (str), gia_dang (int | None).
     Output: dict khoảng giá tham chiếu (gia_min, gia_max, gia_trung_binh) và % chênh lệch so với giá đăng.
-    Tác động ra ngoài: không (chỉ đọc data/gia_tham_chieu.csv)."""
+    Tác động ra ngoài: không (chỉ đọc data/gia_tham_chieu.csv và giá đăng Chợ Tốt trong evidence/)."""
     rows, nguon = _load_csv("gia_tham_chieu.csv", _FALLBACK_GIA)
+    rows = rows + _chotot()["gia"]
     q_mon = _norm(mon)
     q_doi = _norm(doi)
     q_tt = _norm(tinh_trang)
@@ -224,7 +288,7 @@ def tra_gia_thi_truong(mon: str, doi: str = "", tinh_trang: str = "", gia_dang: 
         "gia_trung_binh": gia_tb,
         "gia_dang": gia_dang_int,
         "chenh_lech_pct": chenh_lech_pct,
-        "nguon": nguon,
+        "nguon": best.get("nguon", nguon),
     }
 
 
@@ -304,12 +368,14 @@ def kiem_tai_khoan(so_tk: str = "", sdt: str = "") -> dict:
 
 @tool
 def kiem_tin_dang(ma_tin: str = "") -> dict:
-    """kiem_tin_dang · Input: ma_tin (str) của tin đăng trên Chợ Mẫu.
+    """kiem_tin_dang · Input: ma_tin (str) — mã tin Chợ Mẫu (TDxxx) hoặc mã tin Chợ Tốt (số trong link).
     Output: dict gồm tuổi tài khoản người bán, số tin đã đăng, đánh giá và ảnh có trùng tin người bán khác không.
-    Tác động ra ngoài: không (chỉ đọc data/tin_dang.csv và data/nguoi_ban.csv)."""
+    Tác động ra ngoài: không (chỉ đọc data/tin_dang.csv, data/nguoi_ban.csv và dữ liệu Chợ Tốt trong evidence/)."""
     code = (ma_tin or "").strip().upper()
     tin_rows, nguon_tin = _load_csv("tin_dang.csv", _FALLBACK_TIN)
     nb_rows, _ = _load_csv("nguoi_ban.csv", _FALLBACK_NGUOI_BAN)
+    tin_rows = tin_rows + _chotot()["tin"]
+    nb_rows = nb_rows + _chotot()["nb"]
 
     if not code:
         return {
@@ -358,5 +424,5 @@ def kiem_tin_dang(ma_tin: str = "") -> dict:
         "so_danh_gia": _to_int_or_none(nb.get("so_danh_gia")) if co_nb else None,
         "anh_trung_nguoi_ban_khac": len(tin_trung) > 0,
         "cac_tin_trung_anh": tin_trung,
-        "nguon": nguon_tin,
+        "nguon": tin.get("nguon", nguon_tin),
     }

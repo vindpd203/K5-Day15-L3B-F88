@@ -7,13 +7,15 @@ Hình dạng: workflow cố định 5 bước (không dùng vòng lặp agent), 
   [4] AI kết luận 1 trong 3 mức + lý do + bước kiểm tiếp
   [5] Code ghi đè khi có tín hiệu đỏ + gắn số liệu gốc từ công cụ
 
-Hợp đồng: answer(text: str) -> {"output": str}. Chỉ dùng thư viện chuẩn Python.
+Hợp đồng: answer(text: str) -> {"output": str}, output là chuỗi JSON {muc, tin_hieu, so_lieu, ly_do, buoc_kiem}
+(khớp eval/metric_spec.yaml). Chỉ dùng thư viện chuẩn Python.
 """
 import json
 import re
 
 from ai import call_model
 from tools import (
+    _bo_dau,
     _norm,
     _to_int_or_none,
     kiem_tai_khoan,
@@ -27,6 +29,8 @@ MUC_AN_TOAN = "tương đối an toàn"
 MUC_KIEM_THEM = "cần kiểm thêm"
 MUC_LUA_DAO = "có dấu hiệu lừa đảo"
 MUC_HOP_LE = {MUC_AN_TOAN, MUC_KIEM_THEM, MUC_LUA_DAO}
+# Mã mức trong output JSON (hợp đồng eval/metric_spec.yaml)
+MA_MUC = {MUC_AN_TOAN: "tuong_doi_an_toan", MUC_KIEM_THEM: "can_kiem_them", MUC_LUA_DAO: "dau_hieu_lua_dao"}
 
 SYSTEM_EXTRACT = (
     "Bạn là bộ trích xuất thông tin cho công cụ kiểm tra rủi ro khi mua đồ cũ trước khi chuyển cọc.\n"
@@ -40,7 +44,10 @@ SYSTEM_EXTRACT = (
     "  gia_dang (int|null, VND), tien_coc (int|null, VND), doi_chuyen_tien_truoc (bool),\n"
     "  cach_giao (str), so_tk (str), sdt (str), ten_chu_tk (str), ten_nguoi_ban (str), ma_tin (str),\n"
     "  co_thuc_ep (bool), doi_chuyen_kenh (bool), tu_choi_gap_hoac_video (bool), co_link_la (bool),\n"
-    "  dau_hieu_chat (list[str])."
+    "  cho_kiem_truoc_khi_tra (bool: người bán đồng ý cho xem/thử hàng rồi mới trả tiền, không đòi cọc trước),\n"
+    "  dau_hieu_chat (list[str]).\n"
+    "- ngoai_pham_vi = true khi NGƯỜI MUA nhờ làm việc ngoài phạm vi: chuyển tiền/đặt cọc hộ, tra hoặc tiết lộ "
+    "CCCD/địa chỉ/thông tin cá nhân người khác, viết hoặc đăng bài tố cáo/bóc phốt ai đó."
 )
 
 SYSTEM_DECIDE = (
@@ -119,12 +126,12 @@ def _kiem_ngoai_pham_vi(text: str) -> str:
     """Kiểm tra nhanh yêu cầu ngoài phạm vi (tu_choi) theo spec.md §4 & §5."""
     low = _norm(text)
     patterns = [
-        (r"\b(chuyen tien|chuyen khoan|dat coc|coc tien|chuyen coc)(?:\s+\w+){0,2}\s+(giup|ho|dum|thay)\b",
+        (r"\b(chuyen tien|chuyen khoan|chuyen|ck|thanh toan|dat coc|coc tien|chuyen coc)(?:\s+(?!cho\b)\w+){0,2}\s+(giup|ho|dum|thay)\b",  # 'cho họ' ≠ 'hộ'
          "Tôi không thể thực hiện chuyển tiền hoặc đặt cọc thay bạn."),
-        (r"\b(tra|tim|lay)(?:\s+\w+){0,2}\s+(dia chi nha|cccd|cmnd|so can cuoc|thong tin ca nhan)\b",
-         "Tôi không hỗ trợ tra cứu thông tin cá nhân (địa chỉ nhà, CCCD/CMND) của người khác."),
-        (r"\b(viet bai|dang bai)(?:\s+\w+){0,2}\s+(boc phot|to cao|phot)\b",
-         "Tôi không hỗ trợ viết hoặc đăng bài bóc phốt cá nhân lên mạng xã hội."),
+        (r"\b(tra|tim|lay|tiet lo|cung cap)\b(?:\s+\w+){0,4}\s+(so\s+)?(dia chi nha|cccd|cmnd|can cuoc|thong tin ca nhan)\b(?!\s+cua (toi|minh))",
+         "Tôi không hỗ trợ tra cứu hay tiết lộ thông tin cá nhân (địa chỉ nhà, CCCD/CMND) của người khác."),
+        (r"\b(viet|dang)\b(?:\s+\w+){0,4}\s+(boc phot|to cao|phot|(khang dinh|noi|cao buoc)(?:\s+\w+){0,2}\s+lua dao)\b",
+         "Tôi không hỗ trợ viết hoặc đăng bài bóc phốt, cáo buộc người khác lừa đảo."),
     ]
     for pat, reason in patterns:
         if re.search(pat, low):
@@ -134,7 +141,7 @@ def _kiem_ngoai_pham_vi(text: str) -> str:
 
 def _trich_du_phong(text: str) -> dict:
     """Trích xuất heuristic tổng quát khi model trả chuỗi giả (MODEL_PROVIDER=fake) không phải JSON."""
-    low = _norm(text)
+    low = _bo_dau(text)
 
     # 1. Kiểm ngoài phạm vi & trạng thái đã chuyển tiền
     ly_do_tu_choi = _kiem_ngoai_pham_vi(text)
@@ -143,7 +150,8 @@ def _trich_du_phong(text: str) -> dict:
     ))
 
     # 2. Mã tin đăng (vd TD001)
-    m_tin = re.search(r"\b(TD\d{2,6})\b", text, re.IGNORECASE)
+    m_tin = re.search(r"\b(TD\d{2,6})\b", text, re.IGNORECASE) or re.search(
+        r"(?:chotot\.com/\S*?|ma tin\s*:?\s*)(\d{8,10})\b", low)  # mã tin Chợ Tốt trong link
     ma_tin = m_tin.group(1).upper() if m_tin else ""
 
     # 3. SĐT & Số tài khoản
@@ -200,7 +208,7 @@ def _trich_du_phong(text: str) -> dict:
         tinh_trang = "tốt"
 
     # 6. Giá bán & tiền cọc (bỏ 'cu' để tránh khớp chữ 'cũ', hỗ trợ dạng '6tr5')
-    money_pat = r"(?<![a-z0-9])(\d+(?:[.,]\d+)?)\s*(tr|trieu|k|nghin|ngan|vnd|d)(\d)?\b"
+    money_pat = r"(?<![a-z0-9])(\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?)\s*(tr|trieu|k|nghin|ngan|vnd|d)(\d)?\b"
     tien_coc = None
     m_coc = re.search(r"(?:coc|dat coc|chuyen truoc|phi ship)\D{0,20}" + money_pat, low)
     if m_coc:
@@ -232,7 +240,10 @@ def _trich_du_phong(text: str) -> dict:
         r"\b(khong gap|ko gap|ban lam|o xa|khong goi video|ko goi video|gui xe khach)\b", low
     ))
     co_link_la = bool(re.search(
-        r"(https?://\S+|link\s*(nhan tien|bao hiem|xac nhan)|bao hiem giao dich)", low
+        r"(https?://(?!(www\.)?chotot\.com)\S+|link\s*(nhan tien|bao hiem|xac nhan)|bao hiem giao dich)", low
+    ))
+    cho_kiem_truoc_khi_tra = bool(re.search(
+        r"\b(moi tra|roi moi tra|xong moi tra|roi tra tien|(nhan|xem|kiem|thu) (may|hang|xe) (roi|xong|moi) (moi )?tra|khong can coc|khong coc)\b", low
     ))
 
     dau_hieu_chat = []
@@ -265,6 +276,7 @@ def _trich_du_phong(text: str) -> dict:
         "doi_chuyen_kenh": doi_chuyen_kenh,
         "tu_choi_gap_hoac_video": tu_choi_gap_hoac_video,
         "co_link_la": co_link_la,
+        "cho_kiem_truoc_khi_tra": cho_kiem_truoc_khi_tra,
         "dau_hieu_chat": dau_hieu_chat,
     }
 
@@ -301,6 +313,7 @@ _BOOL_FIELDS = (
     "doi_chuyen_kenh",
     "tu_choi_gap_hoac_video",
     "co_link_la",
+    "cho_kiem_truoc_khi_tra",
 )
 _INT_FIELDS = ("gia_dang", "tien_coc")
 _STR_FIELDS = (
@@ -385,63 +398,63 @@ def _buoc2_tra_cuu(info: dict) -> dict:
 
 
 def _buoc3_luat_cung(info: dict, ket_qua: dict) -> dict:
-    """[3] Luật cứng bằng code → tín hiệu 🔴 đỏ / 🟡 vàng (khớp docs/de-xuat-do-cu.md §3)."""
+    """[3] Luật cứng bằng code → tín hiệu 🔴 đỏ / 🟡 vàng (khớp spec.md §4). Mỗi tín hiệu: {ma, mo_ta}."""
     do = []
     vang = []
+
+    def bat(ds, ma, mo_ta):
+        ds.append({"ma": ma, "mo_ta": mo_ta})
 
     tk = ket_qua["tai_khoan"]
     gia = ket_qua["gia"]
     tin = ket_qua["tin_dang"]
+    pct = gia.get("chenh_lech_pct") if gia.get("found") else None
+    doi_truoc = info.get("doi_chuyen_tien_truoc")
 
     # --- Tín hiệu 🔴 ĐỎ ---
     if tk.get("canh_bao"):
-        do.append("Số TK/SĐT xuất hiện trong danh sách cảnh báo (%d lần bị báo cáo)." % tk.get("so_lan_bao_cao", 0))
+        bat(do, "tk_canh_bao", "Số TK/SĐT xuất hiện trong danh sách cảnh báo (%d lần bị báo cáo)." % tk.get("so_lan_bao_cao", 0))
 
-    if (
-        gia.get("found")
-        and gia.get("chenh_lech_pct") is not None
-        and gia["chenh_lech_pct"] <= -30.0
-        and info.get("doi_chuyen_tien_truoc")
-    ):
-        do.append(
-            "Giá đăng thấp hơn giá tham chiếu %.1f%% (ngưỡng ≥30%%) và người bán yêu cầu chuyển tiền/cọc trước khi xem hàng."
-            % abs(gia["chenh_lech_pct"])
-        )
+    if pct is not None and pct <= -30.0:
+        bat(do, "gia_thap_30", "Giá đăng thấp hơn giá tham chiếu %.1f%% (ngưỡng ≥30%%)." % abs(pct))
+    elif pct is not None and pct <= -15.0 and doi_truoc:
+        bat(do, "gia_thap_15_doi_chuyen_truoc",
+            "Giá đăng thấp hơn giá tham chiếu %.1f%% (ngưỡng ≥15%%) và người bán đòi chuyển tiền/cọc trước khi xem hàng." % abs(pct))
 
     if tin.get("found") and tin.get("anh_trung_nguoi_ban_khac"):
-        do.append(
-            "Ảnh tin đăng trùng với tin của người bán khác (%s)."
-            % ", ".join(tin.get("cac_tin_trung_anh") or [])
-        )
+        bat(do, "anh_trung", "Ảnh tin đăng trùng với tin của người bán khác (%s)." % ", ".join(tin.get("cac_tin_trung_anh") or []))
 
     if info.get("co_link_la"):
-        do.append("Đoạn chat có đường link lạ ('nhận tiền' / 'bảo hiểm giao dịch') — nguy cơ lừa đảo chiếm đoạt tiền.")
+        bat(do, "link_la", "Đoạn chat có đường link lạ ('nhận tiền' / 'bảo hiểm giao dịch') — nguy cơ lừa đảo chiếm đoạt tiền.")
 
     # --- Tín hiệu 🟡 VÀNG ---
+    if pct is not None and -30.0 < pct <= -15.0 and not doi_truoc:
+        bat(vang, "gia_thap_15", "Giá đăng thấp hơn giá tham chiếu %.1f%% (ngưỡng ≥15%%)." % abs(pct))
+
     if tin.get("found") and tin.get("co_thong_tin_nguoi_ban"):
         tuoi = tin.get("tuoi_tai_khoan_ngay")
         so_dg = tin.get("so_danh_gia")
         if tuoi is not None and 0 <= tuoi < 30:
-            vang.append("Tài khoản người bán mới tạo (%d ngày, dưới ngưỡng 30 ngày)." % tuoi)
+            bat(vang, "tai_khoan_moi", "Tài khoản người bán mới tạo (%d ngày, dưới ngưỡng 30 ngày)." % tuoi)
         if so_dg is not None and so_dg == 0:
-            vang.append("Người bán chưa có đánh giá nào trên hệ thống.")
+            bat(vang, "chua_danh_gia", "Người bán chưa có đánh giá nào trên hệ thống.")
 
     if info.get("doi_chuyen_kenh"):
-        vang.append("Người bán yêu cầu chuyển sang kênh chat ngoài ứng dụng (Zalo/Telegram…).")
+        bat(vang, "doi_chuyen_kenh", "Người bán yêu cầu chuyển sang kênh chat ngoài ứng dụng (Zalo/Telegram…).")
 
     if info.get("tu_choi_gap_hoac_video"):
-        vang.append("Người bán từ chối gặp trực tiếp hoặc gọi video kiểm tra hàng.")
+        bat(vang, "tu_choi_gap_video", "Người bán từ chối gặp trực tiếp hoặc gọi video kiểm tra hàng.")
 
     if info.get("co_thuc_ep"):
-        vang.append("Người bán có lời lẽ thúc ép chuyển tiền gấp.")
+        bat(vang, "thuc_ep", "Người bán có lời lẽ thúc ép chuyển tiền gấp.")
 
     ten_chu_tk = _norm(info.get("ten_chu_tk") or "")
     ten_nb = _norm(info.get("ten_nguoi_ban") or (tin.get("ten_nguoi_ban") if tin.get("found") else ""))
     if ten_chu_tk and ten_nb and ten_chu_tk != ten_nb:
-        vang.append("Tên chủ tài khoản nhận tiền khác tên người bán.")
+        bat(vang, "ten_tk_khac", "Tên chủ tài khoản nhận tiền khác tên người bán.")
 
-    if info.get("doi_chuyen_tien_truoc") and not do:
-        vang.append("Người bán yêu cầu chuyển cọc/tiền trước khi xem hàng.")
+    if doi_truoc and not do:
+        bat(vang, "doi_chuyen_truoc", "Người bán yêu cầu chuyển cọc/tiền trước khi xem hàng.")
 
     note("bước 3 luật cứng: %d tín hiệu đỏ, %d tín hiệu vàng" % (len(do), len(vang)))
     return {"do": do, "vang": vang}
@@ -456,7 +469,7 @@ def _ket_luan_du_phong(info: dict, ket_qua: dict, luat: dict) -> dict:
     else:
         muc = MUC_AN_TOAN
 
-    ly_do = list(luat["do"]) + list(luat["vang"])
+    ly_do = [t["mo_ta"] for t in luat["do"] + luat["vang"]]
     if not ly_do:
         ly_do.append("Chưa phát hiện tín hiệu rủi ro nổi bật từ thông tin và dữ liệu tra cứu hiện có.")
     if not ket_qua["gia"].get("found"):
@@ -501,108 +514,84 @@ def _buoc4_ai_ket_luan(info: dict, ket_qua: dict, luat: dict) -> tuple:
     return parsed, False
 
 
-def _buoc5_ghi_de_va_dinh_dang(info: dict, ket_qua: dict, luat: dict, ket_luan: dict, is_fake: bool) -> str:
-    """[5] Code ghi đè khi có tín hiệu đỏ + gắn số liệu gốc từ công cụ để khớp 100% metric."""
-    muc = str(ket_luan.get("muc_rui_ro") or "").strip().lower()
-    if muc not in MUC_HOP_LE:
-        muc = MUC_KIEM_THEM
+def _tom_tat_tra_cuu(tk: dict, tin: dict) -> dict:
+    """Câu tóm tắt kết quả kiem_tai_khoan / kiem_tin_dang để người mua đọc."""
+    if not tk.get("da_kiem"):
+        tk_txt = tk.get("thong_bao", "không có số TK/SĐT")
+    elif tk.get("canh_bao"):
+        tk_txt = "CÓ trong danh sách cảnh báo (%d lần bị báo cáo)" % tk.get("so_lan_bao_cao", 0)
+    else:
+        tk_txt = "chưa thấy trong danh sách cảnh báo dựng sẵn"
 
-    # Luật ghi đè cứng: có tín hiệu đỏ → KHÔNG BAO GIỜ ra "tương đối an toàn" (ép về "có dấu hiệu lừa đảo")
-    ghi_de_note = ""
+    if not tin.get("found"):
+        tin_txt = tin.get("thong_bao", "không có mã tin")
+    else:
+        if tin.get("co_thong_tin_nguoi_ban"):
+            phan = [
+                "tài khoản %s ngày" % tin["tuoi_tai_khoan_ngay"] if tin.get("tuoi_tai_khoan_ngay") is not None else "",
+                "%s tin đã đăng" % tin["so_tin_da_dang"] if tin.get("so_tin_da_dang") is not None else "",
+                "đánh giá %.1f" % tin["danh_gia"] if tin.get("danh_gia") else "",
+                "%s lượt đánh giá" % tin["so_danh_gia"] if tin.get("so_danh_gia") is not None else "",
+            ]
+            nb_txt = ", ".join(x for x in phan if x) or "hồ sơ người bán không có số liệu"
+        else:
+            nb_txt = "chưa có hồ sơ người bán trong dữ liệu"
+        trung = "CÓ (%s)" % ", ".join(tin["cac_tin_trung_anh"]) if tin.get("anh_trung_nguoi_ban_khac") else "không"
+        tin_txt = "tin %s: %s; ảnh trùng người bán khác: %s" % (tin["ma_tin"], nb_txt, trung)
+    return {"tai_khoan": tk_txt, "tin_dang": tin_txt}
+
+
+def _buoc5_ghi_de_va_dinh_dang(info: dict, ket_qua: dict, luat: dict, ket_luan: dict, is_fake: bool) -> str:
+    """[5] Code ghi đè mức rủi ro + đóng gói output JSON theo hợp đồng eval/metric_spec.yaml:
+    {muc, tin_hieu, so_lieu, ly_do, buoc_kiem} (+ tra_cuu, luu_y, ghi_chu để người mua đọc)."""
+    raw = _norm(str(ket_luan.get("muc_rui_ro") or ""))  # nhận cả 'tương đối an toàn' lẫn 'tuong_doi_an_toan'
+    muc = next((m for m in MUC_HOP_LE if _norm(m) == raw), MUC_KIEM_THEM)
+    ghi_chu = []
+    if is_fake:
+        ghi_chu.append("Đang chạy với AI giả — trích xuất & kết luận dùng nhánh dự phòng để kiểm luồng.")
+
+    # Có tín hiệu đỏ → KHÔNG BAO GIỜ ra "tương đối an toàn" (ép về "có dấu hiệu lừa đảo")
     if luat["do"] and muc != MUC_LUA_DAO:
-        ghi_de_note = "Hệ thống đã ghi đè mức đánh giá lên '%s' do có tín hiệu đỏ từ luật cứng." % MUC_LUA_DAO
         note("bước 5 ghi đè: %s → %s (có %d tín hiệu đỏ)" % (muc, MUC_LUA_DAO, len(luat["do"])))
+        ghi_chu.append("Hệ thống đã ghi đè mức đánh giá lên '%s' do có tín hiệu đỏ từ luật cứng." % MUC_LUA_DAO)
         muc = MUC_LUA_DAO
     elif not luat["do"] and luat["vang"] and muc == MUC_AN_TOAN:
         note("bước 5 nâng mức: %s → %s (có %d tín hiệu vàng)" % (muc, MUC_KIEM_THEM, len(luat["vang"])))
         muc = MUC_KIEM_THEM
 
-    # Bảo đảm luôn có ≥1 bước kiểm cụ thể theo đúng loại món
+    # G10 (spec.md §4): chưa đối chiếu được TK/SĐT hay tin đăng, và người bán cũng không cho xem hàng rồi mới trả
+    # → chưa đủ căn cứ để nói "an toàn"
+    da_doi_chieu = ket_qua["tai_khoan"].get("da_kiem") or ket_qua["tin_dang"].get("found")
+    if muc == MUC_AN_TOAN and not da_doi_chieu and not info.get("cho_kiem_truoc_khi_tra"):
+        note("bước 5 G10: %s → %s (chưa có căn cứ đối chiếu)" % (muc, MUC_KIEM_THEM))
+        ghi_chu.append("Chưa đối chiếu được số TK/SĐT hay tin đăng, và người bán chưa đồng ý cho xem hàng rồi mới trả tiền.")
+        muc = MUC_KIEM_THEM
+
+    # Luôn có ≥1 bước kiểm cụ thể theo đúng loại món
     buoc_kiem = ket_luan.get("buoc_kiem_tiep")
     if not isinstance(buoc_kiem, list) or not [b for b in buoc_kiem if str(b).strip()]:
         buoc_kiem = _buoc_kiem_theo_mon(info.get("mon") or "")
+    buoc_kiem = [str(b).strip() for b in buoc_kiem if str(b).strip()]
 
     ly_do = ket_luan.get("ly_do")
+    if isinstance(ly_do, str):
+        ly_do = [ly_do]
     if not isinstance(ly_do, list) or not [r for r in ly_do if str(r).strip()]:
-        ly_do = list(luat["do"]) + list(luat["vang"]) or ["Dựa trên thông tin hiện có, chưa thấy dấu hiệu bất thường rõ rệt."]
+        ly_do = [t["mo_ta"] for t in luat["do"] + luat["vang"]] or ["Dựa trên thông tin hiện có, chưa thấy dấu hiệu bất thường rõ rệt."]
+    ly_do = [str(r).strip() for r in ly_do if str(r).strip()][:3]
 
-    # Chèn số liệu gốc từ 4 công cụ (đảm bảo 100% số liệu khớp công cụ)
+    # Số liệu lấy NGUYÊN từ công cụ (metric so_lieu_khop_cong_cu)
     gia = ket_qua["gia"]
     coc = ket_qua["coc"]
-    tk = ket_qua["tai_khoan"]
-    tin = ket_qua["tin_dang"]
-
-    so_lieu = []
+    so_lieu = {
+        "gia_tham_chieu": gia.get("gia_trung_binh") if gia.get("found") else None,
+        "chenh_gia_pct": gia.get("chenh_lech_pct") if gia.get("found") else None,
+        "coc_pct": coc.get("ti_le_coc_pct") if coc.get("hop_le") else None,
+    }
     if gia.get("found"):
-        dong_gia = "Giá tham chiếu (%s · %s · %s): %s – %s" % (
-            gia["mon"], gia["doi"], gia["tinh_trang"],
-            _fmt_vnd(gia["gia_min"]), _fmt_vnd(gia["gia_max"]),
-        )
-        if gia.get("chenh_lech_pct") is not None:
-            dong_gia += " | Giá đăng %s (chênh %+.1f%% so với trung bình %s)" % (
-                _fmt_vnd(gia["gia_dang"]), gia["chenh_lech_pct"], _fmt_vnd(gia["gia_trung_binh"])
-            )
-        so_lieu.append(dong_gia)
-    else:
-        so_lieu.append("Giá tham chiếu: %s." % gia.get("thong_bao", "chưa có dữ liệu giá tham chiếu"))
-
-    if coc.get("hop_le"):
-        so_lieu.append("Tỉ lệ cọc: %s / %s = %.1f%%." % (
-            _fmt_vnd(coc["coc"]), _fmt_vnd(coc["gia"]), coc["ti_le_coc_pct"]
-        ))
-    else:
-        so_lieu.append("Tỉ lệ cọc: chưa tính được (%s)." % coc.get("ly_do", "không có số tiền cọc"))
-
-    if tk.get("da_kiem"):
-        if tk.get("canh_bao"):
-            so_lieu.append("Kiểm TK/SĐT: CÓ trong danh sách cảnh báo (%d lần bị báo cáo)." % tk["so_lan_bao_cao"])
-        else:
-            so_lieu.append("Kiểm TK/SĐT: chưa thấy trong danh sách cảnh báo dựng sẵn.")
-    else:
-        so_lieu.append("Kiểm TK/SĐT: %s." % tk.get("thong_bao", "không có số TK/SĐT"))
-
-    if tin.get("found"):
-        trung_txt = "CÓ (%s)" % ", ".join(tin["cac_tin_trung_anh"]) if tin["anh_trung_nguoi_ban_khac"] else "không"
-        if tin.get("co_thong_tin_nguoi_ban"):
-            so_lieu.append(
-                "Kiểm tin đăng %s: tài khoản %d ngày, %d tin đã đăng, đánh giá %.1f (%d lượt), ảnh trùng người bán khác: %s."
-                % (
-                    tin["ma_tin"], tin["tuoi_tai_khoan_ngay"], tin["so_tin_da_dang"],
-                    tin["danh_gia"], tin["so_danh_gia"], trung_txt,
-                )
-            )
-        else:
-            so_lieu.append(
-                "Kiểm tin đăng %s: chưa có hồ sơ người bán trong dữ liệu, ảnh trùng người bán khác: %s."
-                % (tin["ma_tin"], trung_txt)
-            )
-    else:
-        so_lieu.append("Kiểm tin đăng: %s." % tin.get("thong_bao", "không có mã tin"))
-
-    lines = ["Mức đánh giá: %s" % muc]
-    if is_fake:
-        lines.append("(Đang chạy với AI giả — phần trích xuất & kết luận dùng nhánh dự phòng để kiểm luồng.)")
-    if ghi_de_note:
-        lines.append("Ghi đè an toàn: %s" % ghi_de_note)
-
-    lines.append("\nSố liệu đối chiếu từ công cụ:")
-    for item in so_lieu:
-        lines.append("- %s" % item)
-
-    if luat["do"] or luat["vang"]:
-        lines.append("\nTín hiệu luật cứng:")
-        for d in luat["do"]:
-            lines.append("- [ĐỎ] %s" % d)
-        for v in luat["vang"]:
-            lines.append("- [VÀNG] %s" % v)
-
-    lines.append("\nLý do:")
-    for r in ly_do:
-        lines.append("- %s" % str(r).strip())
-
-    lines.append("\nBước kiểm tiếp theo:")
-    for b in buoc_kiem:
-        lines.append("- %s" % str(b).strip())
+        so_lieu["khoang_gia_tham_chieu"] = [gia["gia_min"], gia["gia_max"]]
+        so_lieu["doi_tham_chieu"] = gia.get("doi")
+        so_lieu["nguon_gia"] = gia.get("nguon")
 
     luu_y = str(ket_luan.get("luu_y_an_toan") or "").strip()
     if info.get("da_chuyen_tien") and "ngân hàng" not in luu_y.lower():
@@ -610,31 +599,45 @@ def _buoc5_ghi_de_va_dinh_dang(info: dict, ket_qua: dict, luat: dict, ket_luan: 
             "Nếu bạn đã chuyển tiền: chụp màn hình toàn bộ tin đăng, đoạn chat và biên lai chuyển khoản; "
             "liên hệ ngay ngân hàng để hỗ trợ tra soát và trình báo cơ quan công an."
         )
-    if luu_y:
-        lines.append("\nLưu ý khẩn: %s" % luu_y)
-
-    lines.append(
-        "\nLưu ý: Kết quả chỉ mang tính tham khảo hỗ trợ quyết định; người mua tự quyết định giao dịch "
+    luu_y_ds = [luu_y] if luu_y else []
+    luu_y_ds.append(
+        "Kết quả chỉ mang tính tham khảo; người mua tự quyết định giao dịch "
         "(AI không chuyển tiền, không liên hệ người bán hay tố cáo thay)."
     )
-    return "\n".join(lines)
+
+    out = {
+        "muc": MA_MUC[muc],
+        "tin_hieu": [dict(muc="do", **t) for t in luat["do"]] + [dict(muc="vang", **t) for t in luat["vang"]],
+        "so_lieu": so_lieu,
+        "ly_do": ly_do,
+        "buoc_kiem": buoc_kiem,
+        "tra_cuu": _tom_tat_tra_cuu(ket_qua["tai_khoan"], ket_qua["tin_dang"]),
+        "luu_y": luu_y_ds,
+        "ghi_chu": ghi_chu,
+    }
+    return json.dumps(out, ensure_ascii=False, indent=2)
 
 
 def answer(text: str) -> dict:
-    """Điểm vào chính cho run.py, eval và simulate."""
+    """Điểm vào chính cho run.py, eval và simulate. output là chuỗi JSON (hợp đồng eval/metric_spec.yaml)."""
     # [1] AI trích thông tin → JSON
     info, fake1 = _buoc1_trich_thong_tin(text)
 
     if info.get("ngoai_pham_vi"):
         ly_do = info.get("ly_do_tu_choi") or "Yêu cầu này nằm ngoài phạm vi hỗ trợ."
         note("từ chối: ngoài phạm vi — %s" % ly_do)
-        return {
-            "output": (
-                "Từ chối thực hiện (ngoài phạm vi): %s\n"
-                "Tôi chỉ hỗ trợ kiểm tra tin đăng, đoạn chat và số TK/SĐT để đánh giá rủi ro trước khi bạn tự quyết định chuyển cọc."
-                % ly_do
-            )
+        out = {
+            "muc": "tu_choi",
+            "tin_hieu": [],
+            "so_lieu": {},  # không gọi công cụ → so_lieu rỗng
+            "ly_do": [ly_do],
+            "buoc_kiem": [
+                "Tôi chỉ hỗ trợ kiểm tra tin đăng, đoạn chat và số TK/SĐT để bạn tự quyết định. "
+                "Hãy hẹn xem hàng trực tiếp trước khi trả tiền; nếu nghi ngờ, lưu lại tin đăng và đoạn chat "
+                "rồi báo cáo qua kênh của sàn."
+            ],
         }
+        return {"output": json.dumps(out, ensure_ascii=False, indent=2)}
 
     # [2] Tra cứu và tính bằng 4 công cụ
     ket_qua = _buoc2_tra_cuu(info)
@@ -645,6 +648,6 @@ def answer(text: str) -> dict:
     # [4] AI kết luận 3 mức + lý do + bước kiểm tiếp
     ket_luan, fake4 = _buoc4_ai_ket_luan(info, ket_qua, luat)
 
-    # [5] Code ghi đè khi có tín hiệu đỏ + định dạng đầu ra
+    # [5] Code ghi đè + đóng gói output JSON
     output = _buoc5_ghi_de_va_dinh_dang(info, ket_qua, luat, ket_luan, is_fake=(fake1 or fake4))
     return {"output": output}
