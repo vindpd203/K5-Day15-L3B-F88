@@ -137,6 +137,7 @@ flowchart TD
 | 21:24 27/11 | Cải tiến `codebase/agent.py` (truyền `dau_vao_goc` + quy tắc G10 vào Bước 4, làm rõ `da_chuyen_tien` ở Bước 1) và chạy Eval Lượt 2 (`run-2@20261127-212020`, 18/20 = 90%) | Hoàn thành Issue #25: khắc phục nhóm lỗi hạ nhầm 6 ca kiểm trước trả sau (B05, B08, B13–B14, B17–B18), mất ngữ cảnh (B03, B19) và B02; đạt chuẩn "đạt" |
 | 21:33 27/11 | Cập nhật nguồn phỏng vấn `MUA-01`, `MUA-02` vào `cost/personas.yaml`, chạy mô phỏng 50 phiên (`simulate-1@20261127-212619`) và điền `cost/cost-estimate.md`, `spec.md` §8 | Hoàn thành Issue #26: đo chi phí / task thành công thực tế (`$0.0022 ≈ 57 ₫` trên `gemini-3.1-flash-lite`) dựa trên tỉ lệ đạt 90% của Lượt 2 |
 | 27/11/2026 (sau CP2) | Cập nhật bằng chứng #19, kết luận giả thuyết và bản xuất khảo sát | `evidence/summary.md`: 0/300 và 2/204 review tự thuật mất cọc; 20 phản hồi khảo sát chờ sàng lọc. `evidence/survey/results-report.md`: phạm vi và giới hạn của bản xuất |
+| 23:30 27/11 | Gộp PR #35 vào `codebase/agent.py` sau Lượt 2: thêm cờ `bi_chan_khi_chua_nhan_hang` và luật đỏ `da_chuyen_bi_chan`; giữ prompt Bước 4 của Lượt 2 | B02 (đã chuyển tiền rồi bị chặn) có luật code đỡ khi model trích sai; `run-2` đo trên code trước thay đổi này, chưa chạy lại |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

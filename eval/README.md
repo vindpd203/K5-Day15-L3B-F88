@@ -36,3 +36,9 @@ Lượt chạy lại vì lỗi kỹ thuật, lượt sau Checkpoint 4: ghi thêm
 ## 6. Lỗi chính
 
 Nhóm lỗi lớn nhất ở Lượt 1 là đứt ngữ cảnh giao dịch gốc và thiếu quy tắc G10 giữa Bước 1 → Bước 4 (làm 6/8 ca kiểm trước trả sau bị hạ về `can_kiem_them`, 4 ca mất chi tiết phụ và B02 bị gán nhầm `ngoai_pham_vi`). Sau một lần cải tiến truyền `dau_vao_goc` + quy tắc G10 vào Bước 4 và làm rõ `da_chuyen_tien` ở Bước 1, Lượt 2 đạt **18/20 (90%)** và vượt chuẩn đạt (`17/17` đúng mã mức, `0` câu tệ đi). Còn lại 2 câu `kho` (`B04`, `B06`) đúng mức `can_kiem_them` nhưng diễn đạt chưa tách bạch tin đồn chung (`B04`) hoặc chưa bắt hết câu viết tắt không dấu mở sẵn phương án hẹn xem trực tiếp (`B06`).
+
+## 7. Demo CP3
+
+- [Video demo CP3 trên Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) quay ở phiên bản terminal trước khi tích hợp đầu ra JSON từ `main`.
+- Lượt thử `run-try@20261127-223855` chạy B01–B03 với `openai/gpt-4o-mini` trên bản tích hợp. Cả ba câu có token vào và ra, và trường `muc` trùng nhãn mong đợi. Xem [kết quả CSV](run-try.csv) và [trace](../traces/run-try.jsonl).
+- Video quay bản cũ: câu B01 bị từ chối nhầm là ngoài phạm vi, công cụ 0 lần. Cần quay lại trên `main` hiện tại (B01, B05 và một câu ngoài phạm vi) rồi thay link. Lượt `run-try` dùng model khác Lượt 1/2 nên chỉ là bằng chứng nối model, không so với hai lượt eval.
