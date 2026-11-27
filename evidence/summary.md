@@ -7,7 +7,7 @@ Cập nhật 27/11/2026 · [issue #5](https://github.com/vindpd203/K5-Day15-L3B-
 | Nguồn | Trạng thái | Đạt ngưỡng? | File |
 |---|---|---|---|
 | Review Chợ Tốt | 504/504 nhãn được ghi vào nhan_minh theo xác nhận khớp của Minh trong chat; người duyệt cuối là Minh, nguồn gợi ý Codex được giữ | Có xác nhận của Minh; chưa có đối chiếu độc lập Minh/Khánh | data-mining.md; label-report.json |
-| Phỏng vấn ≥3 người mua ngoài nhóm | Có câu hỏi/tin hẹn; chưa có lịch hoặc kết quả thật trong repo | Chưa | interviews/guide.md |
+| Phỏng vấn ≥3 người mua ngoài nhóm | Đã phỏng vấn **2 người mua** (MUA-01, MUA-02) + **1 người bán** (BAN-01, đếm riêng); Minh xác nhận là người thật ngày 27/11/2026 | Chưa (2/3 người mua) | interviews/README.md |
 | Khảo sát ≥20 người hợp lệ ngoài nhóm | Đã cập nhật bộ link mới theo log 17:38:36; kết quả sẽ bổ sung sau khi chốt khảo sát theo yêu cầu của Minh | Chưa xác nhận | survey/questions.md |
 
 ## Số đã kiểm lại
@@ -23,6 +23,23 @@ Cập nhật 27/11/2026 · [issue #5](https://github.com/vindpd203/K5-Day15-L3B-
 
 Tái lập: `python -X utf8 evidence/count.py stats evidence/raw-chotot_reviews.csv` và `python -X utf8 evidence/count.py count evidence/private/sample.csv`.
 
+## Phỏng vấn — số và trích dẫn
+
+| Mã | Vai | Kết quả lần gần nhất | Bị đòi cọc trước? | Phút kiểm người bán *(tự ước tính)* | Số người bán đã kiểm / 30 ngày *(tự ước tính)* |
+|---|---|---|---|---|---|
+| MUA-01 | Người mua (Facebook Marketplace) | Dừng giao dịch | Có, 200.000đ; người bán từ chối gọi video và cho xem máy | 25 | 5 |
+| MUA-02 | Người mua (Chợ Tốt) | Mua thành công, 4.000.000đ | Không; gặp trực tiếp, test máy rồi mới trả | 15 online + 20 tại chỗ | 3 |
+| BAN-01 | Người bán cá nhân (nhóm Facebook) | Bán thành công, 3.500.000đ | Không đòi cọc; cho xem trực tiếp | 20 phút trả lời mỗi khách chốt | 6 khách hỏi |
+
+n nhỏ, không tính %. Trích dẫn (ẩn danh, người được hỏi đồng ý):
+
+1. "Chưa kiểm chứng được thì mình tìm tin khác, thà mất thời gian tìm kiếm chứ không thể mạo hiểm chuyển cọc trước." — MUA-01
+2. "Mình muốn biết chắc chắn người bán đang cầm đúng chiếc máy đó trên tay rồi mới tính đến chuyện tiền bạc." — MUA-01
+3. "Mình cứ phải xem máy tận mắt, test kỹ mọi chức năng rồi mới chuyển tiền thì mới thực sự an tâm." — MUA-02
+4. "Mình sẵn sàng quay video máy và cho kiểm tra trực tiếp thoải mái, nhưng tuyệt đối không chụp ảnh giấy tờ cá nhân gửi qua mạng." — BAN-01
+
+Nguồn gốc: báo cáo do Codex trình bày theo yêu cầu Minh, Minh xác nhận là buổi hỏi thật (`docs/ai-usage.md`); chưa có ghi chép gốc và ngày giờ từng buổi.
+
 ## Ví dụ đã đối chiếu (không phải kết quả nhãn tay)
 
 1. “khi cọc tiền cho người bán xong thì họ chặn mình, và không gửi hàng” — C0342, 20/06/2026.
@@ -35,13 +52,20 @@ Truy vết: ID trong snapshot có hash cố định, không có reviewId Google.
 
 ## Đối chiếu và kết luận
 
-Chưa có dữ liệu khảo sát/phỏng vấn để đối chiếu. Kết quả phân loại có 2 review rõ theo định nghĩa mất cọc, được Minh xác nhận khớp nhãn qua chat; chưa đạt tiêu chí dự kiến ≥5 review tự thuật rõ chuyện cọc/kết quả trong hypothesis.md. Review còn nhiều từ khóa nhiễu và thiếu loại hàng, chưa đủ kết luận cho riêng người mua điện thoại cũ. Giả thuyết **chưa được xác nhận**; còn thiếu số lần kiểm người bán và phút/lần từ đúng người dùng. Chưa có kết quả hai người kiểm tay độc lập.
+Chưa có dữ liệu khảo sát. Phỏng vấn (2 người mua) khớp hướng của review: cả hai kiểm người bán trước khi trả tiền, một người bỏ giao dịch khi bị đòi cọc 200.000đ mà không được xem máy; chưa ai trong mẫu mất tiền. Kết quả phân loại có 2 review rõ theo định nghĩa mất cọc, được Minh xác nhận khớp nhãn qua chat; chưa đạt tiêu chí dự kiến ≥5 review tự thuật rõ chuyện cọc/kết quả trong hypothesis.md. Review còn nhiều từ khóa nhiễu và thiếu loại hàng, chưa đủ kết luận cho riêng người mua điện thoại cũ. Giả thuyết **chưa được xác nhận**; đã có số phút kiểm người bán từ 2 người mua (25 và 35 phút/lần, tự ước tính), cần thêm người mua thứ 3 và khảo sát. Chưa có kết quả hai người kiểm tay độc lập.
 
 Chỉ đánh dấu đạt sau khi người phụ trách duyệt nguồn và số. Người bán phỏng vấn bổ sung đếm riêng, không cộng vào ngưỡng 3 người mua. Không dùng tỷ lệ review làm xác suất bị lừa trong công thức impact.
 
 ## Lịch hẹn thực tế
 
-Chưa có lịch được xác nhận. Khi có, chỉ ghi mã P_, vai và giờ; không ghi tên hoặc số liên hệ. Không tự điền lịch dự kiến thành lịch đã hẹn.
+| Mã | Vai | Giờ hẹn | Đã xong? |
+|---|---|---|---|
+| MUA-01 | Người mua | chưa ghi | Xong |
+| MUA-02 | Người mua | chưa ghi | Xong |
+| BAN-01 | Người bán | chưa ghi | Xong |
+| MUA-03 | Người mua | cần hẹn để đủ 3 người mua | Chưa |
+
+Chỉ ghi mã, vai và giờ; không ghi tên hoặc số liên hệ.
 
 Đã chuẩn bị [lịch đề xuất tham khảo](interviews/schedule-reference.md), [kịch bản đầy đủ cho người mua/người bán](interviews/guide.md) và [phiếu ghi chép trắng](interviews/record-reference.md). Các tài liệu này chưa phải lịch xác nhận, người đã hỏi hoặc kết quả phỏng vấn.
 
