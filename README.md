@@ -133,5 +133,5 @@ Codex và coding agent viết script đếm review và gợi ý nhãn (Minh duy�
 | 4 | Bản chạy thử làm trọn lát cắt | `codebase/` · lệnh ở mục "Lệnh" |
 | 5 | Định nghĩa "tốt" + bộ câu thử | `data/DATA_CARD.md` · `eval/` |
 | 6 | Mô phỏng chi phí khi dùng thật | `cost/` |
-| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: [Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) (bản 27/11, quay trước khi có đầu ra JSON — đang quay lại, xem `eval/README.md` §7) |
+| 7 | Slide + demo + video dự phòng | `demo-slides.pdf` ở thư mục gốc · link video: [Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) (bản 28/11 quay lại trên `main`: B01 gọi thật `gpt-4o-mini` kèm 4 lần gọi công cụ, B10 từ chối ngoài phạm vi — xem `eval/README.md` §7) |
 | + | *Bonus:* người dùng thử | `validation/log.md` |

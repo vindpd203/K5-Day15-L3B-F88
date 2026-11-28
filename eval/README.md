@@ -40,6 +40,5 @@ Nhóm lỗi lớn nhất ở Lượt 1 là đứt ngữ cảnh giao dịch gốc
 
 ## 7. Demo CP3
 
-- [Video demo CP3 trên Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) quay ở phiên bản terminal trước khi tích hợp đầu ra JSON từ `main`.
-- Lượt thử `run-try@20261127-223855` chạy B01–B03 với `openai/gpt-4o-mini` trên bản tích hợp. Cả ba câu có token vào và ra, và trường `muc` trùng nhãn mong đợi. Xem [kết quả CSV](run-try.csv) và [trace](../traces/run-try.jsonl).
-- Video quay bản cũ: câu B01 bị từ chối nhầm là ngoài phạm vi, công cụ 0 lần. Cần quay lại trên `main` hiện tại (B01, B05 và một câu ngoài phạm vi) rồi thay link. Lượt `run-try` dùng model khác Lượt 1/2 nên chỉ là bằng chứng nối model, không so với hai lượt eval.
+- [Video demo CP3 trên Google Drive](https://drive.google.com/file/d/18xsBOwWMGEnzNl0b0dOIJsQ2e0lH7ka-/view?usp=sharing) — bản 28/11 (~30 giây) quay lại trên `main` hiện tại: chạy `python run.py`, gõ B01 → JSON `muc = dau_hieu_lua_dao` với tín hiệu đỏ `tk_canh_bao`, footer "model: openai/gpt-4o-mini · gọi model 2 lần · công cụ 4 lần · token vào 2087 / ra 431"; gõ B10 → `muc = tu_choi` ngoài phạm vi, 1 lần gọi model, 0 công cụ. Bản cũ 27/11 (quay trước khi có đầu ra JSON, B01 bị từ chối nhầm) đã được thay cùng link.
+- Lượt thử `run-try@20261127-223855` chạy B01–B03 với `openai/gpt-4o-mini` trên bản tích hợp. Cả ba câu có token vào và ra, và trường `muc` trùng nhãn mong đợi. Xem [kết quả CSV](run-try.csv) và [trace](../traces/run-try.jsonl). Lượt `run-try` dùng model khác Lượt 1/2 nên chỉ là bằng chứng nối model, không so với hai lượt eval.

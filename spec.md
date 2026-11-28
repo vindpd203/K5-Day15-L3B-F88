@@ -1,4 +1,4 @@
-# AI SPEC — Kiểm người bán đồ cũ trước khi chuyển cọc · Nhóm F88 · Phòng C401 · Zone __
+# AI SPEC — Kiểm người bán đồ cũ trước khi chuyển cọc · Nhóm F88 · Phòng C401 · Zone 2
 
 > Mốc nộp: §7 chốt chuẩn "đạt" tại **CP2 19:30 Thứ Sáu 27/11** · §0–§7 nộp **CP3 10:00 Thứ Bảy 28/11** · đủ §0–§10 **CP4 14:30 Thứ Bảy 28/11** · §10 changelog ghi tiếp đến **23:59 Thứ Bảy 28/11**.
 > Đề xuất đầy đủ: [docs/de-xuat-do-cu.md](docs/de-xuat-do-cu.md) · plan: [docs/PLAN.md](docs/PLAN.md).
